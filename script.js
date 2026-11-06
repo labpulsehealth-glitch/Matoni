@@ -155,9 +155,12 @@ function closeLesson() {
 
     const lessonArea = document.getElementById("lessonArea");
 
-    lessonArea.hidden = true;
+    if (lessonArea) {
+        lessonArea.hidden = true;
+    }
 
-    document.getElementById("learn").scrollIntoView({
+    window.scrollTo({
+        top: 0,
         behavior: "smooth"
     });
 }
@@ -323,4 +326,65 @@ function answerQuestion(answer) {
 
     feedback.appendChild(document.createElement("br"));
     feedback.appendChild(nextButton);
+}
+
+// WOMEN'S COMMUNITY - QUESTION SUBMISSION
+
+const questionForm = document.getElementById("questionForm");
+
+if (questionForm) {
+
+    questionForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const questionInput = document.getElementById("question");
+        const identityInput = document.getElementById("identity");
+        const categoryInput = document.getElementById("category");
+
+        const questionList = document.getElementById("communityQuestions");
+        const message = document.getElementById("questionMessage");
+
+        const question = questionInput.value.trim();
+        const identity = identityInput.value;
+        const category = categoryInput.value;
+
+        if (!question) {
+            message.textContent = "Please enter your question.";
+            return;
+        }
+
+        const card = document.createElement("article");
+        card.className = "learning-card";
+
+        const topic = document.createElement("span");
+        topic.className = "eyebrow";
+        topic.textContent = category.toUpperCase();
+
+        const heading = document.createElement("h3");
+        heading.textContent = question;
+
+        const author = document.createElement("p");
+        author.textContent = identity === "anonymous"
+            ? "Asked anonymously"
+            : "Asked by a community member";
+
+        const status = document.createElement("p");
+        status.textContent =
+            "This question is currently a local preview. Online responses will be enabled when the community database is connected.";
+
+        card.appendChild(topic);
+        card.appendChild(heading);
+        card.appendChild(author);
+        card.appendChild(status);
+
+        questionList.prepend(card);
+
+        questionForm.reset();
+
+        message.textContent =
+            "Your question has appeared in the community preview!";
+
+    });
+
 }
