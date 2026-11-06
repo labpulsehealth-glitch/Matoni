@@ -1,98 +1,338 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#713d56">
+
   <title>MATONI | A World Where Every Girl Is Understood</title>
+
+  <meta name="description" content="MATONI is a women's health platform advancing knowledge, body literacy, research, dignity and understanding for girls and women.">
+
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .herbody-section {
-      max-width: 1100px;
-      margin: 55px auto;
-      padding: 25px 18px;
+    :root {
+      --matoni-ink: #352630;
+      --matoni-wine: #713d56;
+      --matoni-muted: #796b73;
+      --matoni-paper: #fffdfc;
+      --matoni-soft: #f8f2f5;
+      --matoni-line: #eadfe5;
+      --matoni-accent: #b58a9d;
     }
 
-    .herbody-section h2 {
-      color: #713d56;
+    body {
+      background: var(--matoni-paper);
+      color: var(--matoni-ink);
     }
 
-    .herbody-intro {
-      line-height: 1.7;
-      max-width: 750px;
+    .matoni-header {
+      background: var(--matoni-paper);
+      border-bottom: 1px solid var(--matoni-line);
     }
 
-    .herbody-grid {
+    .matoni-logo {
+      letter-spacing: 0.16em;
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .matoni-header nav a {
+      font-size: 13px;
+    }
+
+    .editorial-hero {
+      max-width: 1050px;
+      margin: auto;
+      padding: 105px 24px 95px;
+      text-align: center;
+    }
+
+    .editorial-hero .eyebrow {
+      color: var(--matoni-wine);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .editorial-hero h1 {
+      max-width: 820px;
+      margin: 0 auto;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.08;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+    }
+
+    .editorial-hero .hero-description {
+      max-width: 560px;
+      margin: 25px auto 30px;
+      color: var(--matoni-muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .editorial-button {
+      display: inline-block;
+      padding: 15px 27px;
+      background: var(--matoni-wine);
+      color: white;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      transition: background 0.2s ease;
+    }
+
+    .editorial-button:hover {
+      background: #542b3f;
+    }
+
+    .editorial-intro {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 65px 24px;
+      text-align: center;
+      border-top: 1px solid var(--matoni-line);
+    }
+
+    .editorial-intro h2,
+    .initiatives-heading h2,
+    .editorial-about h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(29px, 4vw, 43px);
+      line-height: 1.2;
+    }
+
+    .editorial-intro p,
+    .editorial-about p {
+      max-width: 680px;
+      margin: 17px auto 0;
+      color: var(--matoni-muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .initiatives-section {
+      padding: 75px 24px 85px;
+      background: var(--matoni-soft);
+    }
+
+    .initiatives-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .initiatives-heading {
+      margin-bottom: 38px;
+      text-align: center;
+    }
+
+    .initiatives-heading .eyebrow,
+    .editorial-about .eyebrow {
+      color: var(--matoni-wine);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.19em;
+    }
+
+    .initiatives-heading p {
+      color: var(--matoni-muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .initiative-list {
+      border-top: 1px solid var(--matoni-line);
+    }
+
+    .initiative-item {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      grid-template-columns: 65px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 20px;
+      padding: 26px 8px;
+      border-bottom: 1px solid var(--matoni-line);
+      text-decoration: none;
+      color: var(--matoni-ink);
+      transition: padding 0.2s ease, background 0.2s ease;
+    }
+
+    .initiative-item:hover {
+      padding-left: 17px;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .initiative-number {
+      color: var(--matoni-accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+    }
+
+    .initiative-copy h3 {
+      margin: 0 0 7px;
+      color: var(--matoni-wine);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      font-weight: 400;
+    }
+
+    .initiative-copy p {
+      margin: 0;
+      color: var(--matoni-muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .initiative-link {
+      color: var(--matoni-wine);
+      font-size: 20px;
+    }
+
+    .herbody-features {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 13px;
       margin-top: 25px;
     }
 
-    .herbody-card {
-      display: block;
+    .herbody-feature {
+      padding: 18px;
+      background: white;
+      border: 1px solid var(--matoni-line);
       text-decoration: none;
-      color: inherit;
-      background: #fff8fb;
-      border: 1px solid #f0dce5;
-      border-radius: 15px;
-      padding: 23px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: var(--matoni-ink);
+      transition: border-color 0.2s ease;
     }
 
-    .herbody-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(113, 61, 86, 0.10);
+    .herbody-feature:hover {
+      border-color: var(--matoni-wine);
     }
 
-    .herbody-card h3 {
-      color: #713d56;
-      margin-top: 0;
-    }
-
-    .herbody-card p {
-      line-height: 1.6;
+    .herbody-feature h4 {
+      margin: 0 0 8px;
+      color: var(--matoni-wine);
       font-size: 14px;
     }
 
-    .herbody-card span {
-      display: inline-block;
-      margin-top: 10px;
-      color: #713d56;
-      font-weight: bold;
-      font-size: 14px;
+    .herbody-feature p {
+      margin: 0;
+      color: var(--matoni-muted);
+      font-size: 12px;
+      line-height: 1.7;
     }
 
-    .trust-links {
+    .editorial-about {
+      max-width: 850px;
+      margin: auto;
+      padding: 85px 24px;
       text-align: center;
-      padding: 35px 18px;
-      margin: 35px auto;
-      max-width: 900px;
     }
 
-    .trust-links h2 {
-      color: #713d56;
+    .editorial-about p {
+      margin-bottom: 18px;
     }
 
-    .trust-links p {
-      line-height: 1.6;
-    }
-
-    .trust-link-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .trust-link-grid a {
+    .editorial-about .about-link {
+      display: inline-block;
+      margin-top: 17px;
+      color: var(--matoni-wine);
       text-decoration: none;
-      color: #713d56;
-      background: #f8e8ef;
-      padding: 12px 17px;
-      border-radius: 25px;
-      font-size: 14px;
+      border-bottom: 1px solid var(--matoni-accent);
+      padding-bottom: 5px;
+      font-size: 13px;
+    }
+
+    .editorial-footer {
+      padding: 45px 24px 25px;
+      background: #382934;
+      color: #fff;
+    }
+
+    .footer-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .footer-brand {
+      font-size: 21px;
+      letter-spacing: 0.17em;
+      font-weight: 700;
+    }
+
+    .footer-tagline {
+      color: #e6d8df;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      margin: 28px 0;
+    }
+
+    .footer-links a {
+      color: #f1e7ec;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      color: #d5c5ce;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 700px) {
+      .editorial-hero {
+        padding: 78px 21px 70px;
+      }
+
+      .editorial-intro {
+        padding: 52px 22px;
+      }
+
+      .initiatives-section {
+        padding: 60px 20px;
+      }
+
+      .initiative-item {
+        grid-template-columns: 37px minmax(0, 1fr) 18px;
+        gap: 10px;
+        padding: 23px 2px;
+      }
+
+      .initiative-copy h3 {
+        font-size: 20px;
+      }
+
+      .initiative-copy p {
+        font-size: 12px;
+      }
+
+      .herbody-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .editorial-about {
+        padding: 65px 22px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .herbody-features {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -108,180 +348,233 @@
 
   <nav id="navigation">
     <a href="index.html">Home</a>
-    <a href="learn.html">Learn</a>
+    <a href="#initiatives">Our Work</a>
     <a href="body.html">HERBODY</a>
-    <a href="cycle.html">My Cycle</a>
-    <a href="journal.html">My Journal</a>
-    <a href="symptoms.html">Symptoms</a>
-    <a href="support.html">Menstrual Support</a>
+    <a href="hervoice.html">HERVOICE</a>
+    <a href="research.html">Research</a>
   </nav>
 </header>
 
 <main>
 
-<section class="matoni-hero">
-  <p class="eyebrow">WOMEN'S HEALTH • KNOWLEDGE • DIGNITY</p>
+  <!-- HERO -->
 
-  <h1>A world where every girl is understood.</h1>
+  <section class="editorial-hero">
+    <p class="eyebrow">WOMEN'S HEALTH · KNOWLEDGE · DIGNITY</p>
 
-  <p>
-    Understand your body. Find answers. Take charge of your health.
-  </p>
+    <h1>A world where every girl is understood.</h1>
 
-  <a href="learn.html" class="matoni-main-button">
-    Begin Your Journey
-  </a>
-</section>
+    <p class="hero-description">
+      A women's health platform advancing knowledge, understanding,
+      research and dignity through education and responsible technology.
+    </p>
 
-<section class="matoni-welcome">
-  <h2>Welcome to MATONI</h2>
-
-  <p>
-    A space created to help girls and women understand their bodies,
-    explore their health and access reliable information without shame.
-  </p>
-</section>
-
-<section class="herbody-section">
-  <p class="eyebrow">HERBODY | BODY LITERACY</p>
-
-  <h2>Get to Know Your Body</h2>
-
-  <p class="herbody-intro">
-    Your body deserves understanding, not confusion or shame.
-    Explore your menstrual cycle, learn about your anatomy,
-    understand symptoms and keep a record of your experiences.
-  </p>
-
-  <div class="herbody-grid">
-
-    <a href="body.html" class="herbody-card">
-      <h3>Explore Your Body</h3>
-      <p>
-        Learn about the female reproductive system, hormones
-        and the changes that happen in your body.
-      </p>
-      <span>Explore Body Literacy</span>
+    <a href="#initiatives" class="editorial-button">
+      Discover MATONI
     </a>
+  </section>
 
-    <a href="cycle.html" class="herbody-card">
-      <h3>Understand Your Cycle</h3>
-      <p>
-        Explore the four phases of the menstrual cycle
-        and calculate an estimated next-period date.
-      </p>
-      <span>Explore My Cycle</span>
+  <!-- INTRODUCTION -->
+
+  <section class="editorial-intro">
+    <h2>Women's health deserves more.</h2>
+
+    <p>
+      Every girl and woman deserves access to reliable health knowledge,
+      the freedom to understand her body and the opportunity to have
+      her experiences heard and taken seriously.
+    </p>
+  </section>
+
+  <!-- INITIATIVES -->
+
+  <section class="initiatives-section" id="initiatives">
+    <div class="initiatives-inner">
+
+      <div class="initiatives-heading">
+        <p class="eyebrow">OUR WORK</p>
+        <h2>Six initiatives. One purpose.</h2>
+        <p>
+          Explore the different areas through which MATONI
+          works towards a better future for women's health.
+        </p>
+      </div>
+
+      <div class="initiative-list">
+
+        <a href="body.html" class="initiative-item">
+          <span class="initiative-number">01</span>
+          <div class="initiative-copy">
+            <h3>HERBODY</h3>
+            <p>
+              Body literacy, menstrual health, symptoms and
+              understanding the female body.
+            </p>
+          </div>
+          <span class="initiative-link">↗</span>
+        </a>
+
+        <a href="learn.html" class="initiative-item">
+          <span class="initiative-number">02</span>
+          <div class="initiative-copy">
+            <h3>HERWISE</h3>
+            <p>
+              Accessible health education and reliable information
+              for girls and women.
+            </p>
+          </div>
+          <span class="initiative-link">↗</span>
+        </a>
+
+        <a href="hervoice.html" class="initiative-item">
+          <span class="initiative-number">03</span>
+          <div class="initiative-copy">
+            <h3>HERVOICE</h3>
+            <p>
+              Women's experiences, stories, advocacy and
+              community conversations.
+            </p>
+          </div>
+          <span class="initiative-link">↗</span>
+        </a>
+
+        <a href="research.html" class="initiative-item">
+          <span class="initiative-number">04</span>
+          <div class="initiative-copy">
+            <h3>HERRESEARCH</h3>
+            <p>
+              Advancing interest in evidence, women's health
+              research and scientific understanding.
+            </p>
+          </div>
+          <span class="initiative-link">↗</span>
+        </a>
+
+        <a href="confidence.html" class="initiative-item">
+          <span class="initiative-number">05</span>
+          <div class="initiative-copy">
+            <h3>PERIOD WITHOUT SHAME</h3>
+            <p>
+              Menstrual dignity, education and the vision
+              of accessible menstrual products.
+            </p>
+          </div>
+          <span class="initiative-link">↗</span>
+        </a>
+
+        <a href="guard.html" class="initiative-item">
+          <span class="initiative-number">06</span>
+          <div class="initiative-copy">
+            <h3>HERGUARD</h3>
+            <p>
+              A future-focused initiative for women's
+              health safety and protection.
+            </p>
+          </div>
+          <span class="initiative-link">↗</span>
+        </a>
+
+      </div>
+
+      <!-- HERBODY QUICK ACCESS -->
+
+      <div style="margin-top:55px;">
+        <p class="eyebrow">START WITH HERBODY</p>
+        <h2 style="font-family:Georgia,serif;font-weight:400;">
+          Understand your body.
+        </h2>
+        <p style="color:var(--matoni-muted);font-size:14px;line-height:1.8;">
+          Explore the practical tools and learning experiences
+          currently available on MATONI.
+        </p>
+
+        <div class="herbody-features">
+
+          <a href="body.html" class="herbody-feature">
+            <h4>Body Literacy</h4>
+            <p>Explore anatomy, hormones and body changes.</p>
+          </a>
+
+          <a href="cycle.html" class="herbody-feature">
+            <h4>My Cycle</h4>
+            <p>Understand the menstrual cycle and its phases.</p>
+          </a>
+
+          <a href="symptoms.html" class="herbody-feature">
+            <h4>Symptoms</h4>
+            <p>Learn about symptoms and warning signs.</p>
+          </a>
+
+          <a href="journal.html" class="herbody-feature">
+            <h4>My Journal</h4>
+            <p>Keep personal notes about your experiences.</p>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT MATONI -->
+
+  <section class="editorial-about">
+    <p class="eyebrow">THE MATONI COMMITMENT</p>
+
+    <h2>Knowledge without shame. Progress without exclusion.</h2>
+
+    <p>
+      We believe women's health deserves attention, scientific
+      investment, accessible education and meaningful understanding.
+    </p>
+
+    <p>
+      MATONI is being developed around the belief that no girl
+      should be left without the knowledge and support she needs
+      to understand her health.
+    </p>
+
+    <a href="privacy.html" class="about-link">
+      Read about our approach to privacy and trust
     </a>
-
-    <a href="symptoms.html" class="herbody-card">
-      <h3>Understand Symptoms</h3>
-      <p>
-        Learn about common menstrual symptoms, recognise
-        concerning changes and know when to seek care.
-      </p>
-      <span>Explore Symptoms</span>
-    </a>
-
-    <a href="journal.html" class="herbody-card">
-      <h3>My Health Journal</h3>
-      <p>
-        Record your cycle experiences, symptoms and
-        personal health notes in one place.
-      </p>
-      <span>Open My Journal</span>
-    </a>
-
-  </div>
-</section>
-
-<section class="matoni-explore">
-  <p class="eyebrow">DISCOVER MATONI</p>
-  <h2>Explore</h2>
-
-  <div class="matoni-button-grid">
-
-    <a href="learn.html" class="matoni-link-button">
-      <span>01</span>
-      <strong>Explore Learning Resources</strong>
-      <small>Understand your body and health</small>
-      <b>↗</b>
-    </a>
-
-    <a href="ask.html" class="matoni-link-button">
-      <span>02</span>
-      <strong>Explore Health Topics</strong>
-      <small>Find answers to your questions</small>
-      <b>↗</b>
-    </a>
-
-    <a href="research.html" class="matoni-link-button">
-      <span>03</span>
-      <strong>Discover Our Research Vision</strong>
-      <small>Explore the future of women's health research</small>
-      <b>↗</b>
-    </a>
-
-    <a href="community.html" class="matoni-link-button">
-      <span>04</span>
-      <strong>Explore Community Discussions</strong>
-      <small>Discover conversations about women's health</small>
-      <b>↗</b>
-    </a>
-
-    <a href="guard.html" class="matoni-link-button">
-      <span>05</span>
-      <strong>Learn About HERGUARD</strong>
-      <small>Discover our safety and protection vision</small>
-      <b>↗</b>
-    </a>
-
-    <a href="confidence.html" class="matoni-link-button">
-      <span>06</span>
-      <strong>Explore Period Without Shame</strong>
-      <small>Menstrual dignity, education and access</small>
-      <b>↗</b>
-    </a>
-
-    <a href="hervoice.html" class="matoni-link-button">
-      <span>07</span>
-      <strong>Explore HERVOICE</strong>
-      <small>Share your story. Hear other voices.</small>
-      <b>↗</b>
-    </a>
-
-  </div>
-</section>
-
-<section class="matoni-closing">
-  <h2>Your body. Your health. Your knowledge.</h2>
-  <p>You deserve to understand every part of your health journey.</p>
-
-  <a href="learn.html" class="matoni-main-button">
-    Start Exploring
-  </a>
-</section>
+  </section>
 
 </main>
 
-<section class="trust-links">
-  <h2>Your trust matters to us.</h2>
-  <p>
-    Learn how MATONI approaches privacy, safety and community respect.
-  </p>
+<!-- FOOTER -->
 
-  <div class="trust-link-grid">
-    <a href="privacy.html">Privacy and Data Protection</a>
-    <a href="guidelines.html">Community Guidelines</a>
-    <a href="safety.html">Health and Safety</a>
+<footer class="editorial-footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">MATONI</div>
+
+    <p class="footer-tagline">
+      A world where every girl is understood.
+    </p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learning</a>
+      <a href="body.html">HERBODY</a>
+      <a href="hervoice.html">HERVOICE</a>
+      <a href="research.html">Research</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="guidelines.html">Community Guidelines</a>
+      <a href="safety.html">Health and Safety</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 MATONI. All rights reserved.</p>
+      <p>
+        Educational information on this platform is not a substitute
+        for professional medical advice, diagnosis or treatment.
+      </p>
+    </div>
+
   </div>
-</section>
-
-<footer class="footer">
-  <h3>MATONI</h3>
-  <p>A world where every girl is understood.</p>
-  <p>© 2026 MATONI</p>
 </footer>
 
-<script src="script.js?v=12"></script>
+<script src="script.js?v=13"></script>
+
 </body>
 </html>
