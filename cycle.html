@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Your Cycle | MATONI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">MATONI</a>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <nav id="navigation">
+    <a href="index.html">Home</a>
+    <a href="learn.html">Learn</a>
+    <a href="cycle.html">My Cycle</a>
+    <a href="symptoms.html">Symptoms</a>
+    <a href="ask.html">Ask & Understand</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <p class="eyebrow">HERBODY | BODY LITERACY</p>
+  <h1>Understand your menstrual cycle.</h1>
+  <p>
+    Your menstrual cycle is more than your period.
+    Learn what happens in your body throughout the cycle.
+  </p>
+</section>
+
+<section class="intro">
+  <h2>What Is the Menstrual Cycle?</h2>
+  <p>
+    The menstrual cycle is a series of natural changes controlled
+    by hormones. These changes prepare the body for a possible pregnancy.
+    If pregnancy does not occur, the lining of the uterus is shed
+    through menstruation.
+  </p>
+  <p>
+    A cycle is counted from the first day of one period to the day
+    before the next period begins.
+  </p>
+</section>
+
+<section class="intro">
+  <h2>Explore the Four Phases</h2>
+  <p>
+    Select each phase to understand what happens.
+    The timing varies from person to person.
+  </p>
+
+  <div class="learning-card">
+    <button class="primary-button" onclick="showPhase('menstrual')">
+      1. Menstrual Phase
+    </button>
+    <div id="menstrual" hidden>
+      <h3>Menstrual Phase</h3>
+      <p>
+        This is when menstrual bleeding occurs. The lining of the uterus
+        is shed and leaves the body through the vagina.
+      </p>
+      <p>
+        Bleeding commonly lasts around 2–7 days, although individual
+        experiences vary.
+      </p>
+    </div>
+  </div>
+
+  <div class="learning-card">
+    <button class="primary-button" onclick="showPhase('follicular')">
+      2. Follicular Phase
+    </button>
+    <div id="follicular" hidden>
+      <h3>Follicular Phase</h3>
+      <p>
+        This phase begins on the first day of menstruation and continues
+        until ovulation. Follicle-stimulating hormone helps follicles
+        in the ovaries develop. Usually one egg becomes dominant.
+      </p>
+      <p>
+        Oestrogen levels rise and the uterine lining begins to rebuild.
+      </p>
+    </div>
+  </div>
+
+  <div class="learning-card">
+    <button class="primary-button" onclick="showPhase('ovulation')">
+      3. Ovulation
+    </button>
+    <div id="ovulation" hidden>
+      <h3>Ovulation</h3>
+      <p>
+        An increase in luteinising hormone triggers the release of
+        an egg from an ovary.
+      </p>
+      <p>
+        Ovulation does not always happen on day 14. Its timing can vary,
+        even in people with regular cycles.
+      </p>
+    </div>
+  </div>
+
+  <div class="learning-card">
+    <button class="primary-button" onclick="showPhase('luteal')">
+      4. Luteal Phase
+    </button>
+    <div id="luteal" hidden>
+      <h3>Luteal Phase</h3>
+      <p>
+        After ovulation, the body produces more progesterone.
+        This hormone helps maintain the uterine lining.
+      </p>
+      <p>
+        If pregnancy does not occur, hormone levels fall and another
+        menstrual period begins.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <h2>Does Everyone Have a 28-Day Cycle?</h2>
+  <p>
+    No. A 28-day cycle is often used as an example, but menstrual
+    cycles naturally vary. In adults, cycles around 21–35 days
+    are common. Cycles can also be less predictable during adolescence.
+  </p>
+  <p>
+    Do not worry if your cycle does not match an example perfectly.
+    However, significant changes or concerning symptoms deserve
+    professional attention.
+  </p>
+</section>
+
+<section class="intro">
+  <h2>Remember</h2>
+  <p>
+    Your cycle is personal. Learning about it can help you recognise
+    patterns and communicate changes to a healthcare professional.
+  </p>
+  <a href="symptoms.html" class="primary-button">Explore Symptoms</a>
+</section>
+
+</main>
+
+<footer class="footer">
+  <h3>MATONI</h3>
+  <p>A world where every girl is understood.</p>
+</footer>
+
+<script>
+function showPhase(phase) {
+  const phases = ['menstrual', 'follicular', 'ovulation', 'luteal'];
+
+  phases.forEach(function(item) {
+    const section = document.getElementById(item);
+    section.hidden = item !== phase;
+  });
+}
+</script>
+<script src="script.js?v=10"></script>
+</body>
+</html>
