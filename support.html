@@ -1,163 +1,164 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#713F58">
-    <title>Menstrual Support | HER KNOWS</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menstrual Support | MATONI</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
-    <a href="index.html" class="logo">
-        <span class="logo-icon">✿</span>
-        <span>HER KNOWS</span>
-    </a>
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
-    <nav id="navigation">
-        <a href="index.html">Home</a>
-        <a href="learn.html">Body School</a>
-        <a href="community.html">Community</a>
-        <a href="confidence.html">Period Without Shame</a>
-        <a href="support.html">Get Support</a>
-    </nav>
+  <a href="index.html" class="logo">MATONI</a>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <nav id="navigation">
+    <a href="index.html">Home</a>
+    <a href="learn.html">Learn</a>
+    <a href="confidence.html">Period Without Shame</a>
+    <a href="support.html">Menstrual Support</a>
+  </nav>
 </header>
 
 <main>
-    <section class="hero">
-        <span class="eyebrow">PERIOD WITHOUT SHAME</span>
-        <h1>Every girl deserves access to period products.</h1>
-        <p>
-            You should never have to miss school, feel embarrassed,
-            or manage your period without the products you need.
-            If you need menstrual products, we want to help connect
-            you with support.
-        </p>
-        <a href="#request-support" class="primary-button">
-            Request support
-        </a>
-    </section>
 
-    <section class="intro">
-        <span class="eyebrow">MENSTRUAL SUPPORT NETWORK</span>
-        <h2>You can ask for help for yourself or someone else.</h2>
-        <p>
-            You might need pads yourself. Or perhaps you know a friend,
-            classmate, sibling or student who cannot afford them.
-            You can use this page to indicate the kind of support needed.
-        </p>
-    </section>
+<section class="hero">
+  <p class="eyebrow">PERIOD WITHOUT SHAME</p>
+  <h1>Every girl deserves access to menstrual products.</h1>
+  <p>
+    Menstrual dignity should never depend on how much money
+    a girl or her family has.
+  </p>
+</section>
 
-    <section class="lesson-area" id="request-support">
-        <div class="learning-card">
-            <h2>Request menstrual support</h2>
-            <p>
-                This is an early demonstration of our support system.
-                Please do not enter your name, phone number, home address
-                or other private information here.
-            </p>
+<section class="intro">
+  <h2>Menstrual Support and Access</h2>
+  <p>
+    MATONI aims to help girls who have difficulty accessing
+    menstrual products by connecting them with verified
+    support organisations and community partners.
+  </p>
+  <p>
+    A request could be made for yourself or, where appropriate,
+    on behalf of someone you are helping, such as a friend,
+    sibling or student.
+  </p>
+</section>
 
-            <form id="supportForm">
-                <label for="requestType">Who needs the support?</label>
-                <select id="requestType" required>
-                    <option value="">Choose an option</option>
-                    <option value="myself">I need support myself</option>
-                    <option value="someone">I am requesting for someone else</option>
-                </select>
+<section class="learning-card">
+  <h3>What Products Could Be Supported?</h3>
+  <ul>
+    <li>Disposable sanitary pads.</li>
+    <li>Reusable menstrual pads.</li>
+    <li>Menstrual underwear.</li>
+    <li>Menstrual hygiene kits.</li>
+  </ul>
+  <p>
+    Availability will depend on participating partners and local needs.
+  </p>
+</section>
 
-                <label for="product">What is needed?</label>
-                <select id="product" required>
-                    <option value="">Choose a product</option>
-                    <option value="Disposable sanitary pads">Disposable sanitary pads</option>
-                    <option value="Reusable menstrual pads">Reusable menstrual pads</option>
-                    <option value="Menstrual underwear">Menstrual underwear</option>
-                    <option value="Menstrual hygiene kit">A menstrual hygiene kit</option>
-                    <option value="Other menstrual essentials">Other menstrual essentials</option>
-                </select>
+<section class="intro">
+  <h2>How the Programme Is Intended to Work</h2>
+  <ol>
+    <li>A girl or authorised helper submits a confidential request.</li>
+    <li>A verified support partner reviews the request.</li>
+    <li>Available products and collection arrangements are confirmed.</li>
+    <li>Products are provided through an appropriate, discreet channel.</li>
+  </ol>
+  <p>
+    This is the proposed service model. MATONI has not yet activated
+    a live distribution network.
+  </p>
+</section>
 
-                <label for="quantity">How many people need support?</label>
-                <select id="quantity" required>
-                    <option value="">Choose an option</option>
-                    <option value="One person">One person</option>
-                    <option value="2–5 people">2–5 people</option>
-                    <option value="6–10 people">6–10 people</option>
-                    <option value="More than 10 people">More than 10 people</option>
-                </select>
+<section class="intro">
+  <h2>Request Demonstration</h2>
+  <p>
+    This is a prototype demonstration of the proposed request process.
+    Do not enter your real name, address, phone number or other
+    personal information.
+  </p>
 
-                <label for="area">General location (optional)</label>
-                <input
-                    type="text"
-                    id="area"
-                    placeholder="For example, Benin City, Edo State"
-                >
+  <form id="supportForm">
+    <label for="requestType">Who is the request for?</label>
+    <select id="requestType" required>
+      <option value="">Select an option</option>
+      <option value="myself">Myself</option>
+      <option value="someone">Someone I am helping</option>
+    </select>
 
-                <button type="submit" class="primary-button">
-                    Preview support request
-                </button>
-            </form>
+    <label for="productType">Preferred product</label>
+    <select id="productType" required>
+      <option value="">Select a product</option>
+      <option value="Disposable pads">Disposable pads</option>
+      <option value="Reusable pads">Reusable pads</option>
+      <option value="Menstrual underwear">Menstrual underwear</option>
+      <option value="Menstrual hygiene kit">Menstrual hygiene kit</option>
+      <option value="Any available option">Any available option</option>
+    </select>
 
-            <div id="supportMessage" class="lesson-section" aria-live="polite"></div>
-        </div>
-    </section>
+    <label for="quantity">Quantity needed</label>
+    <select id="quantity" required>
+      <option value="">Select quantity</option>
+      <option value="1">1 pack or kit</option>
+      <option value="2">2 packs or kits</option>
+      <option value="3">3 packs or kits</option>
+      <option value="4+">More than 3</option>
+    </select>
 
-    <section class="intro">
-        <span class="eyebrow">OUR COMMITMENT</span>
-        <h2>Support without shame.</h2>
-        <p>
-            We envision partnerships with schools, NGOs, community
-            organisations, product manufacturers and donors to help
-            girls access menstrual products discreetly and safely.
-        </p>
-        <p>
-            No girl should be mocked, excluded or made to feel inferior
-            because she cannot afford sanitary products.
-        </p>
-    </section>
+    <button type="submit" class="primary-button">
+      Preview Request
+    </button>
+  </form>
+
+  <div id="supportMessage" class="learning-card" hidden></div>
+</section>
+
+<section class="intro">
+  <h2>Your Privacy Matters</h2>
+  <p>
+    A future live service must protect the identity and dignity
+    of people requesting support. Requests must not be publicly
+    displayed, and intimate photographs or unnecessary sensitive
+    information must never be required.
+  </p>
+  <p>
+    Any service involving minors will require appropriate safeguarding,
+    privacy and consent arrangements.
+  </p>
+</section>
+
 </main>
 
-<footer>
-    <p>HER KNOWS — A world where every woman is understood.</p>
-    <p>PERIOD WITHOUT SHAME</p>
+<footer class="footer">
+  <h3>MATONI</h3>
+  <p>A world where every girl is understood.</p>
 </footer>
 
-<script src="script.js?v=4"></script>
 <script>
-const supportForm = document.getElementById("supportForm");
+document.getElementById('supportForm').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-if (supportForm) {
-    supportForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+  const requestType = document.getElementById('requestType').value;
+  const product = document.getElementById('productType').value;
+  const quantity = document.getElementById('quantity').value;
+  const message = document.getElementById('supportMessage');
 
-        const requestType = document.getElementById("requestType").value;
-        const product = document.getElementById("product").value;
-        const quantity = document.getElementById("quantity").value;
-        const area = document.getElementById("area").value.trim();
+  const recipient = requestType === 'myself'
+    ? 'Yourself'
+    : 'Someone you are helping';
 
-        const who = requestType === "myself"
-            ? "You need support"
-            : "You are requesting support for someone else";
+  message.innerHTML =
+    '<h3>Request Preview</h3>' +
+    '<p>Request for: ' + recipient + '</p>' +
+    '<p>Product: ' + product + '</p>' +
+    '<p>Quantity: ' + quantity + '</p>' +
+    '<p><strong>Demonstration only:</strong> This request has not been submitted or sent to any organisation.</p>';
 
-        document.getElementById("supportMessage").innerHTML = `
-            <h3>Your request preview</h3>
-            <p><strong>${who}</strong></p>
-            <p>Product: ${product}</p>
-            <p>People needing support: ${quantity}</p>
-            <p>General location: ${area ? area.replace(/</g, "&lt;").replace(/>/g, "&gt;") : "Not provided"}</p>
-            <p><strong>Important:</strong> This is only a prototype preview.
-            Your request has NOT been sent to an organisation or donor.
-            A secure support network must be connected before real requests
-            can be submitted.</p>
-        `;
-
-        document.getElementById("supportMessage").scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-        });
-    });
-}
+  message.hidden = false;
+});
 </script>
 
+<script src="script.js?v=10"></script>
 </body>
 </html>
