@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#713F58">
+    <title>Menstrual Support | HER KNOWS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">✿</span>
+        <span>HER KNOWS</span>
+    </a>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <nav id="navigation">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Body School</a>
+        <a href="community.html">Community</a>
+        <a href="confidence.html">Period Without Shame</a>
+        <a href="support.html">Get Support</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <span class="eyebrow">PERIOD WITHOUT SHAME</span>
+        <h1>Every girl deserves access to period products.</h1>
+        <p>
+            You should never have to miss school, feel embarrassed,
+            or manage your period without the products you need.
+            If you need menstrual products, we want to help connect
+            you with support.
+        </p>
+        <a href="#request-support" class="primary-button">
+            Request support
+        </a>
+    </section>
+
+    <section class="intro">
+        <span class="eyebrow">MENSTRUAL SUPPORT NETWORK</span>
+        <h2>You can ask for help for yourself or someone else.</h2>
+        <p>
+            You might need pads yourself. Or perhaps you know a friend,
+            classmate, sibling or student who cannot afford them.
+            You can use this page to indicate the kind of support needed.
+        </p>
+    </section>
+
+    <section class="lesson-area" id="request-support">
+        <div class="learning-card">
+            <h2>Request menstrual support</h2>
+            <p>
+                This is an early demonstration of our support system.
+                Please do not enter your name, phone number, home address
+                or other private information here.
+            </p>
+
+            <form id="supportForm">
+                <label for="requestType">Who needs the support?</label>
+                <select id="requestType" required>
+                    <option value="">Choose an option</option>
+                    <option value="myself">I need support myself</option>
+                    <option value="someone">I am requesting for someone else</option>
+                </select>
+
+                <label for="product">What is needed?</label>
+                <select id="product" required>
+                    <option value="">Choose a product</option>
+                    <option value="Disposable sanitary pads">Disposable sanitary pads</option>
+                    <option value="Reusable menstrual pads">Reusable menstrual pads</option>
+                    <option value="Menstrual underwear">Menstrual underwear</option>
+                    <option value="Menstrual hygiene kit">A menstrual hygiene kit</option>
+                    <option value="Other menstrual essentials">Other menstrual essentials</option>
+                </select>
+
+                <label for="quantity">How many people need support?</label>
+                <select id="quantity" required>
+                    <option value="">Choose an option</option>
+                    <option value="One person">One person</option>
+                    <option value="2–5 people">2–5 people</option>
+                    <option value="6–10 people">6–10 people</option>
+                    <option value="More than 10 people">More than 10 people</option>
+                </select>
+
+                <label for="area">General location (optional)</label>
+                <input
+                    type="text"
+                    id="area"
+                    placeholder="For example, Benin City, Edo State"
+                >
+
+                <button type="submit" class="primary-button">
+                    Preview support request
+                </button>
+            </form>
+
+            <div id="supportMessage" class="lesson-section" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <section class="intro">
+        <span class="eyebrow">OUR COMMITMENT</span>
+        <h2>Support without shame.</h2>
+        <p>
+            We envision partnerships with schools, NGOs, community
+            organisations, product manufacturers and donors to help
+            girls access menstrual products discreetly and safely.
+        </p>
+        <p>
+            No girl should be mocked, excluded or made to feel inferior
+            because she cannot afford sanitary products.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>HER KNOWS — A world where every woman is understood.</p>
+    <p>PERIOD WITHOUT SHAME</p>
+</footer>
+
+<script src="script.js?v=4"></script>
+<script>
+const supportForm = document.getElementById("supportForm");
+
+if (supportForm) {
+    supportForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const requestType = document.getElementById("requestType").value;
+        const product = document.getElementById("product").value;
+        const quantity = document.getElementById("quantity").value;
+        const area = document.getElementById("area").value.trim();
+
+        const who = requestType === "myself"
+            ? "You need support"
+            : "You are requesting support for someone else";
+
+        document.getElementById("supportMessage").innerHTML = `
+            <h3>Your request preview</h3>
+            <p><strong>${who}</strong></p>
+            <p>Product: ${product}</p>
+            <p>People needing support: ${quantity}</p>
+            <p>General location: ${area ? area.replace(/</g, "&lt;").replace(/>/g, "&gt;") : "Not provided"}</p>
+            <p><strong>Important:</strong> This is only a prototype preview.
+            Your request has NOT been sent to an organisation or donor.
+            A secure support network must be connected before real requests
+            can be submitted.</p>
+        `;
+
+        document.getElementById("supportMessage").scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    });
+}
+</script>
+
+</body>
+</html>
