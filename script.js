@@ -388,3 +388,53 @@ if (questionForm) {
     });
 
 }
+
+// LOAD A LESSON ON ITS OWN PAGE
+
+const lessonPage = document.getElementById("lessonPageContent");
+
+if (lessonPage) {
+
+    const parameters = new URLSearchParams(window.location.search);
+    const topic = parameters.get("topic");
+    const lesson = lessons[topic];
+
+    if (lesson) {
+
+        let content = `
+            <span class="eyebrow">YOUR BODY SCHOOL</span>
+            <h1>${lesson.title}</h1>
+            <p>${lesson.intro}</p>
+        `;
+
+        lesson.sections.forEach(section => {
+            content += `
+                <div class="lesson-section">
+                    <h2>${section.heading}</h2>
+                    <p>${section.text}</p>
+                </div>
+            `;
+        });
+
+        content += `
+            <div class="lesson-complete">
+                <p>Well done for taking time to understand your body. 💗</p>
+                <a href="learn.html" class="primary-button">
+                    Back to Body School
+                </a>
+            </div>
+        `;
+
+        lessonPage.innerHTML = content;
+
+        document.title = lesson.title + " | YOUR BODY";
+
+    } else {
+
+        lessonPage.innerHTML = `
+            <h2>Lesson not found</h2>
+            <p>Please return to Body School and choose a lesson.</p>
+            <a href="learn.html" class="primary-button">Back to Body School</a>
+        `;
+    }
+}
