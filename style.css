@@ -463,3 +463,73 @@ footer small {
         padding: 75px 25px;
     }
 }
+
+/* LESSON DETAILS */
+
+.lesson-section {
+    padding: 22px;
+    background: #FFFFFF;
+    border: 1px solid #F0E5E7;
+    border-radius: 10px;
+    margin: 18px 0;
+}
+
+.lesson-section h3 {
+    color: #713F58;
+    margin-bottom: 8px;
+}
+
+.lesson-complete {
+    background: #F8EDEF;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+.lesson-complete button,
+.quiz-section button {
+    background: #713F58;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    margin-top: 15px;
+}
+
+.quiz-section {
+    max-width: 800px;
+    margin: 70px auto;
+    padding: 35px 25px;
+    background: #F8EDEF;
+    border-radius: 15px;
+}
+
+.quiz-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    color: #45283C;
+    margin: 15px 0;
+}
+
+.quiz-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.quiz-options button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#quizFeedback {
+    margin-top: 20px;
+    color: #45283C;
+}
+
+.quiz-progress {
+    color: #713F58;
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
