@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cycle Journal | MATONI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header matoni-header">
+  <a href="index.html" class="logo matoni-logo">MATONI</a>
+  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <nav id="navigation">
+    <a href="index.html">Home</a>
+    <a href="learn.html">Learn</a>
+    <a href="cycle.html">My Cycle</a>
+    <a href="journal.html">Cycle Journal</a>
+    <a href="symptoms.html">Symptoms</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <p class="eyebrow">HERBODY</p>
+  <h1>Your cycle, your understanding.</h1>
+  <p>
+    Learn to recognise your menstrual patterns and understand
+    your cycle over time.
+  </p>
+</section>
+
+<section class="intro">
+  <h2>Cycle Estimate</h2>
+  <p>
+    Enter the first day of your most recent period and your usual
+    cycle length to see an approximate next-period date.
+  </p>
+
+  <form id="cycleForm">
+
+    <label for="lastPeriod">First day of your last period</label>
+    <input type="date" id="lastPeriod" required>
+
+    <label for="cycleLength">Usual cycle length (days)</label>
+    <input
+      type="number"
+      id="cycleLength"
+      min="15"
+      max="45"
+      value="28"
+      required
+    >
+
+    <button type="submit" class="primary-button">
+      Calculate Estimate
+    </button>
+
+  </form>
+
+  <div id="cycleResult" class="learning-card" hidden></div>
+</section>
+
+<section class="intro">
+  <h2>Understanding Cycle Length</h2>
+  <p>
+    Cycle length is counted from the first day of one period
+    to the day before the next period begins.
+  </p>
+  <p>
+    Adult menstrual cycles commonly range from 21 to 35 days.
+    Cycles can be more variable during adolescence.
+  </p>
+</section>
+
+<section class="learning-card">
+  <h3>Keep in Mind</h3>
+  <p>
+    This is an estimate, not a prediction. Stress, illness,
+    hormonal changes and other factors can affect cycle timing.
+    A calendar calculation cannot confirm ovulation or pregnancy.
+  </p>
+</section>
+
+<section class="intro">
+  <h2>Your Privacy Comes First</h2>
+  <p>
+    This prototype performs its calculation in your browser.
+    It does not save your dates, create an account or send your
+    information to MATONI.
+  </p>
+  <p>
+    If you are using a shared device, avoid entering personal
+    health information.
+  </p>
+  <a href="cycle.html" class="primary-button">Learn About Your Cycle</a>
+</section>
+
+</main>
+
+<footer class="footer">
+  <h3>MATONI</h3>
+  <p>A world where every girl is understood.</p>
+</footer>
+
+<script>
+document.getElementById('cycleForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const dateValue = document.getElementById('lastPeriod').value;
+  const cycleLength = Number(document.getElementById('cycleLength').value);
+  const result = document.getElementById('cycleResult');
+
+  if (!dateValue || cycleLength < 15 || cycleLength > 45) {
+    result.hidden = false;
+    result.textContent = 'Please enter a valid date and cycle length between 15 and 45 days.';
+    return;
+  }
+
+  const start = new Date(dateValue + 'T12:00:00');
+
+  if (start > new Date()) {
+    result.hidden = false;
+    result.textContent = 'Please enter a date that is not in the future.';
+    return;
+  }
+
+  const estimated = new Date(start);
+  estimated.setDate(estimated.getDate() + cycleLength);
+
+  const formattedDate = estimated.toLocaleDateString(undefined, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+
+  result.innerHTML =
+    '<h3>Your Estimated Next Period</h3>' +
+    '<p><strong>' + formattedDate + '</strong></p>' +
+    '<p>This is a calendar estimate based on the information entered. Your actual period may arrive earlier or later.</p>';
+
+  result.hidden = false;
+});
+</script>
+
+<script src="script.js?v=11"></script>
+</body>
+</html>
