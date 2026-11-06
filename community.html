@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Community | YOUR BODY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">✿</span>
+        <span>YOUR BODY</span>
+    </a>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <nav id="navigation">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Body School</a>
+        <a href="community.html">Community</a>
+        <a href="confidence.html">Period Confidence</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="intro">
+    <span class="eyebrow">YOU ARE NOT ALONE</span>
+    <h1>Welcome to the Community 💗</h1>
+    <p>
+        A space where girls and women can ask questions,
+        share experiences and learn from one another.
+    </p>
+</section>
+
+<section class="learning">
+    <div class="section-heading">
+        <span class="eyebrow">YOUR VOICE MATTERS</span>
+        <h2>Ask the community</h2>
+        <p>
+            You can ask using your profile or choose to remain anonymous.
+        </p>
+    </div>
+
+    <div class="learning-card">
+        <form id="questionForm">
+
+            <label for="question">What would you like to ask?</label>
+            <textarea
+                id="question"
+                rows="5"
+                placeholder="Write your question here..."
+                required
+            ></textarea>
+
+            <label for="identity">How would you like to appear?</label>
+            <select id="identity">
+                <option value="anonymous">Ask anonymously</option>
+                <option value="named">Use my community name</option>
+            </select>
+
+            <label for="category">Choose a topic</label>
+            <select id="category">
+                <option value="Menstruation">Menstruation</option>
+                <option value="Puberty">Puberty</option>
+                <option value="Reproductive health">Reproductive health</option>
+                <option value="Hormones">Hormones</option>
+                <option value="Emotional wellbeing">Emotional wellbeing</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button type="submit">Submit question</button>
+        </form>
+
+        <p id="questionMessage"></p>
+    </div>
+</section>
+
+<section class="learning">
+    <div class="section-heading">
+        <span class="eyebrow">LEARN FROM ONE ANOTHER</span>
+        <h2>Community discussions</h2>
+        <p>Questions and conversations from members.</p>
+    </div>
+
+    <div id="communityQuestions">
+
+        <article class="learning-card">
+            <span class="eyebrow">MENSTRUATION</span>
+            <h3>How can I manage period cramps at school?</h3>
+            <p>Asked anonymously</p>
+            <p>What can a student do when period cramps begin during lessons?</p>
+            <button type="button">View discussion</button>
+        </article>
+
+        <article class="learning-card">
+            <span class="eyebrow">PUBERTY</span>
+            <h3>Why does the menstrual cycle change?</h3>
+            <p>Asked by a community member</p>
+            <p>I'd love to understand why periods sometimes come earlier or later.</p>
+            <button type="button">View discussion</button>
+        </article>
+
+    </div>
+</section>
+
+<section class="confidence">
+    <h2>A community built on respect.</h2>
+    <p>
+        No bullying. No shaming. No harassment.
+        Personal experiences are welcome, but medical
+        advice should come from qualified professionals.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-logo">✿ YOUR BODY</div>
+    <p>Learning today. Empowering tomorrow.</p>
+    <small>
+        This community is for education and support,
+        not emergency medical care.
+    </small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
