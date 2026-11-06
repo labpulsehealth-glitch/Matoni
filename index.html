@@ -4,41 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#713F58">
-
     <title>Women's Health | Learn Without Shame</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="header">
-    <a href="#" class="logo">
+    <a href="index.html" class="logo">
         <span class="logo-icon">✿</span>
         <span>YOUR BODY</span>
     </a>
 
-    <button class="menu-button" onclick="toggleMenu()">
-        ☰
-    </button>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
 
     <nav id="navigation">
-        <a href="#home">Home</a>
-        <a href="#learn">Learn</a>
-        <a href="#confidence">Period Confidence</a>
-        <a href="#about">About</a>
+        <a href="index.html">Home</a>
+        <a href="learn.html">Body School</a>
+        <a href="community.html">Community</a>
+        <a href="confidence.html">Period Confidence</a>
     </nav>
 </header>
 
 <main>
 
 <section class="hero" id="home">
-
     <div class="hero-content">
-
-        <span class="eyebrow">
-            KNOWLEDGE IS POWER
-        </span>
+        <span class="eyebrow">KNOWLEDGE IS POWER</span>
 
         <h1>
             Your body is not
@@ -47,18 +39,17 @@
 
         <p>
             Learn about your body, understand your health
-            and grow into a confident young woman.
+            and connect with a community that listens.
             No shame. No judgement. Just knowledge.
         </p>
 
-        <a href="#learn" class="primary-button">
-            Explore your learning space
+        <a href="learn.html" class="primary-button">
+            Explore Body School
         </a>
 
         <div class="hero-note">
             ♡ Every girl deserves to understand her body.
         </div>
-
     </div>
 
     <div class="hero-art">
@@ -66,146 +57,82 @@
             <span>✿</span>
         </div>
         <div class="art-caption">
-            Learn. Understand. Be confident.
+            Learn. Understand. Connect.
         </div>
     </div>
-
 </section>
 
-
-<section class="intro" id="about">
-
+<section class="intro">
     <span class="eyebrow">A SPACE FOR YOU</span>
 
-    <h2>
-        There is nothing shameful about being a girl.
-    </h2>
+    <h2>There is nothing shameful about being a girl.</h2>
 
     <p>
         Your body changes as you grow. Your menstrual
         cycle is natural. Your questions matter.
-        You deserve accurate information and the
-        confidence to speak about your health.
+        You deserve accurate information, support
+        and the confidence to speak about your health.
     </p>
-
 </section>
 
-
-<section class="learning" id="learn">
-
+<section class="learning">
     <div class="section-heading">
-        <span class="eyebrow">DISCOVER AND LEARN</span>
-        <h2>Explore your body school</h2>
-        <p>
-            Start with what interests you.
-        </p>
+        <span class="eyebrow">YOUR SPACE, YOUR JOURNEY</span>
+        <h2>Explore what matters to you</h2>
+        <p>Choose where you would like to begin.</p>
     </div>
 
     <div class="learning-grid">
 
         <article class="learning-card">
             <div class="card-icon">🌸</div>
-            <h3>Understanding Periods</h3>
+            <h3>Body School</h3>
             <p>
-                Discover what menstruation is,
-                why it happens and what to expect.
+                Understand menstruation, puberty,
+                hormones and your reproductive health.
             </p>
-            <button onclick="openLesson('periods')">
-                Start learning
-            </button>
+            <a href="learn.html" class="primary-button">
+                Enter Body School
+            </a>
         </article>
 
         <article class="learning-card">
-            <div class="card-icon">🧬</div>
-            <h3>Know Your Body</h3>
+            <div class="card-icon">💬</div>
+            <h3>Women's Community</h3>
             <p>
-                Learn about your reproductive
-                system and how your body works.
+                Ask questions, share experiences
+                and learn from other women.
             </p>
-            <button onclick="openLesson('body')">
-                Start learning
-            </button>
+            <a href="community.html" class="primary-button">
+                Join the Community
+            </a>
         </article>
 
         <article class="learning-card">
             <div class="card-icon">💗</div>
             <h3>Period Confidence</h3>
             <p>
-                Understand your period and
-                face stigma without shame.
+                Challenge stigma and learn why
+                every menstruating person deserves respect.
             </p>
-            <button onclick="openLesson('confidence')">
-                Start learning
-            </button>
-        </article>
-
-        <article class="learning-card">
-            <div class="card-icon">🌿</div>
-            <h3>Healthy Growing</h3>
-            <p>
-                Understand changes in your
-                body as you grow.
-            </p>
-            <button onclick="openLesson('growing')">
-                Start learning
-            </button>
+            <a href="confidence.html" class="primary-button">
+                Explore
+            </a>
         </article>
 
     </div>
-
-</section>
-
-
-<section class="confidence" id="confidence">
-
-    <span class="eyebrow">A MESSAGE TO EVERY GIRL</span>
-
-    <h2>
-        Your period is natural.
-        Your body is worthy of respect.
-    </h2>
-
-    <p>
-        You should never be made to feel dirty,
-        inferior or embarrassed because you menstruate.
-        You deserve kindness, understanding and respect.
-    </p>
-
-</section>
-
-
-<section class="lesson-area" id="lessonArea" hidden>
-
-    <button onclick="closeLesson()" class="back-button">
-        ← Back to learning
-    </button>
-
-    <div id="lessonContent"></div>
-
 </section>
 
 </main>
 
-
 <footer>
     <div class="footer-logo">✿ YOUR BODY</div>
-    <p>
-        Learning today. Empowering tomorrow.
-    </p>
+    <p>Learning today. Empowering tomorrow.</p>
     <small>
         Educational information only. Not a substitute
         for professional medical advice.
     </small>
 </footer>
-<section class="quiz-section" id="quizArea" hidden>
-    <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
-    <h2>Myth or Fact?</h2>
-    <p>Let's see what you've learned about your body.</p>
-
-    <div id="quizContent">
-        <button onclick="startQuiz()">Start quiz</button>
-    </div>
-</section>
 
 <script src="script.js"></script>
 
