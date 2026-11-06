@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#713F58">
+    <title>Ask & Understand | HER KNOWS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">✿</span>
+        <span>HER KNOWS</span>
+    </a>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <nav id="navigation">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Body School</a>
+        <a href="community.html">Community</a>
+        <a href="confidence.html">Period Without Shame</a>
+        <a href="support.html">Get Support</a>
+        <a href="ask.html">Ask & Understand</a>
+        <a href="research.html">Research</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <span class="eyebrow">YOUR QUESTIONS MATTER</span>
+        <h1>Understand your body. Ask without fear.</h1>
+        <p>
+            Women's health questions deserve clear explanations,
+            reliable information and respectful answers.
+            No question should make you feel embarrassed.
+        </p>
+    </section>
+
+    <section class="intro">
+        <span class="eyebrow">ASK & UNDERSTAND</span>
+        <h2>A space for better health understanding.</h2>
+        <p>
+            Explore information about your body, hormones,
+            menstruation and women's health conditions.
+            Learn what questions to ask and when to seek
+            professional medical advice.
+        </p>
+    </section>
+
+    <section class="lesson-area">
+        <h2>Explore health topics</h2>
+
+        <div class="learning-card">
+            <h3>Menstrual health</h3>
+            <p>Understand periods, bleeding patterns, menstrual pain and common concerns.</p>
+        </div>
+
+        <div class="learning-card">
+            <h3>Hormones and the body</h3>
+            <p>Learn about hormones, puberty, reproductive health and changes throughout life.</p>
+        </div>
+
+        <div class="learning-card">
+            <h3>Women's health conditions</h3>
+            <p>Explore introductory information about PCOS, endometriosis, fibroids and other conditions.</p>
+        </div>
+
+        <div class="learning-card">
+            <h3>Preparing for a healthcare appointment</h3>
+            <p>Learn how to describe symptoms, organise questions and communicate concerns to a healthcare professional.</p>
+        </div>
+    </section>
+
+    <section class="lesson-area">
+        <span class="eyebrow">QUESTION EXPLORER</span>
+        <h2>What would you like to understand?</h2>
+
+        <form id="askForm">
+            <label for="healthTopic">Choose a topic</label>
+            <select id="healthTopic" required>
+                <option value="">Select a topic</option>
+                <option value="periods">Periods and menstruation</option>
+                <option value="hormones">Hormones and puberty</option>
+                <option value="conditions">Women's health conditions</option>
+                <option value="appointments">Talking to a healthcare professional</option>
+            </select>
+
+            <button type="submit" class="primary-button">
+                Explore topic
+            </button>
+        </form>
+
+        <div id="askResponse" class="lesson-section" aria-live="polite"></div>
+    </section>
+
+    <section class="intro">
+        <h2>Our promise about health information</h2>
+        <p>
+            HER KNOWS aims to make health information understandable,
+            evidence-informed and respectful.
+        </p>
+        <p>
+            This prototype does not provide AI-generated medical advice,
+            diagnose conditions or prescribe treatment. Information
+            should never replace assessment by a qualified healthcare
+            professional.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>HER KNOWS — A world where every woman is understood.</p>
+</footer>
+
+<script src="script.js?v=5"></script>
+<script>
+const askForm = document.getElementById("askForm");
+
+if (askForm) {
+    askForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const topic = document.getElementById("healthTopic").value;
+
+        const information = {
+            periods: {
+                title: "Periods and menstruation",
+                text: "Menstruation is a normal biological process. It involves the shedding of the uterine lining when pregnancy has not occurred. Period patterns can vary. Very heavy bleeding, severe pain or unusual symptoms deserve medical assessment."
+            },
+            hormones: {
+                title: "Hormones and puberty",
+                text: "Hormones are chemical messengers that help regulate growth, development and many body functions. Hormonal changes are part of puberty and continue throughout different stages of life."
+            },
+            conditions: {
+                title: "Women's health conditions",
+                text: "Conditions such as PCOS, endometriosis and fibroids can affect people differently. Symptoms alone cannot confirm a diagnosis. A healthcare professional can assess symptoms and recommend appropriate investigations."
+            },
+            appointments: {
+                title: "Preparing for a healthcare appointment",
+                text: "It can help to write down when symptoms started, how often they occur, how they affect daily life and any questions you want to ask. You deserve to have your concerns listened to respectfully."
+            }
+        };
+
+        const selected = information[topic];
+
+        document.getElementById("askResponse").innerHTML = `
+            <h3>${selected.title}</h3>
+            <p>${selected.text}</p>
+            <p><strong>Remember:</strong> This is general educational information, not a personal diagnosis.</p>
+        `;
+    });
+}
+</script>
+
+</body>
+</html>
