@@ -1,117 +1,179 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore MATONI's women's health learning library, with accessible educational topics and trusted medical resources.">
   <title>Learn | MATONI</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="resources.css">
 </head>
-<body>
 
-<header class="header">
-  <a href="index.html" class="logo">MATONI</a>
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
-  <nav id="navigation">
+<body class="matoni-library">
+
+<header class="library-header">
+  <a href="index.html" class="library-brand">MATONI</a>
+  <nav aria-label="Main navigation">
     <a href="index.html">Home</a>
-    <a href="learn.html">Learn</a>
-    <a href="confidence.html">Period Without Shame</a>
-    <a href="ask.html">Ask & Understand</a>
-    <a href="support.html">Menstrual Support</a>
+    <a href="learn.html" aria-current="page">Learn</a>
+    <a href="resources.html">Health Resources</a>
+    <a href="hervoice.html">HERVOICE</a>
   </nav>
 </header>
 
 <main>
+  <section class="library-hero">
+    <span class="eyebrow">HERWISE · LEARNING AND KNOWLEDGE</span>
+    <h1>Understanding your health starts with knowledge.</h1>
+    <p>
+      Explore women's health through clear, accessible educational
+      resources. Learn about your body, understand health conditions,
+      and discover where to find trustworthy information.
+    </p>
 
-<section class="hero">
-  <p class="eyebrow">MATONI LEARNING CENTRE</p>
-  <h1>Understanding your body changes everything.</h1>
-  <p>
-    Explore your health, understand your body and find reliable
-    information to help you make informed decisions.
-  </p>
-</section>
+    <div class="hero-actions">
+      <a href="#learning-topics" class="library-button primary-button">
+        Explore learning topics
+      </a>
+      <a href="resources.html" class="library-button secondary-button">
+        Browse trusted resources
+      </a>
+    </div>
+  </section>
 
-<section class="intro">
-  <h2>Learn Without Shame</h2>
-  <p>
-    Your body is not something to be embarrassed about.
-    MATONI provides accessible educational resources to help girls
-    understand their bodies and navigate different stages of life.
-  </p>
-</section>
+  <section class="library-intro">
+    <div>
+      <span class="eyebrow">A SPACE TO LEARN</span>
+      <h2>Your health is bigger than your period.</h2>
+    </div>
+    <p>
+      Women's health spans every stage of life. MATONI's learning
+      experience is designed to make important health information
+      easier to understand, explore and discuss without shame.
+    </p>
+  </section>
 
-<section class="learning-card">
-  <h3>01. Understanding Menstruation</h3>
-  <p>
-    Learn what menstruation is, why it happens, how the menstrual
-    cycle works and what to expect during your period.
-  </p>
-  <a href="lesson.html?topic=periods">Start learning</a>
-</section>
+  <section id="learning-topics" class="library-section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">EXPLORE THE LIBRARY</span>
+        <h2>What would you like to learn about?</h2>
+        <p>Choose a topic and begin exploring.</p>
+      </div>
+      <a href="resources.html" class="text-link">
+        View all health resources
+      </a>
+    </div>
 
-<section class="learning-card">
-  <h3>02. Know Your Body</h3>
-  <p>
-    Understand female anatomy, puberty, hormones and the physical
-    changes that happen as you grow.
-  </p>
-  <a href="lesson.html?topic=body">Explore your body</a>
-</section>
+    <div id="learning-categories" class="learning-grid">
+      <a class="learning-card" href="resources.html?topic=menstrual">
+        <span class="topic-number">01</span>
+        <h3>Menstrual health</h3>
+        <p>Periods, menstrual hygiene, cycle changes and menstrual wellbeing.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
 
-<section class="learning-card">
-  <h3>03. Period Confidence</h3>
-  <p>
-    Learn how to manage your period, handle unexpected situations
-    and understand that menstruation is nothing to be ashamed of.
-  </p>
-  <a href="confidence.html">Build period confidence</a>
-</section>
+      <a class="learning-card" href="resources.html?topic=body">
+        <span class="topic-number">02</span>
+        <h3>Your body and hormones</h3>
+        <p>Understand reproductive anatomy, hormones and bodily changes.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
 
-<section class="learning-card">
-  <h3>04. Growing Up</h3>
-  <p>
-    Explore puberty, emotional changes, personal hygiene and
-    understanding your developing body.
-  </p>
-  <a href="lesson.html?topic=growing">Learn about growing up</a>
-</section>
+      <a class="learning-card" href="resources.html?topic=conditions">
+        <span class="topic-number">03</span>
+        <h3>Women's health conditions</h3>
+        <p>Explore conditions that can affect reproductive and general health.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
 
-<section class="learning-card">
-  <h3>05. Women's Health Conditions</h3>
-  <p>
-    Begin learning about conditions that can affect women's health,
-    including PCOS, endometriosis and uterine fibroids.
-  </p>
-  <a href="ask.html">Explore health topics</a>
-</section>
+      <a class="learning-card" href="resources.html?topic=sexual">
+        <span class="topic-number">04</span>
+        <h3>Sexual and reproductive health</h3>
+        <p>Learn about reproductive choices, contraception and sexual health.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
 
-<section class="learning-card">
-  <h3>06. Knowing When to Seek Help</h3>
-  <p>
-    Understand why persistent, severe or unusual symptoms should
-    not be ignored and when professional medical assessment matters.
-  </p>
-  <a href="ask.html">Learn more</a>
-</section>
+      <a class="learning-card" href="resources.html?topic=pregnancy">
+        <span class="topic-number">05</span>
+        <h3>Fertility and pregnancy</h3>
+        <p>Discover information about fertility, pregnancy and maternal health.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
 
-<section class="intro">
-  <h2>Knowledge Is Power</h2>
-  <p>
-    You deserve accurate information, the freedom to ask questions
-    and the confidence to understand your health.
-  </p>
-  <a href="index.html" class="primary-button">Back to MATONI</a>
-</section>
+      <a class="learning-card" href="resources.html?topic=breast">
+        <span class="topic-number">06</span>
+        <h3>Breast and cervical health</h3>
+        <p>Explore breast health, cervical health and cancer prevention information.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
 
+      <a class="learning-card" href="resources.html?topic=mental">
+        <span class="topic-number">07</span>
+        <h3>Mental health and wellbeing</h3>
+        <p>Explore emotional wellbeing and health across different life stages.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
+
+      <a class="learning-card" href="resources.html?topic=ageing">
+        <span class="topic-number">08</span>
+        <h3>Menopause and healthy ageing</h3>
+        <p>Learn about perimenopause, menopause and health as you grow older.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
+
+      <a class="learning-card" href="resources.html?topic=research">
+        <span class="topic-number">09</span>
+        <h3>Women's health research</h3>
+        <p>Discover evidence, research and the importance of women's health science.</p>
+        <span class="card-link">Explore resources</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="featured-resources">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">START WITH TRUSTED INFORMATION</span>
+        <h2>Explore reliable health resources.</h2>
+        <p>Discover information published by recognised health organisations.</p>
+      </div>
+      <a href="resources.html" class="text-link">See the full directory</a>
+    </div>
+
+    <div id="featured-resources" class="resource-grid">
+      <p>Loading trusted resources...</p>
+    </div>
+  </section>
+
+  <section class="learning-note">
+    <span class="eyebrow">KNOWLEDGE WITH RESPONSIBILITY</span>
+    <h2>Information should empower, not frighten.</h2>
+    <p>
+      Health information can help you ask questions and make informed
+      decisions. It cannot determine what is happening in your body
+      or replace an assessment by a qualified healthcare professional.
+    </p>
+    <a href="safety.html" class="text-link">Read our health and safety information</a>
+  </section>
 </main>
 
-<footer class="footer">
-  <h3>MATONI</h3>
-  <p>A world where every girl is understood.</p>
-  <p>© 2026 MATONI</p>
+<footer class="library-footer">
+  <div>
+    <a href="index.html" class="footer-brand">MATONI</a>
+    <p>A world where every girl is understood.</p>
+  </div>
+
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="guidelines.html">Community Guidelines</a>
+    <a href="safety.html">Safety</a>
+    <a href="resources.html">Health Resources</a>
+  </div>
+
+  <p class="copyright">© 2026 MATONI. Educational information, dignity and understanding.</p>
 </footer>
 
-<script src="script.js?v=9"></script>
+<script src="resources.js"></script>
 </body>
 </html>
