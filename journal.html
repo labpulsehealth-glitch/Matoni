@@ -1,101 +1,134 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Cycle Journal | MATONI</title>
+  <title>My Health Journal | MATONI</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header matoni-header">
-  <a href="index.html" class="logo matoni-logo">MATONI</a>
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
+<header class="header">
+  <a href="index.html" class="logo">MATONI</a>
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
   <nav id="navigation">
     <a href="index.html">Home</a>
     <a href="learn.html">Learn</a>
     <a href="cycle.html">My Cycle</a>
     <a href="journal.html">Cycle Journal</a>
     <a href="symptoms.html">Symptoms</a>
+    <a href="ask.html">Ask & Understand</a>
   </nav>
 </header>
 
 <main>
 
 <section class="hero">
-  <p class="eyebrow">HERBODY</p>
-  <h1>Your cycle, your understanding.</h1>
+  <p class="eyebrow">HERBODY | PERSONAL HEALTH JOURNAL</p>
+  <h1>Your body. Your experience. Your record.</h1>
   <p>
-    Learn to recognise your menstrual patterns and understand
-    your cycle over time.
+    Keep personal notes about your cycle, symptoms and changes
+    you notice over time.
   </p>
 </section>
 
 <section class="intro">
-  <h2>Cycle Estimate</h2>
+  <h2>Create a Journal Entry</h2>
   <p>
-    Enter the first day of your most recent period and your usual
-    cycle length to see an approximate next-period date.
+    Record only what you feel comfortable writing down.
+    You can review or delete your entries at any time.
   </p>
 
-  <form id="cycleForm">
+  <form id="journalForm">
 
-    <label for="lastPeriod">First day of your last period</label>
-    <input type="date" id="lastPeriod" required>
+    <label for="entryDate">Date</label>
+    <input type="date" id="entryDate" required>
 
-    <label for="cycleLength">Usual cycle length (days)</label>
+    <label for="entryType">What would you like to record?</label>
+    <select id="entryType" required>
+      <option value="Cycle">Cycle information</option>
+      <option value="Symptom">Symptom</option>
+      <option value="General note">General health note</option>
+    </select>
+
+    <label for="symptom">Symptom or experience (optional)</label>
     <input
-      type="number"
-      id="cycleLength"
-      min="15"
-      max="45"
-      value="28"
-      required
+      type="text"
+      id="symptom"
+      maxlength="100"
+      placeholder="e.g. cramps, bloating, tiredness"
     >
 
+    <label for="severity">How intense was it?</label>
+    <select id="severity">
+      <option value="">Not applicable</option>
+      <option value="Mild">Mild</option>
+      <option value="Moderate">Moderate</option>
+      <option value="Severe">Severe</option>
+    </select>
+
+    <label for="flow">Menstrual flow (optional)</label>
+    <select id="flow">
+      <option value="">Not applicable</option>
+      <option value="Light">Light</option>
+      <option value="Moderate">Moderate</option>
+      <option value="Heavy">Heavy</option>
+    </select>
+
+    <label for="notes">Your notes</label>
+    <textarea
+      id="notes"
+      rows="5"
+      maxlength="1500"
+      placeholder="Write about what you noticed, how you felt, or any changes..."
+    ></textarea>
+
     <button type="submit" class="primary-button">
-      Calculate Estimate
+      Save Journal Entry
     </button>
 
   </form>
 
-  <div id="cycleResult" class="learning-card" hidden></div>
+  <p id="journalMessage" role="status" aria-live="polite"></p>
 </section>
 
 <section class="intro">
-  <h2>Understanding Cycle Length</h2>
+  <h2>My Journal Entries</h2>
   <p>
-    Cycle length is counted from the first day of one period
-    to the day before the next period begins.
+    Your saved entries appear below, with the newest entries first.
   </p>
-  <p>
-    Adult menstrual cycles commonly range from 21 to 35 days.
-    Cycles can be more variable during adolescence.
-  </p>
+
+  <div id="journalEntries">
+    <p>Your journal entries will appear here.</p>
+  </div>
+
+  <button type="button" id="clearJournal" class="primary-button">
+    Delete All Journal Entries
+  </button>
 </section>
 
 <section class="learning-card">
-  <h3>Keep in Mind</h3>
+  <h3>Your Privacy Matters</h3>
   <p>
-    This is an estimate, not a prediction. Stress, illness,
-    hormonal changes and other factors can affect cycle timing.
-    A calendar calculation cannot confirm ovulation or pregnancy.
+    This prototype saves entries in the local storage of your current
+    browser and device. They are not uploaded to MATONI or shared
+    with another person.
+  </p>
+  <p>
+    This is not encrypted medical-record storage. Someone with access
+    to your unlocked device or browser may be able to view these entries.
+    Avoid recording information you would not want another device user
+    to see, and delete your entries before handing over a shared device.
+  </p>
+  <p>
+    Clearing browser data may also erase your journal.
   </p>
 </section>
 
 <section class="intro">
-  <h2>Your Privacy Comes First</h2>
-  <p>
-    This prototype performs its calculation in your browser.
-    It does not save your dates, create an account or send your
-    information to MATONI.
-  </p>
-  <p>
-    If you are using a shared device, avoid entering personal
-    health information.
-  </p>
-  <a href="cycle.html" class="primary-button">Learn About Your Cycle</a>
+  <h2>Learn More About Your Cycle</h2>
+  <a href="cycle.html" class="primary-button">Explore My Cycle</a>
+  <a href="symptoms.html" class="primary-button">Understand Symptoms</a>
 </section>
 
 </main>
@@ -105,46 +138,7 @@
   <p>A world where every girl is understood.</p>
 </footer>
 
-<script>
-document.getElementById('cycleForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const dateValue = document.getElementById('lastPeriod').value;
-  const cycleLength = Number(document.getElementById('cycleLength').value);
-  const result = document.getElementById('cycleResult');
-
-  if (!dateValue || cycleLength < 15 || cycleLength > 45) {
-    result.hidden = false;
-    result.textContent = 'Please enter a valid date and cycle length between 15 and 45 days.';
-    return;
-  }
-
-  const start = new Date(dateValue + 'T12:00:00');
-
-  if (start > new Date()) {
-    result.hidden = false;
-    result.textContent = 'Please enter a date that is not in the future.';
-    return;
-  }
-
-  const estimated = new Date(start);
-  estimated.setDate(estimated.getDate() + cycleLength);
-
-  const formattedDate = estimated.toLocaleDateString(undefined, {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  });
-
-  result.innerHTML =
-    '<h3>Your Estimated Next Period</h3>' +
-    '<p><strong>' + formattedDate + '</strong></p>' +
-    '<p>This is a calendar estimate based on the information entered. Your actual period may arrive earlier or later.</p>';
-
-  result.hidden = false;
-});
-</script>
-
-<script src="script.js?v=11"></script>
+<script src="journal.js"></script>
+<script src="script.js?v=12"></script>
 </body>
 </html>
