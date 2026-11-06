@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body School | YOUR BODY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <span class="logo-icon">✿</span>
+        <span>YOUR BODY</span>
+    </a>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <nav id="navigation">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Body School</a>
+        <a href="community.html">Community</a>
+        <a href="confidence.html">Period Confidence</a>
+    </nav>
+</header>
+
+<main>
+<section class="intro">
+    <span class="eyebrow">YOUR LEARNING SPACE</span>
+    <h1>Welcome to Body School 🌸</h1>
+    <p>
+        Your body is amazing. Let's understand how it works,
+        one lesson at a time.
+    </p>
+</section>
+
+<section class="learning">
+    <div class="section-heading">
+        <span class="eyebrow">EXPLORE YOUR BODY</span>
+        <h2>Choose a subject</h2>
+        <p>Learn at your own pace. There are no silly questions.</p>
+    </div>
+
+    <div class="learning-grid">
+
+        <article class="learning-card">
+            <div class="card-icon">🌸</div>
+            <h3>Understanding Periods</h3>
+            <p>Menstruation, the menstrual cycle and what to expect.</p>
+            <button onclick="openLesson('periods')">Open lesson</button>
+        </article>
+
+        <article class="learning-card">
+            <div class="card-icon">🧬</div>
+            <h3>Know Your Body</h3>
+            <p>Learn about your reproductive organs and their functions.</p>
+            <button onclick="openLesson('body')">Open lesson</button>
+        </article>
+
+        <article class="learning-card">
+            <div class="card-icon">💗</div>
+            <h3>Period Confidence</h3>
+            <p>Understand menstrual dignity and challenge stigma.</p>
+            <button onclick="openLesson('confidence')">Open lesson</button>
+        </article>
+
+        <article class="learning-card">
+            <div class="card-icon">🌿</div>
+            <h3>Growing Up</h3>
+            <p>Explore puberty, hormones and changes during adolescence.</p>
+            <button onclick="openLesson('growing')">Open lesson</button>
+        </article>
+
+    </div>
+</section>
+
+<section class="lesson-area" id="lessonArea" hidden>
+    <button onclick="closeLesson()" class="back-button">
+        ← Back to lessons
+    </button>
+    <div id="lessonContent"></div>
+</section>
+</main>
+
+<footer>
+    <div class="footer-logo">✿ YOUR BODY</div>
+    <p>Learning today. Empowering tomorrow.</p>
+    <small>Educational information only. Not a substitute for professional medical advice.</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
