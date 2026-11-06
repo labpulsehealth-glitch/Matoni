@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MATONI | A World Where Every Girl Is Understood</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .herbody-section {
+      max-width: 1100px;
+      margin: 55px auto;
+      padding: 25px 18px;
+    }
+
+    .herbody-section h2 {
+      color: #713d56;
+    }
+
+    .herbody-intro {
+      line-height: 1.7;
+      max-width: 750px;
+    }
+
+    .herbody-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .herbody-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff8fb;
+      border: 1px solid #f0dce5;
+      border-radius: 15px;
+      padding: 23px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .herbody-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(113, 61, 86, 0.10);
+    }
+
+    .herbody-card h3 {
+      color: #713d56;
+      margin-top: 0;
+    }
+
+    .herbody-card p {
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .herbody-card span {
+      display: inline-block;
+      margin-top: 10px;
+      color: #713d56;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .trust-links {
+      text-align: center;
+      padding: 35px 18px;
+      margin: 35px auto;
+      max-width: 900px;
+    }
+
+    .trust-links h2 {
+      color: #713d56;
+    }
+
+    .trust-links p {
+      line-height: 1.6;
+    }
+
+    .trust-link-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .trust-link-grid a {
+      text-decoration: none;
+      color: #713d56;
+      background: #f8e8ef;
+      padding: 12px 17px;
+      border-radius: 25px;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="header matoni-header">
   <a href="index.html" class="logo matoni-logo">MATONI</a>
 
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Open navigation">
+    ☰
+  </button>
 
   <nav id="navigation">
     <a href="index.html">Home</a>
     <a href="learn.html">Learn</a>
+    <a href="body.html">HERBODY</a>
     <a href="cycle.html">My Cycle</a>
+    <a href="journal.html">My Journal</a>
     <a href="symptoms.html">Symptoms</a>
     <a href="support.html">Menstrual Support</a>
   </nav>
@@ -46,6 +140,58 @@
     A space created to help girls and women understand their bodies,
     explore their health and access reliable information without shame.
   </p>
+</section>
+
+<section class="herbody-section">
+  <p class="eyebrow">HERBODY | BODY LITERACY</p>
+
+  <h2>Get to Know Your Body</h2>
+
+  <p class="herbody-intro">
+    Your body deserves understanding, not confusion or shame.
+    Explore your menstrual cycle, learn about your anatomy,
+    understand symptoms and keep a record of your experiences.
+  </p>
+
+  <div class="herbody-grid">
+
+    <a href="body.html" class="herbody-card">
+      <h3>Explore Your Body</h3>
+      <p>
+        Learn about the female reproductive system, hormones
+        and the changes that happen in your body.
+      </p>
+      <span>Explore Body Literacy</span>
+    </a>
+
+    <a href="cycle.html" class="herbody-card">
+      <h3>Understand Your Cycle</h3>
+      <p>
+        Explore the four phases of the menstrual cycle
+        and calculate an estimated next-period date.
+      </p>
+      <span>Explore My Cycle</span>
+    </a>
+
+    <a href="symptoms.html" class="herbody-card">
+      <h3>Understand Symptoms</h3>
+      <p>
+        Learn about common menstrual symptoms, recognise
+        concerning changes and know when to seek care.
+      </p>
+      <span>Explore Symptoms</span>
+    </a>
+
+    <a href="journal.html" class="herbody-card">
+      <h3>My Health Journal</h3>
+      <p>
+        Record your cycle experiences, symptoms and
+        personal health notes in one place.
+      </p>
+      <span>Open My Journal</span>
+    </a>
+
+  </div>
 </section>
 
 <section class="matoni-explore">
@@ -95,9 +241,12 @@
       <small>Menstrual dignity, education and access</small>
       <b>↗</b>
     </a>
+
     <a href="hervoice.html" class="matoni-link-button">
-  <span>HERVOICE</span>
-  <small>Share your story. Hear other voices.</small>
+      <span>07</span>
+      <strong>Explore HERVOICE</strong>
+      <small>Share your story. Hear other voices.</small>
+      <b>↗</b>
     </a>
 
   </div>
@@ -106,15 +255,19 @@
 <section class="matoni-closing">
   <h2>Your body. Your health. Your knowledge.</h2>
   <p>You deserve to understand every part of your health journey.</p>
+
   <a href="learn.html" class="matoni-main-button">
     Start Exploring
   </a>
 </section>
 
 </main>
+
 <section class="trust-links">
   <h2>Your trust matters to us.</h2>
-  <p>Learn how MATONI approaches privacy, safety and community respect.</p>
+  <p>
+    Learn how MATONI approaches privacy, safety and community respect.
+  </p>
 
   <div class="trust-link-grid">
     <a href="privacy.html">Privacy and Data Protection</a>
@@ -123,46 +276,12 @@
   </div>
 </section>
 
-<style>
-.trust-links {
-  text-align: center;
-  padding: 35px 18px;
-  margin: 35px auto;
-  max-width: 900px;
-}
-
-.trust-links h2 {
-  color: #713d56;
-}
-
-.trust-links p {
-  line-height: 1.6;
-}
-
-.trust-link-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.trust-link-grid a {
-  text-decoration: none;
-  color: #713d56;
-  background: #f8e8ef;
-  padding: 12px 17px;
-  border-radius: 25px;
-  font-size: 14px;
-}
-  </style>
-  
 <footer class="footer">
   <h3>MATONI</h3>
   <p>A world where every girl is understood.</p>
   <p>© 2026 MATONI</p>
 </footer>
 
-<script src="script.js?v=11"></script>
+<script src="script.js?v=12"></script>
 </body>
 </html>
