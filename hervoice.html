@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERVOICE | MATONI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hervoice.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">MATONI</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="confidence.html">Initiatives</a>
+    </nav>
+  </header>
+
+  <main class="hv-container">
+
+    <section class="hv-hero">
+      <p class="hv-eyebrow">THE MATONI COMMUNITY</p>
+      <h1>HERVOICE</h1>
+      <h2>Your story deserves to be heard.</h2>
+      <p>
+        Share your experiences, listen to other girls and women,
+        and find comfort in knowing that you are not alone.
+      </p>
+    </section>
+
+    <section class="hv-compose">
+      <h2>Share your experience</h2>
+      <p>
+        Something happened today? Something has been bothering you?
+        Or perhaps something made you happy? You can talk about it here.
+      </p>
+
+      <form id="storyForm">
+        <label for="identity">How would you like your story to appear?</label>
+        <select id="identity" required>
+          <option value="anonymous">Share anonymously</option>
+          <option value="nickname">Use a display name</option>
+        </select>
+
+        <div id="nicknameArea" hidden>
+          <label for="nickname">Choose a display name</label>
+          <input
+            type="text"
+            id="nickname"
+            maxlength="25"
+            placeholder="e.g. LittleSunshine"
+          >
+        </div>
+
+        <label for="storyCategory">What is your experience about?</label>
+        <select id="storyCategory" required>
+          <option value="Periods and menstruation">Periods and menstruation</option>
+          <option value="Body and health">Body and health</option>
+          <option value="School and relationships">School and relationships</option>
+          <option value="Emotions and wellbeing">Emotions and wellbeing</option>
+          <option value="Personal growth">Personal growth</option>
+          <option value="Something positive">Something positive</option>
+          <option value="Other experiences">Other experiences</option>
+        </select>
+
+        <label for="storyText">Your story</label>
+        <textarea
+          id="storyText"
+          rows="6"
+          maxlength="1500"
+          placeholder="Tell us what happened. Share only what you feel comfortable sharing..."
+          required
+        ></textarea>
+
+        <p class="hv-small">
+          Please don't include your full name, phone number, home address,
+          school name or other identifying information.
+        </p>
+
+        <label class="hv-consent">
+          <input type="checkbox" id="storyConsent" required>
+          I understand that this is a demonstration and my story will
+          not be shared with other users yet.
+        </label>
+
+        <button type="submit" class="hv-primary-button">Share your story</button>
+        <p id="formMessage" class="hv-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="hv-stories">
+      <div class="hv-section-heading">
+        <p class="hv-eyebrow">YOU ARE NOT ALONE</p>
+        <h2>Stories from the community</h2>
+        <p>Read, relate and respond with kindness.</p>
+      </div>
+
+      <div id="storiesList"></div>
+    </section>
+
+    <section class="hv-guidelines">
+      <h2>A little kindness goes a long way.</h2>
+      <p>
+        Every experience deserves respect. Don't mock, shame, threaten,
+        expose or judge someone for sharing their story.
+      </p>
+      <p>
+        HERVOICE is a peer-support space, not a medical service.
+        If someone describes severe pain, fainting or another urgent
+        health concern, encourage them to seek appropriate medical care.
+      </p>
+    </section>
+
+    <p class="hv-demo-notice">
+      HERVOICE is currently a demonstration. Stories and comments created
+      here are temporary and visible only in this browser session.
+      Please do not share private or identifying information.
+    </p>
+
+  </main>
+
+  <footer>
+    <p>MATONI | A world where every girl is understood.</p>
+  </footer>
+
+  <script src="hervoice.js"></script>
+</body>
+</html>
