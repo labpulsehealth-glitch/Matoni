@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +10,12 @@
 
 <header class="header">
   <a href="index.html" class="logo">MATONI</a>
-  <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
   <nav id="navigation">
     <a href="index.html">Home</a>
     <a href="learn.html">Learn</a>
     <a href="cycle.html">My Cycle</a>
+    <a href="journal.html">Cycle Journal</a>
     <a href="symptoms.html">Symptoms</a>
     <a href="ask.html">Ask & Understand</a>
   </nav>
@@ -48,13 +48,11 @@
 
 <section class="intro">
   <h2>Explore the Four Phases</h2>
-  <p>
-    Select each phase to understand what happens.
-    The timing varies from person to person.
-  </p>
+  <p>Select each phase to understand what happens in your body.</p>
 
   <div class="learning-card">
-    <button class="primary-button" onclick="showPhase('menstrual')">
+    <button class="primary-button" type="button"
+      onclick="showPhase('menstrual', this)" aria-expanded="false">
       1. Menstrual Phase
     </button>
     <div id="menstrual" hidden>
@@ -63,15 +61,13 @@
         This is when menstrual bleeding occurs. The lining of the uterus
         is shed and leaves the body through the vagina.
       </p>
-      <p>
-        Bleeding commonly lasts around 2–7 days, although individual
-        experiences vary.
-      </p>
+      <p>Bleeding commonly lasts around 2–7 days, although experiences vary.</p>
     </div>
   </div>
 
   <div class="learning-card">
-    <button class="primary-button" onclick="showPhase('follicular')">
+    <button class="primary-button" type="button"
+      onclick="showPhase('follicular', this)" aria-expanded="false">
       2. Follicular Phase
     </button>
     <div id="follicular" hidden>
@@ -79,16 +75,15 @@
       <p>
         This phase begins on the first day of menstruation and continues
         until ovulation. Follicle-stimulating hormone helps follicles
-        in the ovaries develop. Usually one egg becomes dominant.
+        in the ovaries develop. Usually, one egg becomes dominant.
       </p>
-      <p>
-        Oestrogen levels rise and the uterine lining begins to rebuild.
-      </p>
+      <p>Oestrogen levels rise and the uterine lining begins to rebuild.</p>
     </div>
   </div>
 
   <div class="learning-card">
-    <button class="primary-button" onclick="showPhase('ovulation')">
+    <button class="primary-button" type="button"
+      onclick="showPhase('ovulation', this)" aria-expanded="false">
       3. Ovulation
     </button>
     <div id="ovulation" hidden>
@@ -105,7 +100,8 @@
   </div>
 
   <div class="learning-card">
-    <button class="primary-button" onclick="showPhase('luteal')">
+    <button class="primary-button" type="button"
+      onclick="showPhase('luteal', this)" aria-expanded="false">
       4. Luteal Phase
     </button>
     <div id="luteal" hidden>
@@ -126,14 +122,50 @@
   <h2>Does Everyone Have a 28-Day Cycle?</h2>
   <p>
     No. A 28-day cycle is often used as an example, but menstrual
-    cycles naturally vary. In adults, cycles around 21–35 days
+    cycles naturally vary. Adult menstrual cycles around 21–35 days
     are common. Cycles can also be less predictable during adolescence.
   </p>
   <p>
-    Do not worry if your cycle does not match an example perfectly.
-    However, significant changes or concerning symptoms deserve
-    professional attention.
+    Significant changes or concerning symptoms deserve professional attention.
   </p>
+</section>
+
+<section class="intro" id="cycle-estimator">
+  <h2>Estimate Your Next Period</h2>
+  <p>
+    Enter the first day of your most recent period and your usual
+    cycle length. MATONI will calculate an approximate date.
+  </p>
+
+  <form id="cycleForm">
+    <label for="lastPeriod">First day of your last period</label>
+    <input type="date" id="lastPeriod" required>
+
+    <label for="cycleLength">Usual cycle length (days)</label>
+    <input type="number" id="cycleLength" min="15" max="45"
+      value="28" required>
+
+    <button type="submit" class="primary-button">
+      Calculate Estimate
+    </button>
+  </form>
+
+  <div id="cycleResult" class="learning-card" hidden
+    aria-live="polite"></div>
+
+  <p>
+    This is a calendar estimate, not a medical prediction. It cannot
+    confirm ovulation or pregnancy.
+  </p>
+</section>
+
+<section class="intro">
+  <h2>Keep Track of Your Experience</h2>
+  <p>
+    Recording your period dates, symptoms and changes can help you
+    recognise patterns and explain your experience during a consultation.
+  </p>
+  <a href="journal.html" class="primary-button">Open My Cycle Journal</a>
 </section>
 
 <section class="intro">
@@ -153,15 +185,80 @@
 </footer>
 
 <script>
-function showPhase(phase) {
+function showPhase(phase, button) {
   const phases = ['menstrual', 'follicular', 'ovulation', 'luteal'];
 
   phases.forEach(function(item) {
     const section = document.getElementById(item);
-    section.hidden = item !== phase;
+    const phaseButton = document.querySelector(
+      '[onclick*="showPhase(\\'' + item + '\\'"]'
+    );
+
+    if (item === phase) {
+      const shouldOpen = section.hidden;
+      section.hidden = !shouldOpen;
+      if (phaseButton) {
+        phaseButton.setAttribute('aria-expanded', String(shouldOpen));
+      }
+    } else {
+      section.hidden = true;
+      if (phaseButton) {
+        phaseButton.setAttribute('aria-expanded', 'false');
+      }
+    }
   });
 }
+
+document.getElementById('cycleForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const dateValue = document.getElementById('lastPeriod').value;
+  const cycleLength = Number(document.getElementById('cycleLength').value);
+  const result = document.getElementById('cycleResult');
+
+  if (!dateValue || cycleLength < 15 || cycleLength > 45) {
+    result.textContent =
+      'Please enter a valid date and cycle length between 15 and 45 days.';
+    result.hidden = false;
+    return;
+  }
+
+  const start = new Date(dateValue + 'T12:00:00');
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+
+  if (start > today) {
+    result.textContent = 'Please enter a date that is not in the future.';
+    result.hidden = false;
+    return;
+  }
+
+  const estimated = new Date(start);
+  estimated.setDate(estimated.getDate() + cycleLength);
+
+  const formattedDate = estimated.toLocaleDateString(undefined, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+
+  result.replaceChildren();
+
+  const heading = document.createElement('h3');
+  heading.textContent = 'Your Estimated Next Period';
+
+  const date = document.createElement('p');
+  date.textContent = formattedDate;
+
+  const note = document.createElement('p');
+  note.textContent =
+    'This is an estimate based on the information entered. Your actual period may arrive earlier or later.';
+
+  result.append(heading, date, note);
+  result.hidden = false;
+});
 </script>
-<script src="script.js?v=10"></script>
+
+<script src="script.js?v=12"></script>
 </body>
 </html>
