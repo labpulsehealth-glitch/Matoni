@@ -1,0 +1,456 @@
+/* MATONI HERBODY EDUCATIONAL EXPERIENCE */
+
+.matoni-body {
+  margin: 0;
+  background: #f8fbfa;
+  color: #203b38;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+.matoni-body * {
+  box-sizing: border-box;
+}
+
+.body-header {
+  min-height: 75px;
+  padding: 15px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #073f3b;
+  color: white;
+}
+
+.body-brand {
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-decoration: none;
+}
+
+.body-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.body-header nav a {
+  color: #e7f2ef;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.body-header nav a:hover,
+.body-header nav a[aria-current="page"] {
+  color: #b7e4d6;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.body-hero {
+  padding: 90px 9%;
+  background: linear-gradient(135deg, #073f3b, #116c61);
+  color: white;
+}
+
+.body-eyebrow {
+  display: inline-block;
+  color: #278477;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.body-hero .body-eyebrow {
+  color: #b7e4d6;
+}
+
+.body-hero h1 {
+  max-width: 820px;
+  margin: 16px 0;
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 1.12;
+}
+
+.body-hero p {
+  max-width: 680px;
+  color: #e0eeea;
+  font-size: 17px;
+}
+
+.body-button {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 13px 22px;
+  border-radius: 7px;
+  background: #c2e8d9;
+  color: #073f3b;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.body-introduction {
+  padding: 60px 9%;
+  background: white;
+}
+
+.body-introduction h2,
+.body-section-heading h2,
+.body-reference-section h2 {
+  margin: 8px 0;
+  color: #124e47;
+  font-size: clamp(26px, 4vw, 37px);
+  line-height: 1.25;
+}
+
+.body-introduction p,
+.body-section-heading p,
+.body-reference-section > p {
+  max-width: 780px;
+  color: #627772;
+}
+
+.body-section {
+  padding: 70px 9%;
+}
+
+.body-section-heading {
+  margin-bottom: 30px;
+}
+
+.anatomy-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.anatomy-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.anatomy-button,
+.phase-button {
+  padding: 14px 17px;
+  border: 1px solid #d4e4de;
+  border-radius: 8px;
+  background: white;
+  color: #315b52;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  transition: 0.2s ease;
+}
+
+.anatomy-button:hover,
+.anatomy-button.active,
+.phase-button:hover,
+.phase-button.active {
+  border-color: #0c665c;
+  background: #0c665c;
+  color: white;
+}
+
+.anatomy-information {
+  min-height: 300px;
+  padding: 32px;
+  border: 1px solid #dce9e5;
+  border-radius: 13px;
+  background: white;
+}
+
+.anatomy-information h3,
+.phase-information h3 {
+  margin: 10px 0;
+  color: #174f47;
+  font-size: 27px;
+}
+
+.anatomy-information > p,
+.phase-information > p {
+  color: #526b65;
+}
+
+.fact-panel {
+  margin-top: 25px;
+  padding: 18px;
+  border-left: 3px solid #258579;
+  border-radius: 5px;
+  background: #edf5f2;
+}
+
+.fact-panel strong {
+  color: #174f47;
+}
+
+.fact-panel p {
+  margin-bottom: 0;
+  color: #526b65;
+}
+
+.anatomy-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #72857f !important;
+}
+
+.hormone-section {
+  background: #edf5f2;
+}
+
+.hormone-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.hormone-card {
+  padding: 25px;
+  border: 1px solid #dce9e5;
+  border-radius: 12px;
+  background: white;
+}
+
+.hormone-label {
+  display: inline-block;
+  color: #258579;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.hormone-card h3 {
+  margin: 10px 0;
+  color: #174f47;
+  font-size: 19px;
+}
+
+.hormone-card p {
+  margin: 0;
+  color: #627772;
+  font-size: 14px;
+}
+
+.hormone-note,
+.cycle-disclaimer {
+  margin-top: 23px;
+  padding: 18px;
+  border-left: 3px solid #258579;
+  background: white;
+  color: #536b66;
+  font-size: 14px;
+}
+
+.cycle-phase-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.phase-button {
+  text-align: center;
+}
+
+.phase-information {
+  padding: 32px;
+  border: 1px solid #dce9e5;
+  border-radius: 13px;
+  background: white;
+}
+
+.phase-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.phase-facts > div {
+  padding: 18px;
+  border-radius: 9px;
+  background: #edf5f2;
+}
+
+.phase-facts strong {
+  color: #174f47;
+}
+
+.phase-facts p {
+  margin-bottom: 0;
+  color: #627772;
+  font-size: 14px;
+}
+
+.body-text-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: #087366;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.body-text-link:hover {
+  text-decoration: underline;
+}
+
+.body-myth-section {
+  background: #edf5f2;
+}
+
+.myth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.myth-card {
+  padding: 23px;
+  border: 1px solid #dce9e5;
+  border-radius: 12px;
+  background: white;
+}
+
+.myth-card h3 {
+  margin: 0 0 10px;
+  color: #174f47;
+  font-size: 18px;
+}
+
+.myth-card p {
+  margin: 0;
+  color: #627772;
+  font-size: 14px;
+}
+
+.body-reference-section {
+  padding: 65px 9%;
+  background: white;
+}
+
+.body-reference-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.body-reference-links a {
+  padding: 16px;
+  border: 1px solid #dce9e5;
+  border-radius: 8px;
+  color: #087366;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.body-reference-links a:hover {
+  border-color: #258579;
+  background: #edf5f2;
+}
+
+.body-review-note {
+  max-width: 850px;
+  padding: 17px;
+  border-left: 3px solid #258579;
+  background: #edf5f2;
+  color: #536b66;
+  font-size: 13px;
+}
+
+.body-footer {
+  padding: 35px 9% 20px;
+  background: #073f3b;
+  color: white;
+}
+
+.body-footer p {
+  color: #c2d8d1;
+  font-size: 13px;
+}
+
+.body-footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 20px 0;
+}
+
+.body-footer > div a {
+  color: #e5f0ed;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.body-footer > div a:hover {
+  text-decoration: underline;
+}
+
+.body-copyright {
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.16);
+}
+
+@media (max-width: 750px) {
+  .body-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .anatomy-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .anatomy-selector {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .body-header nav {
+    gap: 12px;
+  }
+
+  .body-header nav a {
+    font-size: 12px;
+  }
+
+  .body-hero {
+    padding: 65px 7%;
+  }
+
+  .body-introduction,
+  .body-section,
+  .body-reference-section {
+    padding: 45px 7%;
+  }
+
+  .hormone-grid,
+  .phase-facts,
+  .myth-grid,
+  .body-reference-links {
+    grid-template-columns: 1fr;
+  }
+
+  .anatomy-information,
+  .phase-information {
+    padding: 23px;
+  }
+
+  .cycle-phase-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .body-footer {
+    padding: 30px 7% 18px;
+  }
+}
