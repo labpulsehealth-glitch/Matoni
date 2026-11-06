@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore female reproductive anatomy, hormones and menstrual cycle education with MATONI.">
+  <title>HERBODY | MATONI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="body.css">
+</head>
+
+<body class="matoni-body">
+
+<header class="body-header">
+  <a href="index.html" class="body-brand">MATONI</a>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="learn.html">Learning Library</a>
+    <a href="resources.html">Health Resources</a>
+    <a href="body.html" aria-current="page">HERBODY</a>
+  </nav>
+</header>
+
+<main>
+  <section class="body-hero">
+    <span class="body-eyebrow">HERBODY · BODY LITERACY</span>
+    <h1>Your body is not a mystery you should be afraid to understand.</h1>
+    <p>
+      Learn about reproductive anatomy, hormones and the menstrual cycle
+      through accessible explanations designed to build understanding
+      without shame or judgement.
+    </p>
+    <a href="#anatomy" class="body-button">Explore your body</a>
+  </section>
+
+  <section class="body-introduction">
+    <span class="body-eyebrow">START WITH KNOWLEDGE</span>
+    <h2>Understanding your body is a lifelong journey.</h2>
+    <p>
+      The female body is more than its reproductive system. This learning
+      experience introduces some important parts of reproductive health.
+      It is an educational starting point, not a complete account of
+      every aspect of women's health.
+    </p>
+  </section>
+
+  <section id="anatomy" class="body-section">
+    <div class="body-section-heading">
+      <span class="body-eyebrow">01 · REPRODUCTIVE ANATOMY</span>
+      <h2>Get to know the reproductive system.</h2>
+      <p>
+        Select an organ to learn about its general location and function.
+        These descriptions are simplified for learning.
+      </p>
+    </div>
+
+    <div class="anatomy-layout">
+      <div class="anatomy-selector" aria-label="Reproductive anatomy topics">
+        <button type="button" class="anatomy-button active" data-organ="ovaries" aria-pressed="true">
+          Ovaries
+        </button>
+        <button type="button" class="anatomy-button" data-organ="fallopian" aria-pressed="false">
+          Fallopian tubes
+        </button>
+        <button type="button" class="anatomy-button" data-organ="uterus" aria-pressed="false">
+          Uterus
+        </button>
+        <button type="button" class="anatomy-button" data-organ="endometrium" aria-pressed="false">
+          Endometrium
+        </button>
+        <button type="button" class="anatomy-button" data-organ="cervix" aria-pressed="false">
+          Cervix
+        </button>
+        <button type="button" class="anatomy-button" data-organ="vagina" aria-pressed="false">
+          Vagina
+        </button>
+        <button type="button" class="anatomy-button" data-organ="vulva" aria-pressed="false">
+          Vulva
+        </button>
+      </div>
+
+      <article class="anatomy-information" aria-live="polite">
+        <span class="body-eyebrow">SELECTED ORGAN</span>
+        <h3 id="organ-title">Ovaries</h3>
+        <p id="organ-description">
+          The ovaries are two small organs located on either side of the
+          uterus. They contain egg cells and produce hormones, including
+          oestrogen and progesterone.
+        </p>
+        <div class="fact-panel">
+          <strong>Why it matters</strong>
+          <p id="organ-fact">
+            Ovarian activity is involved in the menstrual cycle, hormone
+            production and reproductive function.
+          </p>
+        </div>
+        <p class="anatomy-note">
+          Anatomy varies between individuals. Not everyone has the same
+          reproductive organs or anatomy.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="body-section hormone-section">
+    <div class="body-section-heading">
+      <span class="body-eyebrow">02 · HORMONES</span>
+      <h2>Meet the hormones involved in the menstrual cycle.</h2>
+      <p>
+        Hormones are chemical messengers. They help coordinate processes
+        in different parts of the body.
+      </p>
+    </div>
+
+    <div class="hormone-grid">
+      <article class="hormone-card">
+        <span class="hormone-label">FSH</span>
+        <h3>Follicle-stimulating hormone</h3>
+        <p>
+          Produced by the pituitary gland. It helps stimulate the growth
+          of ovarian follicles, which contain developing egg cells.
+        </p>
+      </article>
+
+      <article class="hormone-card">
+        <span class="hormone-label">LH</span>
+        <h3>Luteinising hormone</h3>
+        <p>
+          Produced by the pituitary gland. A surge in LH usually triggers
+          ovulation.
+        </p>
+      </article>
+
+      <article class="hormone-card">
+        <span class="hormone-label">OESTROGEN</span>
+        <h3>Oestrogen</h3>
+        <p>
+          A group of hormones with several functions. During the menstrual
+          cycle, oestrogen helps the uterine lining grow.
+        </p>
+      </article>
+
+      <article class="hormone-card">
+        <span class="hormone-label">PROGESTERONE</span>
+        <h3>Progesterone</h3>
+        <p>
+          After ovulation, progesterone helps prepare and maintain the
+          uterine lining for a possible pregnancy.
+        </p>
+      </article>
+    </div>
+
+    <div class="hormone-note">
+      Hormones also influence other body systems. Their effects are not
+      limited to menstruation or reproduction.
+    </div>
+  </section>
+
+  <section class="body-section cycle-section">
+    <div class="body-section-heading">
+      <span class="body-eyebrow">03 · THE MENSTRUAL CYCLE</span>
+      <h2>Explore the phases of the menstrual cycle.</h2>
+      <p>
+        Select a phase to learn what commonly happens. Cycle timing differs
+        between individuals, and the phases are not identical in everyone.
+      </p>
+    </div>
+
+    <div class="cycle-phase-selector" role="group" aria-label="Select a menstrual cycle phase">
+      <button type="button" class="phase-button active" data-phase="menstruation" aria-pressed="true">
+        Menstruation
+      </button>
+      <button type="button" class="phase-button" data-phase="follicular" aria-pressed="false">
+        Follicular phase
+      </button>
+      <button type="button" class="phase-button" data-phase="ovulation" aria-pressed="false">
+        Ovulation
+      </button>
+      <button type="button" class="phase-button" data-phase="luteal" aria-pressed="false">
+        Luteal phase
+      </button>
+    </div>
+
+    <article class="phase-information" aria-live="polite">
+      <span class="body-eyebrow" id="phase-number">PHASE 01</span>
+      <h3 id="phase-title">Menstruation</h3>
+      <p id="phase-description">
+        Menstruation is when blood and tissue from the uterine lining
+        leave the body through the vagina. It marks the beginning of a
+        new menstrual cycle.
+      </p>
+
+      <div class="phase-facts">
+        <div>
+          <strong>What happens?</strong>
+          <p id="phase-process">
+            The uterine lining is shed because pregnancy has not occurred
+            in that cycle.
+          </p>
+        </div>
+        <div>
+          <strong>What should you know?</strong>
+          <p id="phase-guidance">
+            Bleeding patterns and duration vary. Severe pain or unusually
+            heavy bleeding deserves medical attention.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <div class="cycle-disclaimer">
+      <strong>Remember:</strong> The often-quoted 28-day cycle is an
+      illustrative average, not a rule. Ovulation does not always happen
+      on day 14. Cycle tracking cannot reliably confirm pregnancy or
+      prevent pregnancy on its own.
+    </div>
+
+    <a href="cycle.html" class="body-text-link">Explore the MATONI cycle tool</a>
+  </section>
+
+  <section class="body-section body-myth-section">
+    <div class="body-section-heading">
+      <span class="body-eyebrow">04 · BODY KNOWLEDGE</span>
+      <h2>Things worth remembering.</h2>
+    </div>
+
+    <div class="myth-grid">
+      <article class="myth-card">
+        <h3>Every cycle is not exactly 28 days.</h3>
+        <p>
+          Cycle length varies. A single average should not be treated as
+          a universal standard.
+        </p>
+      </article>
+
+      <article class="myth-card">
+        <h3>Menstrual pain should not be dismissed.</h3>
+        <p>
+          Some discomfort can occur, but severe or disruptive pain
+          deserves assessment.
+        </p>
+      </article>
+
+      <article class="myth-card">
+        <h3>Menstruation is not dirty.</h3>
+        <p>
+          Menstruation is a normal biological process. It is not a reason
+          for shame or exclusion.
+        </p>
+      </article>
+
+      <article class="myth-card">
+        <h3>Symptoms do not diagnose conditions.</h3>
+        <p>
+          Similar symptoms can have different causes. A healthcare
+          professional can help assess persistent concerns.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="body-reference-section">
+    <span class="body-eyebrow">LEARN FROM TRUSTED SOURCES</span>
+    <h2>Continue your learning.</h2>
+    <p>
+      These educational explanations are introductory. Explore established
+      health organisations for further information.
+    </p>
+
+    <div class="body-reference-links">
+      <a href="https://www.who.int/health-topics/menstrual-health"
+         target="_blank" rel="noopener noreferrer">
+        WHO: Menstrual health
+      </a>
+      <a href="https://medlineplus.gov/womenshealth.html"
+         target="_blank" rel="noopener noreferrer">
+        MedlinePlus: Women's health
+      </a>
+      <a href="https://www.nhs.uk/womens-health/"
+         target="_blank" rel="noopener noreferrer">
+        NHS: Women's health
+      </a>
+      <a href="resources.html">
+        Explore MATONI's resource directory
+      </a>
+    </div>
+
+    <p class="body-review-note">
+      Educational content only. These explanations are not a diagnosis,
+      personal medical recommendation or substitute for professional care.
+      MATONI's educational content should undergo qualified clinical review
+      before being presented as clinically reviewed guidance.
+    </p>
+  </section>
+</main>
+
+<footer class="body-footer">
+  <a href="index.html" class="body-brand">MATONI</a>
+  <p>A world where every girl is understood.</p>
+  <div>
+    <a href="privacy.html">Privacy</a>
+    <a href="safety.html">Safety</a>
+    <a href="guidelines.html">Community Guidelines</a>
+    <a href="learn.html">Learning Library</a>
+  </div>
+  <p class="body-copyright">© 2026 MATONI</p>
+</footer>
+
+<script src="body.js"></script>
+</body>
+</html>
