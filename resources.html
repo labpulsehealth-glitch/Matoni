@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse trusted women's health information from recognised medical and public-health organisations.">
+  <title>Trusted Health Resources | MATONI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="resources.css">
+</head>
+
+<body class="matoni-library">
+
+<header class="library-header">
+  <a href="index.html" class="library-brand">MATONI</a>
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="learn.html">Learn</a>
+    <a href="resources.html" aria-current="page">Health Resources</a>
+    <a href="hervoice.html">HERVOICE</a>
+  </nav>
+</header>
+
+<main>
+  <section class="resource-hero">
+    <span class="eyebrow">HERWISE · HEALTH INFORMATION DIRECTORY</span>
+    <h1>Find information you can explore with confidence.</h1>
+    <p>
+      A curated directory of women's health information from established
+      public-health organisations and medical information services.
+    </p>
+  </section>
+
+  <section class="resource-search-section">
+    <label for="resource-search">Search the health resource library</label>
+    <input
+      type="search"
+      id="resource-search"
+      placeholder="Try menstrual health, PCOS, fertility..."
+      autocomplete="off"
+    >
+
+    <div class="filter-heading">
+      <h2>Browse by topic</h2>
+      <button type="button" id="clear-filters" class="clear-button">
+        Clear filters
+      </button>
+    </div>
+
+    <div id="resource-filters" class="filter-list" aria-label="Filter resources by topic">
+      <button type="button" class="filter-button active" data-topic="all">
+        All resources
+      </button>
+      <button type="button" class="filter-button" data-topic="menstrual">
+        Menstrual health
+      </button>
+      <button type="button" class="filter-button" data-topic="body">
+        Body and hormones
+      </button>
+      <button type="button" class="filter-button" data-topic="conditions">
+        Health conditions
+      </button>
+      <button type="button" class="filter-button" data-topic="sexual">
+        Sexual health
+      </button>
+      <button type="button" class="filter-button" data-topic="pregnancy">
+        Fertility and pregnancy
+      </button>
+      <button type="button" class="filter-button" data-topic="breast">
+        Breast and cervical health
+      </button>
+      <button type="button" class="filter-button" data-topic="mental">
+        Mental wellbeing
+      </button>
+      <button type="button" class="filter-button" data-topic="ageing">
+        Menopause and ageing
+      </button>
+      <button type="button" class="filter-button" data-topic="research">
+        Research
+      </button>
+    </div>
+  </section>
+
+  <section class="resource-results-section">
+    <div class="results-heading">
+      <div>
+        <span class="eyebrow">CURATED HEALTH INFORMATION</span>
+        <h2>Resource directory</h2>
+      </div>
+      <p id="resource-count" aria-live="polite">Loading resources...</p>
+    </div>
+
+    <div id="resource-list" class="resource-grid">
+      <p>Loading the resource directory...</p>
+    </div>
+
+    <div id="no-resources" class="empty-results" hidden>
+      <h3>No matching resources found.</h3>
+      <p>Try a different search term or clear your filters.</p>
+    </div>
+  </section>
+
+  <section class="source-standards">
+    <span class="eyebrow">HOW WE SELECT RESOURCES</span>
+    <h2>Credibility matters.</h2>
+    <p>
+      MATONI prioritises resources from recognised public-health agencies,
+      government health services and established medical information
+      organisations. A listing does not mean MATONI independently endorses
+      every recommendation on an external website.
+    </p>
+
+    <ul>
+      <li>We identify the organisation responsible for each resource.</li>
+      <li>We link readers directly to the original publication or information page.</li>
+      <li>We distinguish external medical guidance from MATONI educational content.</li>
+      <li>We encourage readers to consider their local healthcare context.</li>
+    </ul>
+
+    <p class="review-note">
+      Directory status: Initial curated collection. Links and source details
+      should be checked periodically. MATONI has not independently clinically
+      reviewed every external page.
+    </p>
+  </section>
+
+  <section class="learning-note">
+    <h2>Have a health concern?</h2>
+    <p>
+      Online information can help you understand a topic, but it cannot
+      diagnose a condition. Speak with a qualified healthcare professional
+      about symptoms, test results or treatment decisions.
+    </p>
+    <a href="safety.html" class="text-link">Read MATONI's safety information</a>
+  </section>
+</main>
+
+<footer class="library-footer">
+  <div>
+    <a href="index.html" class="footer-brand">MATONI</a>
+    <p>A world where every girl is understood.</p>
+  </div>
+
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="guidelines.html">Community Guidelines</a>
+    <a href="safety.html">Safety</a>
+    <a href="learn.html">Learning Library</a>
+  </div>
+
+  <p class="copyright">© 2026 MATONI. Educational information, dignity and understanding.</p>
+</footer>
+
+<script src="resources.js"></script>
+</body>
+</html>
