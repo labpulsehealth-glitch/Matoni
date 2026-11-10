@@ -178,8 +178,75 @@ function showTopic(topic) {
     document.getElementById(item).hidden = item !== topic;
   });
 }
-</script>
 
-<script src="script.js?v=10"></script>
+  
+<section id="ask-matoni" class="intro">
+  <div class="learning-card">
+    <p class="eyebrow">MATONI AI HEALTH EDUCATION</p>
+
+    <h2>Ask MATONI</h2>
+
+    <p>
+      Questions about your body deserve clear answers.
+      Ask about periods, hormones, reproductive health
+      and wellbeing without fear or shame.
+    </p>
+
+    <label for="matoni-language">
+      Choose your preferred language
+    </label>
+
+    <select id="matoni-language">
+      <option value="English">English</option>
+      <option value="Nigerian Pidgin">Nigerian Pidgin</option>
+      <option value="Yoruba">Yoruba (experimental)</option>
+    </select>
+
+    <div id="matoni-chat"
+      role="log"
+      aria-live="polite"
+      aria-label="MATONI conversation">
+      <p>
+        <strong>ASK MATONI:</strong>
+        Hello! What would you like to understand about your health?
+      </p>
+    </div>
+
+    <label for="matoni-question">
+      Your question
+    </label>
+
+    <textarea
+      id="matoni-question"
+      rows="3"
+      maxlength="700"
+      placeholder="For example: Why do I experience cramps during my period?"
+    ></textarea>
+
+    <p class="small-note">
+      Please do not enter your name, phone number, address,
+      school or other identifying information.
+    </p>
+
+    <button
+      type="button"
+      class="primary-button"
+      id="matoni-send">
+      Ask MATONI
+    </button>
+
+    <p id="matoni-status" role="status"></p>
+
+    <p class="small-note">
+      MATONI AI provides educational information, not
+      medical diagnosis or treatment. Responses may be
+      inaccurate. Seek professional care for health concerns.
+      Do not use this prototype for emergencies.
+    </p>
+  </div>
+</section>
+
+<script src="matoni-ai.js"></script>
+</main>
 </body>
 </html>
