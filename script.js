@@ -1,10 +1,45 @@
+// MATONI shared script
+// Safe on every page: each feature only runs if its elements exist.
+
+const $ = (id) => document.getElementById(id);
+
+function escapeHTML(value) {
+    const div = document.createElement("div");
+    div.textContent = value;
+    return div.innerHTML;
+}
+
 
 // MOBILE NAVIGATION
 
 function toggleMenu() {
-    const navigation = document.getElementById("navigation");
-    navigation.classList.toggle("show");
+    const navigation = $("navigation");
+    const button = document.querySelector(".menu-button");
+    if (!navigation) return;
+
+    const isOpen = navigation.classList.toggle("show");
+    if (button) button.setAttribute("aria-expanded", String(isOpen));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navigation = $("navigation");
+    const button = document.querySelector(".menu-button");
+
+    if (button) {
+        button.setAttribute("aria-controls", "navigation");
+        button.setAttribute("aria-expanded", "false");
+    }
+
+    // Close the menu after a link is tapped
+    if (navigation) {
+        navigation.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navigation.classList.remove("show");
+                if (button) button.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+});
 
 
 // LESSON CONTENT
@@ -105,29 +140,33 @@ const lessons = {
 
 };
 
+// Only accept real lesson names (blocks keys like "constructor" or "__proto__")
+function getLesson(name) {
+    return Object.prototype.hasOwnProperty.call(lessons, name) ? lessons[name] : null;
+}
 
-// OPEN A LESSON
+
+// OPEN A LESSON (on the Learn page)
 
 function openLesson(lessonName) {
 
-    const lesson = lessons[lessonName];
+    const lesson = getLesson(lessonName);
+    const lessonArea = $("lessonArea");
+    const lessonContent = $("lessonContent");
 
-    if (!lesson) return;
-
-    const lessonArea = document.getElementById("lessonArea");
-    const lessonContent = document.getElementById("lessonContent");
+    if (!lesson || !lessonArea || !lessonContent) return;
 
     let content = `
-        <span class="eyebrow">YOUR BODY SCHOOL</span>
-        <h2>${lesson.title}</h2>
-        <p>${lesson.intro}</p>
+        <span class="eyebrow">MATONI LEARNING</span>
+        <h2>${escapeHTML(lesson.title)}</h2>
+        <p>${escapeHTML(lesson.intro)}</p>
     `;
 
-    lesson.sections.forEach(section => {
+    lesson.sections.forEach((section) => {
         content += `
             <div class="lesson-section">
-                <h3>${section.heading}</h3>
-                <p>${section.text}</p>
+                <h3>${escapeHTML(section.heading)}</h3>
+                <p>${escapeHTML(section.text)}</p>
             </div>
         `;
     });
@@ -135,17 +174,14 @@ function openLesson(lessonName) {
     content += `
         <div class="lesson-complete">
             <p>Well done for taking time to understand your body.</p>
-            <button onclick="closeLesson()">Back to learning</button>
+            <button type="button" onclick="closeLesson()">Back to learning</button>
         </div>
     `;
 
     lessonContent.innerHTML = content;
-
     lessonArea.hidden = false;
 
-    lessonArea.scrollIntoView({
-        behavior: "smooth"
-    });
+    lessonArea.scrollIntoView({ behavior: "smooth" });
 }
 
 
@@ -153,16 +189,13 @@ function openLesson(lessonName) {
 
 function closeLesson() {
 
-    const lessonArea = document.getElementById("lessonArea");
+    const lessonArea = $("lessonArea");
 
     if (lessonArea) {
         lessonArea.hidden = true;
     }
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 
@@ -170,70 +203,61 @@ function closeLesson() {
 
 function showPage(page) {
 
+    const lessonArea = $("lessonArea");
+
     if (page === "home") {
-        document.getElementById("lessonArea").hidden = true;
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
+        if (lessonArea) lessonArea.hidden = true;
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
     }
 
-    const destinations = {
-        learn: "learn",
-        confidence: "confidence"
-    };
-
-    if (destinations[page]) {
-        document.getElementById("lessonArea").hidden = true;
-
-        document.getElementById(destinations[page])
-            .scrollIntoView({
-                behavior: "smooth"
-            });
+    if (page === "learn" || page === "confidence") {
+        if (lessonArea) lessonArea.hidden = true;
+        const target = $(page);
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+        return;
     }
 
     if (page === "myths") {
-        document.getElementById("quizArea").scrollIntoView({
-            behavior: "smooth"
-        });
+        const quizArea = $("quizArea");
+        if (quizArea) quizArea.scrollIntoView({ behavior: "smooth" });
+        return;
     }
 
     if (page === "ask") {
-        alert("Our educational question centre is coming soon!");
+        window.location.href = "ask.html";
     }
 }
 
 
 // MYTH OR FACT QUIZ
+// Each item is a statement. The player decides if it is a fact or a myth.
 
 const quizQuestions = [
     {
-        question: "Is menstruation a natural biological process?",
-        answer: true,
-        explanation: "Yes! Menstruation is a normal biological process."
+        statement: "Menstruation is a natural biological process.",
+        isFact: true,
+        explanation: "Fact. Menstruation is a normal body process."
     },
     {
-        question: "Does having a period make a girl dirty?",
-        answer: false,
-        explanation: "No. Menstruation does not make anyone dirty or less worthy."
+        statement: "Having a period makes a girl dirty.",
+        isFact: false,
+        explanation: "Myth. Menstruation does not make anyone dirty or less worthy."
     },
     {
-        question: "Can menstrual experiences differ between girls?",
-        answer: true,
-        explanation: "Yes. Period length, flow and symptoms can vary."
+        statement: "Period length, flow and symptoms can differ from girl to girl.",
+        isFact: true,
+        explanation: "Fact. Every body is different, and cycles can vary."
     },
     {
-        question: "Should severe menstrual pain always be ignored?",
-        answer: false,
-        explanation: "No. Severe or disruptive pain deserves medical assessment."
+        statement: "Severe period pain should always be ignored.",
+        isFact: false,
+        explanation: "Myth. Severe or disruptive pain deserves medical assessment."
     },
     {
-        question: "Can boys learn about menstruation too?",
-        answer: true,
-        explanation: "Absolutely. Understanding helps create respectful and supportive environments."
+        statement: "Boys can learn about menstruation too.",
+        isFact: true,
+        explanation: "Fact. Understanding helps create respectful and supportive environments."
     }
 ];
 
@@ -243,22 +267,24 @@ let quizScore = 0;
 
 function startQuiz() {
 
+    const quizArea = $("quizArea");
+    if (!quizArea) return;
+
     currentQuestion = 0;
     quizScore = 0;
 
-    document.getElementById("quizArea").hidden = false;
+    quizArea.hidden = false;
 
     displayQuestion();
 
-    document.getElementById("quizArea").scrollIntoView({
-        behavior: "smooth"
-    });
+    quizArea.scrollIntoView({ behavior: "smooth" });
 }
 
 
 function displayQuestion() {
 
-    const questionArea = document.getElementById("quizContent");
+    const questionArea = $("quizContent");
+    if (!questionArea) return;
 
     if (currentQuestion >= quizQuestions.length) {
 
@@ -266,7 +292,7 @@ function displayQuestion() {
             <h3>Quiz completed!</h3>
             <p>You scored ${quizScore} out of ${quizQuestions.length}.</p>
             <p>Keep learning. Every correct answer makes you more informed.</p>
-            <button onclick="startQuiz()">Try again</button>
+            <button type="button" onclick="startQuiz()">Try again</button>
         `;
 
         return;
@@ -279,71 +305,76 @@ function displayQuestion() {
             Question ${currentQuestion + 1} of ${quizQuestions.length}
         </p>
 
-        <h3>${question.question}</h3>
+        <h3>${escapeHTML(question.statement)}</h3>
 
         <div class="quiz-options">
-            <button onclick="answerQuestion(true)">Myth or Fact? FACT</button>
-            <button onclick="answerQuestion(false)">Myth or Fact? MYTH</button>
+            <button type="button" onclick="answerQuestion(true)">Fact</button>
+            <button type="button" onclick="answerQuestion(false)">Myth</button>
         </div>
 
-        <p id="quizFeedback"></p>
+        <p id="quizFeedback" role="status" aria-live="polite"></p>
     `;
 }
 
 
-function answerQuestion(answer) {
+function answerQuestion(answerIsFact) {
 
     const question = quizQuestions[currentQuestion];
+    const feedback = $("quizFeedback");
 
-    const feedback = document.getElementById("quizFeedback");
+    if (!question || !feedback) return;
 
-    const buttons = document.querySelectorAll(".quiz-options button");
-
-    buttons.forEach(button => {
+    document.querySelectorAll(".quiz-options button").forEach((button) => {
         button.disabled = true;
     });
 
-    if (answer === question.answer) {
-
+    if (answerIsFact === question.isFact) {
         quizScore++;
-
         feedback.textContent = "Correct! " + question.explanation;
-
     } else {
-
         feedback.textContent = "Not quite. " + question.explanation;
-
     }
 
     const nextButton = document.createElement("button");
+    nextButton.type = "button";
+    nextButton.textContent =
+        currentQuestion === quizQuestions.length - 1 ? "See my score" : "Next question";
 
-    nextButton.textContent = "Next question";
-
-    nextButton.onclick = function() {
+    nextButton.onclick = function () {
         currentQuestion++;
         displayQuestion();
     };
 
     feedback.appendChild(document.createElement("br"));
     feedback.appendChild(nextButton);
+    nextButton.focus();
 }
 
-// WOMEN'S COMMUNITY - QUESTION SUBMISSION
 
-const questionForm = document.getElementById("questionForm");
+// COMMUNITY - QUESTION SUBMISSION (local preview only)
+
+const questionForm = $("questionForm");
+
+// Blocks phone numbers and email addresses before they appear on screen
+function containsPersonalDetails(text) {
+    const phone = /(\+?\d[\s-]?){9,}/;
+    const email = /\S+@\S+\.\S+/;
+    return phone.test(text) || email.test(text);
+}
 
 if (questionForm) {
 
-    questionForm.addEventListener("submit", function(event) {
+    questionForm.addEventListener("submit", function (event) {
 
         event.preventDefault();
 
-        const questionInput = document.getElementById("question");
-        const identityInput = document.getElementById("identity");
-        const categoryInput = document.getElementById("category");
+        const questionInput = $("question");
+        const identityInput = $("identity");
+        const categoryInput = $("category");
+        const questionList = $("communityQuestions");
+        const message = $("questionMessage");
 
-        const questionList = document.getElementById("communityQuestions");
-        const message = document.getElementById("questionMessage");
+        if (!questionInput || !identityInput || !categoryInput || !questionList || !message) return;
 
         const question = questionInput.value.trim();
         const identity = identityInput.value;
@@ -354,12 +385,23 @@ if (questionForm) {
             return;
         }
 
+        if (question.length > 500) {
+            message.textContent = "Please keep your question under 500 characters.";
+            return;
+        }
+
+        if (containsPersonalDetails(question)) {
+            message.textContent =
+                "Please remove phone numbers or email addresses to protect your privacy.";
+            return;
+        }
+
         const card = document.createElement("article");
         card.className = "learning-card";
 
         const topic = document.createElement("span");
         topic.className = "eyebrow";
-        topic.textContent = category.toUpperCase();
+        topic.textContent = String(category).toUpperCase();
 
         const heading = document.createElement("h3");
         heading.textContent = question;
@@ -382,36 +424,34 @@ if (questionForm) {
 
         questionForm.reset();
 
-        message.textContent =
-            "Your question has appeared in the community preview!";
-
+        message.textContent = "Your question has appeared in the community preview!";
     });
 
 }
 
-// LOAD A LESSON ON ITS OWN PAGE
 
-const lessonPage = document.getElementById("lessonPageContent");
+// LOAD A LESSON ON ITS OWN PAGE (lesson.html?topic=periods)
+
+const lessonPage = $("lessonPageContent");
 
 if (lessonPage) {
 
     const parameters = new URLSearchParams(window.location.search);
-    const topic = parameters.get("topic");
-    const lesson = lessons[topic];
+    const lesson = getLesson(parameters.get("topic"));
 
     if (lesson) {
 
         let content = `
-            <span class="eyebrow">YOUR BODY SCHOOL</span>
-            <h1>${lesson.title}</h1>
-            <p>${lesson.intro}</p>
+            <span class="eyebrow">MATONI LEARNING</span>
+            <h1>${escapeHTML(lesson.title)}</h1>
+            <p>${escapeHTML(lesson.intro)}</p>
         `;
 
-        lesson.sections.forEach(section => {
+        lesson.sections.forEach((section) => {
             content += `
                 <div class="lesson-section">
-                    <h2>${section.heading}</h2>
-                    <p>${section.text}</p>
+                    <h2>${escapeHTML(section.heading)}</h2>
+                    <p>${escapeHTML(section.text)}</p>
                 </div>
             `;
         });
@@ -419,22 +459,20 @@ if (lessonPage) {
         content += `
             <div class="lesson-complete">
                 <p>Well done for taking time to understand your body. 💗</p>
-                <a href="learn.html" class="primary-button">
-                    Back to Body School
-                </a>
+                <a href="learn.html" class="primary-button">Back to Learning</a>
             </div>
         `;
 
         lessonPage.innerHTML = content;
 
-        document.title = lesson.title + " | YOUR BODY";
+        document.title = lesson.title + " | MATONI";
 
     } else {
 
         lessonPage.innerHTML = `
             <h2>Lesson not found</h2>
-            <p>Please return to Body School and choose a lesson.</p>
-            <a href="learn.html" class="primary-button">Back to Body School</a>
+            <p>Please return to Learning and choose a lesson.</p>
+            <a href="learn.html" class="primary-button">Back to Learning</a>
         `;
     }
 }
