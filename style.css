@@ -746,3 +746,70 @@ footer small {
     padding: 65px 20px;
   }
 }
+/* ==================================
+   MATONI FIXES - paste at the very END of style.css
+================================== */
+
+/* Better contrast for small grey text (was #82747C, too light) */
+:root {
+  --muted: #6b5d65;
+}
+
+.matoni-link-button span {
+  color: #7d4f66;
+}
+
+/* Keyboard focus is visible */
+:focus-visible {
+  outline: 3px solid #713f58;
+  outline-offset: 3px;
+}
+
+/* Skip link for keyboard and screen-reader users */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  padding: 10px 16px;
+  background: #713f58;
+  color: #fff;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Respect "reduce motion" settings */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Mobile menu: it opened too far below the header */
+@media (max-width: 550px) {
+  .matoni-header nav {
+    margin-top: 0;
+    top: 100%;
+    z-index: 50;
+  }
+}
+
+/* Larger tap targets on phones */
+@media (max-width: 650px) {
+  .matoni-header nav a {
+    padding: 8px 4px;
+  }
+
+  .quiz-options button,
+  .lesson-complete button {
+    min-height: 44px;
+  }
+}
