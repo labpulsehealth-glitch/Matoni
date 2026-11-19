@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Understand sexual violence, harassment, consent, boundaries and ways to seek support through MATONI HERGUARD.">
+  <title>Sexual Violence & Harassment | MATONI HERGUARD</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .sv-page {
+      background: #f8f3ed;
+      color: #4e3440;
+      padding-bottom: 40px;
+    }
+
+    .sv-page * {
+      box-sizing: border-box;
+    }
+
+    .sv-container {
+      width: min(1000px, 90%);
+      margin: auto;
+    }
+
+    .sv-breadcrumb {
+      padding: 27px 0 0;
+      font-size: 12px;
+      color: #927b83;
+    }
+
+    .sv-breadcrumb a {
+      text-decoration: none;
+      color: #8b4c66;
+    }
+
+    .sv-hero {
+      padding: 70px 0 55px;
+    }
+
+    .sv-label {
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #965b75;
+      margin-bottom: 18px;
+    }
+
+    .sv-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(43px, 7vw, 76px);
+      font-weight: 500;
+      color: #542b3d;
+      line-height: 1.05;
+      margin: 0 0 25px;
+      max-width: 850px;
+    }
+
+    .sv-hero h1 span {
+      color: #b2768e;
+      font-style: italic;
+    }
+
+    .sv-lead {
+      max-width: 720px;
+      font-size: 16px;
+      line-height: 1.95;
+      color: #76636a;
+    }
+
+    .sv-note {
+      margin-top: 32px;
+      background: #f0e4e7;
+      border-left: 3px solid #9d617b;
+      padding: 22px 25px;
+      border-radius: 0 13px 13px 0;
+      color: #634451;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .sv-section {
+      padding: 48px 0;
+    }
+
+    .sv-section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4vw, 44px);
+      color: #542b3d;
+      font-weight: 500;
+      margin: 0 0 18px;
+      line-height: 1.2;
+    }
+
+    .sv-section-text {
+      color: #76636a;
+      font-size: 14px;
+      line-height: 1.95;
+      max-width: 780px;
+    }
+
+    .sv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .sv-card {
+      background: #fffdf9;
+      border: 1px solid #eadfe1;
+      border-radius: 18px;
+      padding: 26px;
+    }
+
+    .sv-card h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      color: #65364c;
+      font-size: 23px;
+      margin: 0 0 12px;
+    }
+
+    .sv-card p,
+    .sv-card li {
+      font-size: 13px;
+      color: #78676d;
+      line-height: 1.85;
+    }
+
+    .sv-card p {
+      margin: 0;
+    }
+
+    .sv-card ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .sv-card li + li {
+      margin-top: 8px;
+    }
+
+    .sv-highlight {
+      background: #71354e;
+      color: #fff8f4;
+      padding: 38px;
+      border-radius: 22px;
+      margin: 30px 0;
+    }
+
+    .sv-highlight h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: 34px;
+      margin: 0 0 15px;
+    }
+
+    .sv-highlight p {
+      color: #f0dfe5;
+      line-height: 1.9;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .sv-list {
+      display: grid;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .sv-list-item {
+      background: #fffdf9;
+      border: 1px solid #eadfe1;
+      padding: 22px 25px;
+      border-radius: 15px;
+    }
+
+    .sv-list-item h3 {
+      color: #65364c;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      font-weight: 500;
+      margin: 0 0 9px;
+    }
+
+    .sv-list-item p {
+      color: #78676d;
+      font-size: 13px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .sv-steps {
+      counter-reset: sv-step;
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .sv-step {
+      counter-increment: sv-step;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: #fffdf9;
+      border: 1px solid #eadfe1;
+      padding: 24px;
+      border-radius: 16px;
+    }
+
+    .sv-step::before {
+      content: counter(sv-step, decimal-leading-zero);
+      color: #a66e86;
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      min-width: 35px;
+    }
+
+    .sv-step h3 {
+      color: #65364c;
+      font-size: 19px;
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      margin: 0 0 8px;
+    }
+
+    .sv-step p {
+      color: #78676d;
+      font-size: 13px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .sv-support-box {
+      background: #eadbdc;
+      border-radius: 23px;
+      padding: 35px;
+      margin-top: 25px;
+    }
+
+    .sv-support-box h2 {
+      font-family: "Playfair Display", serif;
+      color: #542b3d;
+      font-size: 32px;
+      font-weight: 500;
+      margin: 0 0 15px;
+    }
+
+    .sv-support-box p {
+      color: #6e5962;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .sv-back {
+      display: inline-flex;
+      margin-top: 30px;
+      text-decoration: none;
+      background: #71354e;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 40px;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .sv-back:hover {
+      background: #54283b;
+      transform: translateY(-2px);
+    }
+
+    .sv-disclaimer {
+      margin-top: 30px;
+      border-top: 1px solid #e4d6d9;
+      padding-top: 23px;
+      color: #8a777e;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 650px) {
+      .sv-hero {
+        padding: 50px 0 35px;
+      }
+
+      .sv-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sv-section {
+        padding: 35px 0;
+      }
+
+      .sv-card {
+        padding: 23px;
+      }
+
+      .sv-highlight {
+        padding: 28px 23px;
+      }
+
+      .sv-highlight h2 {
+        font-size: 28px;
+      }
+
+      .sv-support-box {
+        padding: 26px 22px;
+      }
+
+      .sv-step {
+        padding: 19px;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="sv-page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MATONI</a>
+
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="learn.html">HERBODY</a>
+        <a href="community.html">Community</a>
+        <a href="ask.html">Ask MATONI</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html" class="active">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="sv-container">
+    <div class="sv-breadcrumb">
+      <a href="guard.html">HERGUARD</a> &nbsp;/&nbsp; Sexual Violence & Harassment
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="sv-hero sv-container">
+    <div class="sv-label">HERGUARD · SAFETY · CONSENT</div>
+
+    <h1>
+      Sexual Violence<br>
+      & <span>Harassment.</span>
+    </h1>
+
+    <p class="sv-lead">
+      Everyone deserves bodily autonomy, respect, freedom from unwanted
+      sexual attention and the ability to make decisions about their own body.
+      Understanding consent, boundaries and sexual violence can help us
+      recognise harm and support ourselves and others.
+    </p>
+
+    <div class="sv-note">
+      <strong>A gentle note:</strong> This page discusses sexual harassment
+      and violence. Some information may be upsetting. You are free to pause,
+      leave this page or return whenever you feel ready. You do not have to
+      read everything to take care of yourself.
+    </div>
+  </section>
+
+  <!-- UNDERSTANDING -->
+  <section class="sv-section sv-container">
+    <div class="sv-label">01 · UNDERSTANDING</div>
+
+    <h2 class="sv-section-title">What do these terms mean?</h2>
+
+    <p class="sv-section-text">
+      Sexual violence and harassment can take different forms. They may occur
+      in public, private, educational, professional, social or online spaces.
+      They can be committed by strangers or by people someone knows,
+      including people they trust.
+    </p>
+
+    <div class="sv-grid">
+
+      <article class="sv-card">
+        <h3>Sexual harassment</h3>
+        <p>
+          Unwanted sexual comments, advances, gestures, requests,
+          messages or conduct that make someone feel intimidated,
+          humiliated, uncomfortable or unsafe. It may happen in person
+          or online.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Sexual assault</h3>
+        <p>
+          Sexual contact or activity involving a person without their consent.
+          Consent cannot be assumed simply because someone is silent,
+          afraid, intoxicated, pressured or unable to make a free decision.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Sexual abuse</h3>
+        <p>
+          Sexual behaviour or contact imposed on someone through force,
+          manipulation, exploitation, threats, unequal power or an inability
+          to freely consent. Abuse can occur repeatedly or as a single incident.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Sexual exploitation</h3>
+        <p>
+          Taking advantage of someone for sexual purposes through manipulation,
+          coercion, vulnerability, unequal power or other exploitative means.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONSENT -->
+  <section class="sv-section sv-container">
+    <div class="sv-label">02 · CONSENT</div>
+
+    <h2 class="sv-section-title">Consent is not a guessing game.</h2>
+
+    <p class="sv-section-text">
+      Consent means a freely given agreement to participate in a particular
+      activity. It must not be obtained through fear, threats, pressure,
+      manipulation or force.
+    </p>
+
+    <div class="sv-highlight">
+      <h2>No one owes anyone access to their body.</h2>
+      <p>
+        Being in a relationship, being married, having consented before,
+        dressing a certain way, flirting, accepting a gift or being physically
+        close to someone does not automatically mean consent to sexual activity.
+      </p>
+    </div>
+
+    <div class="sv-grid">
+
+      <article class="sv-card">
+        <h3>Consent is freely given</h3>
+        <p>
+          A person should be able to say yes or no without being threatened,
+          pressured, manipulated or made to fear consequences.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Consent is specific</h3>
+        <p>
+          Agreeing to one activity does not mean agreeing to another.
+          Permission for one thing is not permission for everything.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Consent can change</h3>
+        <p>
+          Anyone can change their mind or withdraw consent at any time.
+          A previous yes does not remove the right to say no later.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Silence is not consent</h3>
+        <p>
+          Free agreement should not be assumed from silence, freezing,
+          fear, lack of resistance or a person's inability to respond.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- RECOGNISING HARASSMENT -->
+  <section class="sv-section sv-container">
+    <div class="sv-label">03 · RECOGNITION</div>
+
+    <h2 class="sv-section-title">What can sexual harassment look like?</h2>
+
+    <p class="sv-section-text">
+      Harassment is not always loud, physical or obvious to other people.
+      It can involve repeated behaviour, a single serious incident,
+      misuse of authority or actions that cross someone's boundaries.
+    </p>
+
+    <div class="sv-list">
+
+      <div class="sv-list-item">
+        <h3>Unwanted sexual comments</h3>
+        <p>
+          Remarks about someone's body, sexual jokes directed at them,
+          persistent comments about their sexual life or unwanted sexual questions.
+        </p>
+      </div>
+
+      <div class="sv-list-item">
+        <h3>Unwanted touching</h3>
+        <p>
+          Touching, grabbing, kissing or other physical contact that someone
+          has not agreed to.
+        </p>
+      </div>
+
+      <div class="sv-list-item">
+        <h3>Repeated unwanted advances</h3>
+        <p>
+          Continuing to pursue someone sexually after they have said no,
+          shown discomfort or made clear that they are not interested.
+        </p>
+      </div>
+
+      <div class="sv-list-item">
+        <h3>Abuse of power</h3>
+        <p>
+          Using authority, grades, employment, money, opportunities, housing
+          or access to resources to demand sexual attention or favours.
+        </p>
+      </div>
+
+      <div class="sv-list-item">
+        <h3>Digital sexual harassment</h3>
+        <p>
+          Sending unsolicited sexual content, sexualising someone without
+          permission, making threatening sexual comments or repeatedly
+          contacting someone with unwanted sexual messages.
+        </p>
+      </div>
+
+      <div class="sv-list-item">
+        <h3>Image-based abuse</h3>
+        <p>
+          Sharing, threatening to share, or distributing private sexual images
+          or recordings without the person's permission.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POWER AND PRESSURE -->
+  <section class="sv-section sv-container">
+    <div class="sv-label">04 · POWER & PRESSURE</div>
+
+    <h2 class="sv-section-title">When saying no doesn't feel safe.</h2>
+
+    <p class="sv-section-text">
+      Sometimes people are pressured into sexual situations because another
+      person has power over them, or because they fear losing something
+      important. The absence of physical force does not mean a situation
+      was freely chosen.
+    </p>
+
+    <div class="sv-grid">
+
+      <article class="sv-card">
+        <h3>Threats</h3>
+        <p>
+          Threatening harm, punishment, exposure, abandonment or other
+          consequences if someone refuses.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Manipulation</h3>
+        <p>
+          Using guilt, emotional pressure, lies or repeated persuasion
+          to make someone agree to something they do not want.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Power imbalance</h3>
+        <p>
+          Exploiting a position as a teacher, employer, caregiver,
+          authority figure or someone controlling access to opportunities.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Fear or incapacitation</h3>
+        <p>
+          Taking advantage of someone who is asleep, unconscious,
+          severely intoxicated, frightened or unable to freely decide.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- IF IT HAPPENS TO YOU -->
+  <section class="sv-section sv-container">
+    <div class="sv-label">05 · SEEKING SUPPORT</div>
+
+    <h2 class="sv-section-title">If this happens to you.</h2>
+
+    <p class="sv-section-text">
+      There is no perfect way to react to sexual harassment or violence.
+      People may freeze, comply, run, fight, become confused or feel
+      unable to speak. These reactions do not make what happened their fault.
+    </p>
+
+    <div class="sv-steps">
+
+      <div class="sv-step">
+        <div>
+          <h3>Prioritise your immediate safety</h3>
+          <p>
+            If possible, move away from the person and towards a safer place.
+            Seek help from someone nearby if you are in immediate danger.
+          </p>
+        </div>
+      </div>
+
+      <div class="sv-step">
+        <div>
+          <h3>Reach someone you trust</h3>
+          <p>
+            Consider contacting a trusted friend, family member, counsellor,
+            healthcare professional, safeguarding officer or support organisation.
+            Choose someone who will take you seriously and respect your safety.
+          </p>
+        </div>
+      </div>
+
+      <div class="sv-step">
+        <div>
+          <h3>Consider medical care</h3>
+          <p>
+            If sexual contact or assault occurred, a healthcare professional
+            can discuss injuries, pregnancy prevention, STI prevention and
+            testing, and other care. Some care is time-sensitive, so seeking
+            help as soon as you can may be beneficial.
+          </p>
+        </div>
+      </div>
+
+      <div class="sv-step">
+        <div>
+          <h3>Preserve evidence if you wish</h3>
+          <p>
+            If you are considering making a report, messages, screenshots,
+            dates, photographs or other records may be helpful. Do not put
+            yourself at risk trying to collect evidence. You can still seek
+            support even if you have no evidence.
+          </p>
+        </div>
+      </div>
+
+      <div class="sv-step">
+        <div>
+          <h3>Make your own decisions about reporting</h3>
+          <p>
+            Depending on your age, location, immediate safety and applicable
+            safeguarding obligations, reporting options may differ.
+            A qualified local support professional can help you understand
+            your choices.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUPPORTING SOMEONE -->
+  <section class="sv-section sv-container">
+    <div class="sv-label">06 · SUPPORTING SOMEONE</div>
+
+    <h2 class="sv-section-title">When someone tells you what happened.</h2>
+
+    <p class="sv-section-text">
+      Disclosure can be difficult. The way someone is received may influence
+      whether they feel safe seeking further help. You do not need to know
+      every answer to respond with care.
+    </p>
+
+    <div class="sv-grid">
+
+      <article class="sv-card">
+        <h3>Listen without judgment</h3>
+        <p>
+          Let them speak at their own pace. Avoid interrupting,
+          questioning their decisions or demanding details.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Believe and reassure</h3>
+        <p>
+          You can say: “I'm sorry this happened to you.”
+          “Thank you for telling me.” “I believe you.”
+          “This isn't your fault.”
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Don't take control</h3>
+        <p>
+          Ask what they need. Avoid forcing them to report, confront the person,
+          tell others or make decisions before they are ready, while keeping
+          immediate safety and applicable safeguarding duties in mind.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>Help them find support</h3>
+        <p>
+          Offer to accompany them to a healthcare provider, counsellor,
+          trusted safeguarding officer or appropriate support service,
+          if they want you to.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- WHAT NOT TO SAY -->
+  <section class="sv-section sv-container">
+    <div class="sv-label">07 · LET'S END THE BLAME</div>
+
+    <h2 class="sv-section-title">Things survivors should never have to hear.</h2>
+
+    <div class="sv-grid">
+
+      <article class="sv-card">
+        <h3>“Why were you there?”</h3>
+        <p>
+          Being somewhere, attending an event or going out does not make
+          a person responsible for someone else's violence.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>“Why didn't you fight?”</h3>
+        <p>
+          Fear, shock and freezing are common responses to threatening
+          situations. Resistance is not a requirement for a person's
+          experience to matter.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>“But you know him.”</h3>
+        <p>
+          Sexual harm can be committed by someone familiar, a partner,
+          a friend, a relative or someone trusted.
+        </p>
+      </article>
+
+      <article class="sv-card">
+        <h3>“You should have known better.”</h3>
+        <p>
+          Responsibility belongs to the person who chose to violate
+          another person's boundaries, not the person who experienced it.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section class="sv-section sv-container">
+    <div class="sv-support-box">
+      <div class="sv-label">YOU DO NOT HAVE TO NAVIGATE THIS ALONE</div>
+
+      <h2>Support should be safe, respectful and accessible.</h2>
+
+      <p>
+        If you are looking for help, try to reach a trusted person or a
+        qualified local healthcare, counselling, safeguarding or sexual
+        violence support service. If you are in immediate danger, seek
+        emergency assistance or move to a safer place if you can.
+      </p>
+
+      <p>
+        You deserve to be listened to without blame, pressure, humiliation
+        or discrimination.
+      </p>
+    </div>
+
+    <div class="sv-disclaimer">
+      <strong>MATONI notice:</strong> This page is educational and does not
+      provide emergency response, legal representation, clinical care or
+      a staffed reporting service. MATONI's HERGUARD reporting and
+      referral services are not currently operational. Information on this
+      page is not a substitute for qualified, local professional support.
+    </div>
+
+    <a href="guard.html" class="sv-back">
+      ← Back to HERGUARD
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h2>MATONI</h2>
+          <p>Health. Knowledge. Dignity.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="learn.html">HERBODY</a>
+          <a href="community.html">Community</a>
+          <a href="ask.html">Ask MATONI</a>
+          <a href="research.html">HERRESEARCH</a>
+          <a href="guard.html">HERGUARD</a>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        © MATONI. Built around dignity, knowledge and care.
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="script.js?v=7"></script>
+
+</body>
+</html>
