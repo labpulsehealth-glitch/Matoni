@@ -3,856 +3,592 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="MATONI HERGUARD envisions safer pathways, protection, dignity and support for women and girls experiencing abuse, violence or exploitation.">
-
+  <meta name="description" content="HERGUARD by MATONI — safety, dignity, rights, protection and support for women and girls.">
   <title>HERGUARD | MATONI</title>
-
   <link rel="stylesheet" href="style.css">
+  <style>
+    .guard-home {
+      overflow: hidden;
+      background: #f8f3ed;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    .guard-home .guard-wrap {
+      width: min(1160px, 91%);
+      margin: auto;
+    }
+
+    .guard-home .guard-hero {
+      padding: 90px 0 75px;
+      position: relative;
+    }
+
+    .guard-home .guard-hero-inner {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .guard-home .guard-kicker {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #92516b;
+      margin-bottom: 22px;
+    }
+
+    .guard-home .guard-hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 8vw, 95px);
+      line-height: .98;
+      color: #542b3d;
+      font-weight: 500;
+      margin: 0 0 25px;
+    }
+
+    .guard-home .guard-hero h1 span {
+      color: #b16c86;
+      font-style: italic;
+    }
+
+    .guard-home .guard-hero-text {
+      max-width: 550px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #6d5b60;
+    }
+
+    .guard-home .guard-hero-actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .guard-home .guard-btn {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 23px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .guard-home .guard-btn-primary {
+      background: #71354e;
+      color: #fffaf7;
+    }
+
+    .guard-home .guard-btn-primary:hover {
+      background: #54283b;
+      transform: translateY(-2px);
+    }
+
+    .guard-home .guard-btn-secondary {
+      border: 1px solid #c8a8b5;
+      color: #71354e;
+      background: transparent;
+    }
+
+    .guard-home .guard-btn-secondary:hover {
+      background: #efe3e6;
+    }
+
+    .guard-home .guard-visual {
+      min-height: 390px;
+      border-radius: 220px 220px 28px 28px;
+      background:
+        radial-gradient(circle at 30% 25%, #e9cbd4 0, transparent 35%),
+        linear-gradient(145deg, #dfc0cb, #b77e96);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .guard-home .guard-visual::before {
+      content: "";
+      width: 240px;
+      height: 240px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .guard-home .guard-visual::after {
+      content: "";
+      width: 310px;
+      height: 310px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .guard-home .guard-visual-text {
+      position: relative;
+      z-index: 1;
+      max-width: 270px;
+      text-align: center;
+      color: #542b3d;
+    }
+
+    .guard-home .guard-visual-text .symbol {
+      font-size: 60px;
+      display: block;
+      margin-bottom: 15px;
+      font-family: serif;
+    }
+
+    .guard-home .guard-visual-text p {
+      font-family: "Playfair Display", serif;
+      font-size: 29px;
+      line-height: 1.3;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .guard-home .guard-section {
+      padding: 75px 0;
+    }
+
+    .guard-home .guard-section-heading {
+      max-width: 650px;
+      margin-bottom: 38px;
+    }
+
+    .guard-home .guard-section-heading .mini {
+      color: #92516b;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+
+    .guard-home .guard-section-heading h2 {
+      font-family: "Playfair Display", serif;
+      color: #542b3d;
+      font-weight: 500;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.15;
+      margin: 0 0 17px;
+    }
+
+    .guard-home .guard-section-heading p {
+      color: #75636a;
+      font-size: 15px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .guard-home .guard-topics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .guard-home .guard-topic {
+      background: #fffdf9;
+      border: 1px solid #eadfe1;
+      border-radius: 20px;
+      padding: 27px;
+      min-height: 245px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+
+    .guard-home .guard-topic:hover {
+      transform: translateY(-5px);
+      border-color: #cba4b3;
+      box-shadow: 0 12px 32px rgba(84, 43, 61, .07);
+    }
+
+    .guard-home .guard-topic-icon {
+      width: 46px;
+      height: 46px;
+      background: #f1e5e9;
+      color: #71354e;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: serif;
+      font-size: 22px;
+      margin-bottom: 21px;
+    }
+
+    .guard-home .guard-topic h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      color: #542b3d;
+      font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    .guard-home .guard-topic p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: #796970;
+      margin: 0 0 22px;
+    }
+
+    .guard-home .guard-topic-link {
+      margin-top: auto;
+      text-decoration: none;
+      color: #8c4965;
+      font-weight: 700;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guard-home .guard-topic-link:hover {
+      color: #542b3d;
+    }
+
+    .guard-home .guard-rights {
+      background: #71354e;
+      border-radius: 28px;
+      padding: 52px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0 70px;
+    }
+
+    .guard-home .guard-rights .rights-label {
+      color: #e5c5d1;
+      letter-spacing: 2px;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .guard-home .guard-rights h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      color: #fff8f4;
+      font-size: clamp(32px, 4vw, 48px);
+      margin: 0 0 15px;
+    }
+
+    .guard-home .guard-rights p {
+      color: #f0dfe5;
+      font-size: 14px;
+      line-height: 1.85;
+      max-width: 620px;
+      margin: 0;
+    }
+
+    .guard-home .guard-rights .guard-btn {
+      white-space: nowrap;
+      background: #f8f3ed;
+      color: #71354e;
+    }
+
+    .guard-home .guard-commitment {
+      padding: 35px 0 75px;
+      text-align: center;
+    }
+
+    .guard-home .guard-commitment h2 {
+      font-family: "Playfair Display", serif;
+      color: #542b3d;
+      font-size: 35px;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .guard-home .guard-commitment p {
+      max-width: 740px;
+      margin: auto;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #75636a;
+    }
+
+    .guard-home .guard-commitment strong {
+      color: #71354e;
+    }
+
+    @media (max-width: 850px) {
+      .guard-home .guard-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .guard-home .guard-visual {
+        min-height: 320px;
+        max-width: 470px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .guard-home .guard-topics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guard-home .guard-rights {
+        grid-template-columns: 1fr;
+        padding: 35px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .guard-home .guard-hero {
+        padding: 60px 0 50px;
+      }
+
+      .guard-home .guard-hero h1 {
+        font-size: 58px;
+      }
+
+      .guard-home .guard-visual {
+        min-height: 280px;
+      }
+
+      .guard-home .guard-topics {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .guard-home .guard-topic {
+        min-height: 210px;
+        padding: 23px;
+      }
+
+      .guard-home .guard-section {
+        padding: 50px 0;
+      }
+
+      .guard-home .guard-rights {
+        padding: 28px 23px;
+        border-radius: 22px;
+      }
+
+      .guard-home .guard-commitment h2 {
+        font-size: 29px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .guard-home * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="guard-home">
 
-<header class="header">
-  <a href="index.html" class="logo">MATONI</a>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">MATONI</a>
 
-  <button class="menu-button"
-          type="button"
-          onclick="toggleMenu()"
-          aria-label="Open navigation"
-          aria-controls="navigation"
-          aria-expanded="false">
-    ☰
-  </button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+          ☰
+        </button>
 
-  <nav id="navigation">
-    <a href="index.html">Home</a>
-    <a href="learn.html">HERBODY</a>
-    <a href="community.html">Community</a>
-    <a href="ask.html">Ask MATONI</a>
-    <a href="research.html">HERRESEARCH</a>
-    <a href="guard.html" aria-current="page">HERGUARD</a>
-    <a href="support.html">Support</a>
-  </nav>
-</header>
+        <nav class="nav" id="navMenu">
+          <a href="index.html">Home</a>
+          <a href="learn.html">HERBODY</a>
+          <a href="community.html">Community</a>
+          <a href="ask.html">Ask MATONI</a>
+          <a href="research.html">HERRESEARCH</a>
+          <a href="guard.html" class="active">HERGUARD</a>
+          <a href="support.html">Support</a>
+        </nav>
+      </div>
+    </header>
 
+    <!-- HERO -->
+    <section class="guard-hero guard-wrap">
+      <div class="guard-hero-inner">
 
-<main id="main-content">
+        <div>
+          <div class="guard-kicker">MATONI · SAFETY & DIGNITY</div>
 
-  <!-- HERO -->
+          <h1>
+            HER<span>GUARD</span>
+          </h1>
 
-  <section class="guard-hero">
-
-    <span class="section-eyebrow">
-      SAFETY • PROTECTION • DIGNITY
-    </span>
-
-    <h1>HERGUARD</h1>
-
-    <p class="guard-tagline">
-      Your safety matters. Your voice matters.
-      You deserve to be protected.
-    </p>
-
-    <p>
-      No girl or woman should have to face violence,
-      exploitation, abuse or intimidation alone.
-      Everyone deserves to be treated with dignity,
-      believed when they seek help and supported
-      without judgement.
-    </p>
-
-    <div class="guard-hero-actions">
-      <a href="#get-help" class="guard-button">
-        Find help and support
-      </a>
-
-      <a href="#know-your-rights" class="guard-secondary-button">
-        Know your rights
-      </a>
-    </div>
-
-  </section>
-
-
-  <!-- OUR PURPOSE -->
-
-  <section class="guard-introduction">
-    <div class="guard-container">
-
-      <span class="section-eyebrow">WHY HERGUARD EXISTS</span>
-
-      <h2>Safety should never be a privilege.</h2>
-
-      <p>
-        Violence, harassment, coercion, exploitation and
-        abuse can happen in homes, schools, workplaces,
-        relationships, communities and online spaces.
-      </p>
-
-      <p>
-        Sometimes the people who should provide protection
-        are the very people causing harm. Sometimes survivors
-        are ignored, blamed, threatened or discouraged from
-        seeking help.
-      </p>
-
-      <p>
-        HERGUARD is MATONI's proposed protection and
-        safeguarding division. Its purpose is to develop
-        safer pathways through which girls and women can
-        access information, support, referrals and
-        appropriate protection services.
-      </p>
-
-      <p>
-        We believe that seeking help should never require
-        someone to surrender their dignity, privacy or voice.
-      </p>
-
-    </div>
-  </section>
-
-
-  <!-- GET HELP -->
-
-  <section class="guard-help" id="get-help">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">YOU DO NOT HAVE TO FACE IT ALONE</span>
-
-      <h2>What kind of help are you looking for?</h2>
-
-      <p>
-        Different situations require different kinds of
-        support. These are some of the pathways HERGUARD
-        intends to make easier to understand and access.
-      </p>
-
-      <div class="guard-grid">
-
-        <article class="guard-card">
-          <span class="guard-card-number">01</span>
-
-          <h3>Sexual violence and harassment</h3>
-
-          <p>
-            Information and pathways to appropriate medical,
-            psychosocial, legal and protection services for
-            people experiencing sexual violence or harassment.
+          <p class="guard-hero-text">
+            Every girl and woman deserves to feel safe, to be heard,
+            to understand her rights, and to live without fear.
+            HERGUARD exists to make knowledge, protection and support
+            easier to find.
           </p>
 
-          <a href="#sexual-violence">
-            Explore this topic
-          </a>
-        </article>
+          <div class="guard-hero-actions">
+            <a href="#topics" class="guard-btn guard-btn-primary">
+              Explore safety topics
+            </a>
 
+            <a href="guard-rights.html" class="guard-btn guard-btn-secondary">
+              Know your rights
+            </a>
+          </div>
+        </div>
 
-        <article class="guard-card">
-          <span class="guard-card-number">02</span>
-
-          <h3>Forced and child marriage</h3>
-
-          <p>
-            Information about coercion, forced marriage,
-            child marriage, available protections and
-            potential routes to seek assistance.
-          </p>
-
-          <a href="#forced-marriage">
-            Explore this topic
-          </a>
-        </article>
-
-
-        <article class="guard-card">
-          <span class="guard-card-number">03</span>
-
-          <h3>Bullying and body shaming</h3>
-
-          <p>
-            Support and guidance for people experiencing
-            intimidation, humiliation, discrimination,
-            body shaming or repeated harassment.
-          </p>
-
-          <a href="#bullying">
-            Explore this topic
-          </a>
-        </article>
-
-
-        <article class="guard-card">
-          <span class="guard-card-number">04</span>
-
-          <h3>Abuse at home or in relationships</h3>
-
-          <p>
-            Information about emotional, physical,
-            psychological, financial and other forms
-            of abuse within families and relationships.
-          </p>
-
-          <a href="#relationship-abuse">
-            Explore this topic
-          </a>
-        </article>
-
-
-        <article class="guard-card">
-          <span class="guard-card-number">05</span>
-
-          <h3>Online abuse and exploitation</h3>
-
-          <p>
-            Guidance about cyberbullying, blackmail,
-            image-based abuse, stalking, grooming,
-            threats and online exploitation.
-          </p>
-
-          <a href="#online-abuse">
-            Explore this topic
-          </a>
-        </article>
-
-
-        <article class="guard-card">
-          <span class="guard-card-number">06</span>
-
-          <h3>Survivor support</h3>
-
-          <p>
-            Understand the different forms of support
-            survivors may need, including medical care,
-            emotional support, legal guidance and
-            safe referrals.
-          </p>
-
-          <a href="#survivor-support">
-            Explore this topic
-          </a>
-        </article>
+        <div class="guard-visual">
+          <div class="guard-visual-text">
+            <span class="symbol">✳</span>
+            <p>Your safety.<br>Your dignity.<br>Your voice.</p>
+          </div>
+        </div>
 
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SEXUAL VIOLENCE -->
-
-  <section class="guard-topic" id="sexual-violence">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">UNDERSTANDING VIOLENCE</span>
-
-      <h2>Sexual violence and harassment</h2>
-
-      <p>
-        Sexual violence includes acts or attempts involving
-        sexual activity without freely given consent.
-        It can occur in relationships, families, institutions,
-        workplaces and other settings.
-      </p>
-
-      <p>
-        Harassment may involve unwanted sexual comments,
-        advances, intimidation, coercion or other
-        inappropriate conduct.
-      </p>
-
-      <h3>Important things to understand</h3>
-
-      <ul class="guard-list">
-        <li>Consent must be freely given.</li>
-        <li>Silence or fear does not mean consent.</li>
-        <li>A person's clothing, relationship status or past experiences do not justify abuse.</li>
-        <li>Survivors are not responsible for the actions of perpetrators.</li>
-        <li>Medical attention may be important even when there are no visible injuries.</li>
-        <li>Survivors should be treated with dignity and without blame.</li>
-      </ul>
-
-      <p>
-        Anyone experiencing sexual violence may need
-        immediate safety assistance, medical attention,
-        emotional support or access to appropriate
-        protection and legal services.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- FORCED AND CHILD MARRIAGE -->
-
-  <section class="guard-topic guard-topic-alt" id="forced-marriage">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">PROTECTING CHOICE AND CHILDHOOD</span>
-
-      <h2>Forced and child marriage</h2>
-
-      <p>
-        Marriage should never be imposed through threats,
-        intimidation, violence, manipulation or coercion.
-      </p>
-
-      <p>
-        Child marriage can interrupt education, expose
-        children to serious health risks and restrict
-        their freedom, development and future opportunities.
-      </p>
-
-      <h3>Warning signs may include:</h3>
-
-      <ul class="guard-list">
-        <li>Threats or pressure to marry against one's wishes.</li>
-        <li>Plans to remove a child from school for marriage.</li>
-        <li>Restriction of movement or communication.</li>
-        <li>Threats of violence or punishment for refusing marriage.</li>
-        <li>Travel arrangements made without a child's free agreement.</li>
-      </ul>
-
-      <p>
-        Anyone facing forced marriage or concerned about
-        a child at risk should seek assistance from
-        appropriate child-protection services and trusted
-        safeguarding professionals.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- BULLYING -->
-
-  <section class="guard-topic" id="bullying">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">DIGNITY WITHOUT EXCEPTION</span>
-
-      <h2>Bullying and body shaming</h2>
-
-      <p>
-        Nobody deserves to be humiliated because of
-        their appearance, body shape, skin condition,
-        disability, background, health condition or
-        personal circumstances.
-      </p>
-
-      <p>
-        Bullying can take place in schools, homes,
-        workplaces, communities and digital spaces.
-        It may involve repeated insults, threats,
-        exclusion, intimidation or public humiliation.
-      </p>
-
-      <h3>Remember:</h3>
-
-      <ul class="guard-list">
-        <li>Your body is not an invitation for humiliation.</li>
-        <li>Disability and health conditions should never be used to ridicule someone.</li>
-        <li>Online harassment can have serious real-world consequences.</li>
-        <li>Seeking help is not weakness.</li>
-      </ul>
-
-    </div>
-
-  </section>
-
-
-  <!-- RELATIONSHIP ABUSE -->
-
-  <section class="guard-topic guard-topic-alt" id="relationship-abuse">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">RECOGNISING HARM</span>
-
-      <h2>Abuse at home or in relationships</h2>
-
-      <p>
-        Abuse is not always physical. It can involve
-        controlling behaviour, threats, isolation,
-        humiliation, financial control, intimidation
-        and emotional manipulation.
-      </p>
-
-      <h3>Possible warning signs include:</h3>
-
-      <ul class="guard-list">
-        <li>Someone constantly monitors or controls your movements.</li>
-        <li>You are threatened when you disagree or attempt to leave.</li>
-        <li>Someone controls your money, education or access to other people.</li>
-        <li>You are repeatedly insulted, humiliated or intimidated.</li>
-        <li>You are pressured into sexual activity or other unwanted actions.</li>
-      </ul>
-
-      <p>
-        If you recognise these experiences, you deserve
-        support. You do not have to prove that your
-        situation is serious enough before seeking help.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- ONLINE ABUSE -->
-
-  <section class="guard-topic" id="online-abuse">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">SAFETY IN DIGITAL SPACES</span>
-
-      <h2>Online abuse and exploitation</h2>
-
-      <p>
-        Digital spaces should not become places where
-        people are threatened, manipulated, exploited
-        or humiliated.
-      </p>
-
-      <h3>Online abuse may include:</h3>
-
-      <ul class="guard-list">
-        <li>Cyberbullying and targeted harassment.</li>
-        <li>Threats to publish private images or information.</li>
-        <li>Blackmail and sexual extortion.</li>
-        <li>Unwanted sexual messages or explicit material.</li>
-        <li>Stalking, impersonation and account harassment.</li>
-        <li>Grooming and exploitation of children.</li>
-      </ul>
-
-      <p>
-        Where safe to do so, preserve relevant evidence,
-        avoid confronting a threatening person alone,
-        and seek help from trusted professionals and
-        appropriate reporting channels.
-      </p>
-
-      <p>
-        Do not share intimate images further in an attempt
-        to prove that abuse occurred. For children,
-        suspected sexual exploitation should be handled
-        through appropriate child-protection channels.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- SURVIVOR SUPPORT -->
-
-  <section class="guard-support" id="survivor-support">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">SUPPORT WITHOUT JUDGEMENT</span>
-
-      <h2>Survivors deserve care, not blame.</h2>
-
-      <p>
-        People who have experienced abuse may need
-        different forms of assistance. Support should
-        respect their choices, safety, privacy and dignity.
-      </p>
-
-      <div class="guard-grid">
-
-        <article class="guard-card">
-          <h3>Medical support</h3>
+    </section>
+
+    <!-- TOPICS -->
+    <section class="guard-section" id="topics">
+      <div class="guard-wrap">
+
+        <div class="guard-section-heading">
+          <div class="mini">Knowledge is protection</div>
+          <h2>You deserve to know.<br>You deserve to be safe.</h2>
           <p>
-            Access to qualified healthcare professionals
-            for appropriate assessment, treatment,
-            documentation and follow-up care.
+            Explore the issues that affect safety, freedom, dignity and wellbeing.
+            Each topic has its own space, so you can read privately and
+            explore only what you need.
           </p>
-        </article>
+        </div>
 
-        <article class="guard-card">
-          <h3>Psychological support</h3>
-          <p>
-            Access to trained counsellors, mental health
-            professionals and appropriate psychosocial care.
-          </p>
-        </article>
+        <div class="guard-topics">
 
-        <article class="guard-card">
-          <h3>Legal guidance</h3>
-          <p>
-            Information about legal rights and access
-            to qualified legal professionals and
-            appropriate protection services.
-          </p>
-        </article>
+          <article class="guard-topic">
+            <div class="guard-topic-icon">✳</div>
+            <h3>Sexual Violence & Harassment</h3>
+            <p>Understand consent, sexual harassment, assault, boundaries and what support may be available.</p>
+            <a href="guard-sexual-violence.html" class="guard-topic-link">
+              Explore this topic <span>↗</span>
+            </a>
+          </article>
 
-        <article class="guard-card">
-          <h3>Protection and safe accommodation</h3>
+          <article class="guard-topic">
+            <div class="guard-topic-icon">◇</div>
+            <h3>Forced & Child Marriage</h3>
+            <p>Learn about forced marriage, child marriage, coercion, warning signs and seeking help.</p>
+            <a href="guard-child-marriage.html" class="guard-topic-link">
+              Explore this topic <span>↗</span>
+            </a>
+          </article>
+
+          <article class="guard-topic">
+            <div class="guard-topic-icon">♡</div>
+            <h3>Bullying & Body Shaming</h3>
+            <p>Explore bullying, humiliation, body-based insults, emotional harm and how to respond.</p>
+            <a href="guard-bullying.html" class="guard-topic-link">
+              Explore this topic <span>↗</span>
+            </a>
+          </article>
+
+          <article class="guard-topic">
+            <div class="guard-topic-icon">⌘</div>
+            <h3>Relationship Abuse</h3>
+            <p>Recognise controlling behaviour, manipulation, emotional abuse and unhealthy relationship patterns.</p>
+            <a href="guard-relationship-abuse.html" class="guard-topic-link">
+              Explore this topic <span>↗</span>
+            </a>
+          </article>
+
+          <article class="guard-topic">
+            <div class="guard-topic-icon">◎</div>
+            <h3>Online Abuse & Exploitation</h3>
+            <p>Understand digital harassment, blackmail, image abuse, grooming and online safety.</p>
+            <a href="guard-online-safety.html" class="guard-topic-link">
+              Explore this topic <span>↗</span>
+            </a>
+          </article>
+
+          <article class="guard-topic">
+            <div class="guard-topic-icon">✧</div>
+            <h3>Survivor Support</h3>
+            <p>Information for anyone navigating harm, supporting a survivor or trying to find a safe next step.</p>
+            <a href="guard-survivor-support.html" class="guard-topic-link">
+              Explore this topic <span>↗</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KNOW YOUR RIGHTS -->
+    <section class="guard-wrap">
+      <div class="guard-rights">
+
+        <div>
+          <div class="rights-label">Knowledge. Rights. Agency.</div>
+
+          <h2>Know your rights.</h2>
+
           <p>
-            Where necessary, referrals to appropriate
-            protection services and verified safe
-            accommodation providers.
+            Your rights matter. Learn about dignity, consent, personal safety,
+            equality, protection and where to begin when those rights are violated.
           </p>
-        </article>
+        </div>
+
+        <a href="guard-rights.html" class="guard-btn">
+          Explore your rights ↗
+        </a>
 
       </div>
+    </section>
 
-    </div>
-
-  </section>
-
-
-  <!-- FIND TRUSTED SUPPORT -->
-
-  <section class="guard-topic guard-topic-alt" id="trusted-support">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">FINDING THE RIGHT HELP</span>
-
-      <h2>Find trusted support.</h2>
+    <!-- COMMITMENT -->
+    <section class="guard-wrap guard-commitment">
+      <h2>You are not less deserving of safety.</h2>
 
       <p>
-        A person experiencing abuse may need help from
-        several different services. Depending on the
-        situation, these may include:
+        We believe no one should be blamed for experiencing abuse,
+        silenced for speaking up, or denied dignity because of their age,
+        circumstances, background or identity.
+        <strong>Your experience matters. Your safety matters.
+        You matter.</strong>
       </p>
+    </section>
 
-      <ul class="guard-list">
-        <li>Hospitals and qualified healthcare providers.</li>
-        <li>Sexual assault referral centres.</li>
-        <li>Child-protection and social welfare services.</li>
-        <li>Qualified legal aid providers.</li>
-        <li>Verified domestic violence and survivor support organisations.</li>
-        <li>Appropriate law enforcement and protection authorities.</li>
-        <li>Qualified mental health and psychosocial professionals.</li>
-      </ul>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <h2>MATONI</h2>
+            <p>Health. Knowledge. Dignity.</p>
+          </div>
 
-      <p>
-        MATONI intends to develop a directory of verified
-        support services with relevant locations, contact
-        details, service descriptions and referral information.
-      </p>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="learn.html">HERBODY</a>
+            <a href="community.html">Community</a>
+            <a href="ask.html">Ask MATONI</a>
+            <a href="research.html">HERRESEARCH</a>
+            <a href="guard.html">HERGUARD</a>
+          </div>
+        </div>
 
-      <div class="guard-feature-status">
-        The support directory is a planned feature.
-        A verified, active referral directory is not
-        currently available through this page.
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- KNOW YOUR RIGHTS -->
-
-  <section class="guard-topic" id="know-your-rights">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">KNOWLEDGE IS PART OF PROTECTION</span>
-
-      <h2>Know your rights.</h2>
-
-      <p>
-        Every person deserves dignity, personal safety
-        and protection from violence, exploitation
-        and discrimination.
-      </p>
-
-      <p>
-        Women and girls should have access to understandable
-        information about their rights, available protection
-        systems and the services that may assist them.
-      </p>
-
-      <h3>Our proposed rights and protection resource will cover:</h3>
-
-      <ul class="guard-list">
-        <li>Protection from violence and abuse.</li>
-        <li>Child safeguarding and protection.</li>
-        <li>Consent and bodily autonomy.</li>
-        <li>Access to appropriate healthcare.</li>
-        <li>Privacy and confidentiality.</li>
-        <li>Access to legal information and assistance.</li>
-        <li>Protection from harassment and exploitation.</li>
-      </ul>
-
-      <p>
-        Laws and protection procedures differ by location.
-        Legal information published by MATONI must be
-        reviewed against current applicable laws and
-        qualified local legal guidance.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- HOW HERGUARD WORKS -->
-
-  <section class="guard-process" id="how-herguard-works">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">OUR FUTURE RESPONSE MODEL</span>
-
-      <h2>What HERGUARD is working towards.</h2>
-
-      <p>
-        We do not want protection to end with a list of
-        telephone numbers. Our long-term vision is to
-        build a responsible support system that can
-        help people navigate the process of seeking
-        assistance.
-      </p>
-
-      <div class="guard-steps">
-
-        <article class="guard-step">
-          <span>01</span>
-          <h3>Reach out safely</h3>
-          <p>
-            A person can choose a suitable way to contact
-            the service and communicate their needs.
-          </p>
-        </article>
-
-        <article class="guard-step">
-          <span>02</span>
-          <h3>Understand the situation</h3>
-          <p>
-            A trained responder assesses urgency,
-            immediate safety concerns and the kind
-            of assistance requested.
-          </p>
-        </article>
-
-        <article class="guard-step">
-          <span>03</span>
-          <h3>Connect with appropriate support</h3>
-          <p>
-            The person is guided towards suitable
-            healthcare, protection, legal or
-            psychosocial services.
-          </p>
-        </article>
-
-        <article class="guard-step">
-          <span>04</span>
-          <h3>Follow up responsibly</h3>
-          <p>
-            Where consent and safe contact arrangements
-            allow, the service follows up to understand
-            whether the person has accessed support.
-          </p>
-        </article>
-
-      </div>
-
-      <div class="guard-feature-status">
-        This is a proposed response model.
-        HERGUARD does not currently operate a staffed
-        reporting or emergency response service.
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SAFE EXIT -->
-
-  <section class="guard-safe-exit" id="safe-exit">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">YOUR SAFETY COMES FIRST</span>
-
-      <h2>Think carefully about your safety.</h2>
-
-      <p>
-        If someone monitors your phone, messages,
-        internet activity or movements, seeking help
-        may require additional safety planning.
-      </p>
-
-      <ul class="guard-list">
-        <li>Use a safer device if you believe yours is monitored.</li>
-        <li>Consider whether your browser history or messages can be seen by another person.</li>
-        <li>Contact someone you trust if doing so is safe.</li>
-        <li>Avoid announcing plans to leave an abusive situation if this could increase danger.</li>
-        <li>Seek guidance from qualified domestic violence or protection professionals when possible.</li>
-      </ul>
-
-      <p>
-        Leaving an abusive situation can sometimes increase
-        immediate danger. A safety plan should consider
-        the person's circumstances and risks.
-      </p>
-
-      <p>
-        This website cannot provide an emergency extraction,
-        transport or rescue service.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- REPORT ABUSE -->
-
-  <section class="guard-report" id="report-abuse">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">YOUR VOICE DESERVES TO BE HEARD</span>
-
-      <h2>Report abuse.</h2>
-
-      <p>
-        We envision a secure reporting pathway through
-        which individuals can request support, report
-        safeguarding concerns and communicate their
-        preferred method of contact.
-      </p>
-
-      <p>
-        The future system is intended to provide options
-        such as secure online reporting, telephone,
-        WhatsApp, SMS and email, subject to appropriate
-        security and operational arrangements.
-      </p>
-
-      <div class="guard-report-notice">
-        <h3>Reporting is not yet available.</h3>
-
-        <p>
-          This page does not currently collect abuse
-          reports or transmit information to a response
-          team. Please do not submit personal details,
-          survivor accounts or sensitive information
-          through this prototype.
-        </p>
-
-        <p>
-          If you or someone else is in immediate danger,
-          seek assistance from an appropriate local
-          emergency service or trusted protection
-          professional.
+        <p class="footer-bottom">
+          © MATONI. Built around dignity, knowledge and care.
         </p>
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- OUR COMMITMENT -->
-
-  <section class="guard-commitment">
-
-    <div class="guard-container">
-
-      <span class="section-eyebrow">THE MATONI COMMITMENT</span>
-
-      <h2>We believe every girl deserves protection.</h2>
-
-      <p>
-        No victim-blaming. No humiliation.
-        No discrimination. No exploitation.
-        No dismissal of someone's suffering.
-      </p>
-
-      <p>
-        We believe that protection should be accessible,
-        support should be compassionate and every person
-        should be treated with dignity.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- CURRENT STATUS -->
-
-  <section class="guard-status">
-
-    <div class="guard-container">
-
-      <h2>Where we are today</h2>
-
-      <p>
-        MATONI is developing the HERGUARD concept and
-        prototype. Its reporting system, trained response
-        team, verified referral network, emergency
-        pathways and survivor support programmes are
-        future developments.
-      </p>
-
-      <p>
-        This page provides general educational information.
-        It is not an emergency service, legal service,
-        clinical service or substitute for professional
-        safeguarding assistance.
-      </p>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-  <div class="footer-content">
-
-    <a href="index.html" class="logo">MATONI</a>
-
-    <p>
-      Knowledge. Dignity. Possibility.
-    </p>
-
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="learn.html">HERBODY</a>
-      <a href="research.html">HERRESEARCH</a>
-      <a href="guard.html">HERGUARD</a>
-      <a href="support.html">Support</a>
-    </div>
-
-    <p class="footer-note">
-      © 2026 MATONI. All rights reserved.
-    </p>
+    </footer>
 
   </div>
 
-</footer>
-
-<script src="script.js?v=7"></script>
+  <script src="script.js?v=7"></script>
 
 </body>
 </html>
