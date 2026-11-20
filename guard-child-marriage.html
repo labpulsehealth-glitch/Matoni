@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MATONI HERGUARD provides educational information about forced marriage, child marriage, safety, rights and seeking support.">
+  <title>Forced & Child Marriage | MATONI HERGUARD</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .cm-page {
+      background: #f8f3ed;
+      color: #4e3440;
+      padding-bottom: 35px;
+    }
+
+    .cm-page * {
+      box-sizing: border-box;
+    }
+
+    .cm-container {
+      width: min(1000px, 90%);
+      margin: auto;
+    }
+
+    .cm-breadcrumb {
+      padding-top: 26px;
+      color: #927b83;
+      font-size: 12px;
+    }
+
+    .cm-breadcrumb a {
+      color: #8b4c66;
+      text-decoration: none;
+    }
+
+    .cm-hero {
+      padding: 75px 0 55px;
+    }
+
+    .cm-eyebrow {
+      color: #965b75;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .cm-hero h1 {
+      font-family: "Playfair Display", serif;
+      color: #542b3d;
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 1.05;
+      font-weight: 500;
+      margin: 0 0 24px;
+    }
+
+    .cm-hero h1 span {
+      color: #b2768e;
+      font-style: italic;
+    }
+
+    .cm-lead {
+      max-width: 730px;
+      color: #76636a;
+      font-size: 15px;
+      line-height: 1.95;
+    }
+
+    .cm-soft-note {
+      margin-top: 30px;
+      padding: 22px 25px;
+      background: #f0e4e7;
+      border-left: 3px solid #9d617b;
+      border-radius: 0 14px 14px 0;
+      color: #634451;
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .cm-section {
+      padding: 45px 0;
+    }
+
+    .cm-heading {
+      font-family: "Playfair Display", serif;
+      color: #542b3d;
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.2;
+      font-weight: 500;
+      margin: 0 0 17px;
+    }
+
+    .cm-description {
+      color: #76636a;
+      font-size: 14px;
+      line-height: 1.9;
+      max-width: 780px;
+    }
+
+    .cm-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .cm-card {
+      background: #fffdf9;
+      border: 1px solid #eadfe1;
+      border-radius: 18px;
+      padding: 26px;
+      transition: .25s ease;
+    }
+
+    .cm-card:hover {
+      border-color: #cba4b3;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(84, 43, 61, .05);
+    }
+
+    .cm-card h3 {
+      font-family: "Playfair Display", serif;
+      color: #65364c;
+      font-weight: 500;
+      font-size: 23px;
+      margin: 0 0 12px;
+    }
+
+    .cm-card p {
+      color: #78676d;
+      font-size: 13px;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .cm-card ul {
+      padding-left: 19px;
+      margin: 13px 0 0;
+    }
+
+    .cm-card li {
+      color: #78676d;
+      font-size: 13px;
+      line-height: 1.85;
+      margin-bottom: 8px;
+    }
+
+    .cm-banner {
+      background: #71354e;
+      border-radius: 23px;
+      padding: 38px;
+      margin: 30px 0;
+    }
+
+    .cm-banner h2 {
+      font-family: "Playfair Display", serif;
+      color: #fff8f4;
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 16px;
+    }
+
+    .cm-banner p {
+      color: #f0dfe5;
+      font-size: 14px;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .cm-warning {
+      background: #fffdf9;
+      border: 1px solid #eadfe1;
+      border-radius: 18px;
+      padding: 26px;
+      margin-top: 25px;
+    }
+
+    .cm-warning h3 {
+      font-family: "Playfair Display", serif;
+      color: #65364c;
+      font-size: 23px;
+      font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    .cm-warning p {
+      color: #78676d;
+      font-size: 13px;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .cm-list {
+      display: grid;
+      gap: 15px;
+      margin-top: 28px;
+    }
+
+    .cm-list-item {
+      background: #fffdf9;
+      border: 1px solid #eadfe1;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .cm-list-item h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      color: #65364c;
+      font-weight: 500;
+      margin: 0 0 9px;
+    }
+
+    .cm-list-item p {
+      color: #78676d;
+      font-size: 13px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    /* HELP & REPORTING */
+
+    .cm-help-section {
+      padding: 55px 0;
+    }
+
+    .cm-help-box {
+      background: #eadbdc;
+      border-radius: 24px;
+      padding: 38px;
+    }
+
+    .cm-help-label {
+      color: #92516b;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .cm-help-box h2 {
+      font-family: "Playfair Display", serif;
+      color: #542b3d;
+      font-size: clamp(32px, 4vw, 45px);
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 17px;
+    }
+
+    .cm-help-box > p {
+      color: #6e5962;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .cm-help-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .cm-help-card {
+      background: #fffdf9;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .cm-help-card h3 {
+      font-family: "Playfair Display", serif;
+      color: #65364c;
+      font-weight: 500;
+      font-size: 21px;
+      margin: 0 0 10px;
+    }
+
+    .cm-help-card p {
+      color: #78676d;
+      font-size: 13px;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .cm-report-notice {
+      background: #71354e;
+      border-radius: 18px;
+      padding: 25px;
+      margin-top: 20px;
+    }
+
+    .cm-report-notice h3 {
+      font-family: "Playfair Display", serif;
+      color: #fff8f4;
+      font-weight: 500;
+      font-size: 25px;
+      margin: 0 0 12px;
+    }
+
+    .cm-report-notice p {
+      color: #f0dfe5;
+      font-size: 13px;
+      line-height: 1.9;
+      margin: 0;
+    }
+
+    .cm-support-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #71354e;
+      color: #fffaf7;
+      padding: 14px 23px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 22px;
+      transition: .2s;
+    }
+
+    .cm-support-button:hover {
+      background: #54283b;
+      transform: translateY(-2px);
+    }
+
+    .cm-back {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #71354e;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 14px 0;
+      margin-top: 20px;
+    }
+
+    .cm-disclaimer {
+      border-top: 1px solid #e4d6d9;
+      padding-top: 22px;
+      margin-top: 32px;
+      color: #8a777e;
+      font-size: 11px;
+      line-height: 1.85;
+    }
+
+    @media (max-width: 650px) {
+      .cm-hero {
+        padding: 52px 0 35px;
+      }
+
+      .cm-section {
+        padding: 34px 0;
+      }
+
+      .cm-grid,
+      .cm-help-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cm-card,
+      .cm-help-card {
+        padding: 23px;
+      }
+
+      .cm-banner,
+      .cm-help-box {
+        padding: 27px 23px;
+      }
+
+      .cm-banner h2 {
+        font-size: 28px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cm-page * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="cm-page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MATONI</a>
+
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="learn.html">HERBODY</a>
+        <a href="community.html">Community</a>
+        <a href="ask.html">Ask MATONI</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html" class="active">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="cm-container">
+    <div class="cm-breadcrumb">
+      <a href="guard.html">HERGUARD</a> / Forced & Child Marriage
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="cm-hero cm-container">
+    <div class="cm-eyebrow">HERGUARD · FREEDOM · SAFETY</div>
+
+    <h1>
+      Forced &<br>
+      <span>Child Marriage.</span>
+    </h1>
+
+    <p class="cm-lead">
+      Marriage should never be a decision made through fear, threats,
+      pressure or the absence of choice. Every girl deserves the opportunity
+      to grow, learn, make decisions about her future and live with dignity.
+    </p>
+
+    <div class="cm-soft-note">
+      <strong>If this is happening to you:</strong> You do not have to
+      confront anyone or take a risky action to prove that you need help.
+      Your safety matters. You deserve support, and there may be people
+      and services able to help you consider your options.
+    </div>
+  </section>
+
+  <!-- UNDERSTANDING -->
+  <section class="cm-section cm-container">
+    <div class="cm-eyebrow">01 · UNDERSTANDING</div>
+
+    <h2 class="cm-heading">What is child or forced marriage?</h2>
+
+    <p class="cm-description">
+      These terms are related, but they describe different circumstances.
+      Understanding the distinction helps us recognise the harm and the
+      different ways people may need support.
+    </p>
+
+    <div class="cm-grid">
+
+      <article class="cm-card">
+        <h3>Child marriage</h3>
+        <p>
+          A marriage or union in which at least one person is under 18.
+          It can affect a child's safety, education, health, development,
+          autonomy and future opportunities.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Forced marriage</h3>
+        <p>
+          A marriage entered into without the free and full consent of one
+          or both people. Pressure may involve threats, coercion, emotional
+          manipulation, financial control, violence or abuse of authority.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="cm-warning">
+      <h3>Can someone be forced to marry even if they don't say no?</h3>
+      <p>
+        Yes. Fear, family pressure, threats, dependence, intimidation
+        or believing refusal is impossible can prevent someone from freely
+        expressing their wishes. Silence or compliance under pressure
+        should not automatically be treated as consent.
+      </p>
+    </div>
+  </section>
+
+  <!-- WARNING SIGNS -->
+  <section class="cm-section cm-container">
+    <div class="cm-eyebrow">02 · RECOGNITION</div>
+
+    <h2 class="cm-heading">Recognising the warning signs.</h2>
+
+    <p class="cm-description">
+      Forced marriage does not always begin with an announcement.
+      Sometimes the warning signs appear gradually, and a girl may
+      not know how to explain what she is experiencing.
+    </p>
+
+    <div class="cm-list">
+
+      <article class="cm-list-item">
+        <h3>Sudden marriage plans</h3>
+        <p>
+          A marriage being arranged unexpectedly, especially when a girl
+          is not being given the opportunity to express her wishes.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Pressure to agree</h3>
+        <p>
+          Being told that she has no choice, that refusal is unacceptable,
+          or that she must marry to protect the family's reputation.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Threats or punishment</h3>
+        <p>
+          Threats of violence, being sent away, losing financial support,
+          being disowned, confinement or other consequences for refusing.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Withdrawal from school</h3>
+        <p>
+          Being removed from school, prevented from completing education
+          or suddenly restricted from normal activities because of marriage plans.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Travel under pressure</h3>
+        <p>
+          Being pressured to travel or taken somewhere without being told
+          the real purpose, particularly when marriage plans are involved.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Loss of freedom</h3>
+        <p>
+          Having communication, movement, friendships or access to trusted
+          people restricted in preparation for a marriage she does not want.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- COERCION -->
+  <section class="cm-section cm-container">
+    <div class="cm-eyebrow">03 · PRESSURE & COERCION</div>
+
+    <h2 class="cm-heading">When choice is taken away.</h2>
+
+    <p class="cm-description">
+      Forced marriage may involve physical force, but it can also happen
+      through emotional, financial, social or psychological pressure.
+    </p>
+
+    <div class="cm-grid">
+
+      <article class="cm-card">
+        <h3>Emotional pressure</h3>
+        <p>
+          Being made to feel responsible for a family's happiness,
+          reputation, shame, disappointment or wellbeing if she refuses.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Financial control</h3>
+        <p>
+          Threatening to withdraw necessities, school fees, housing,
+          money or other support unless she agrees to marry.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Social or cultural pressure</h3>
+        <p>
+          Being told that family tradition, community expectations,
+          religion or social standing make refusal impossible.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Threats and intimidation</h3>
+        <p>
+          Using threats, confinement, physical violence, intimidation
+          or punishment to make someone accept a marriage.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="cm-banner">
+      <h2>Pressure is not consent.</h2>
+      <p>
+        A person's agreement should be freely given. Fear of punishment,
+        abandonment, harm, humiliation or losing basic support can make
+        it impossible to make a free decision.
+      </p>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="cm-section cm-container">
+    <div class="cm-eyebrow">04 · IMPACT</div>
+
+    <h2 class="cm-heading">The impact can reach far beyond the wedding.</h2>
+
+    <p class="cm-description">
+      Child and forced marriage can affect different parts of a person's
+      life. The experience is not the same for everyone, but the risks
+      can be serious and long-lasting.
+    </p>
+
+    <div class="cm-grid">
+
+      <article class="cm-card">
+        <h3>Education</h3>
+        <p>
+          Interrupted schooling, reduced access to further education,
+          fewer opportunities and greater difficulty pursuing personal goals.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Physical health</h3>
+        <p>
+          Increased risks associated with early pregnancy, limited access
+          to healthcare, reproductive health concerns and physical violence.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Mental wellbeing</h3>
+        <p>
+          Anxiety, isolation, distress, loss of autonomy, fear and
+          difficulties coping with circumstances a person did not choose.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Freedom & independence</h3>
+        <p>
+          Reduced freedom to make decisions, maintain friendships,
+          access resources, pursue interests or choose a future.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- IF AT RISK -->
+  <section class="cm-section cm-container">
+    <div class="cm-eyebrow">05 · IF YOU ARE AT RISK</div>
+
+    <h2 class="cm-heading">You do not have to handle it alone.</h2>
+
+    <p class="cm-description">
+      If you believe a marriage is being arranged against your wishes,
+      your circumstances and safety should guide what you do next.
+      You do not need to wait until the situation becomes violent
+      before seeking help.
+    </p>
+
+    <div class="cm-list">
+
+      <article class="cm-list-item">
+        <h3>Identify a safe person</h3>
+        <p>
+          Consider someone you trust who is likely to take you seriously:
+          a teacher, counsellor, healthcare professional, trusted relative,
+          safeguarding professional or support worker.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Explain what is happening</h3>
+        <p>
+          If it is safe, tell them clearly that you do not want the marriage,
+          what you are being pressured to do, and whether you are afraid
+          of what may happen if you refuse.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Think about immediate safety</h3>
+        <p>
+          If you may be harmed, confined or taken somewhere against your will,
+          seek help from a safe person or appropriate protection service.
+          Do not confront people or make plans that could put you at greater risk.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Consider access to important information</h3>
+        <p>
+          If safe and appropriate, know how to access important contact details,
+          identification, medication and essential information. Do not attempt
+          to gather or carry anything if doing so increases danger.
+        </p>
+      </article>
+
+      <article class="cm-list-item">
+        <h3>Seek specialised support</h3>
+        <p>
+          A child protection, gender-based violence, legal aid or safeguarding
+          professional may help explain possible protections and plan next steps.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- HELPING SOMEONE -->
+  <section class="cm-section cm-container">
+    <div class="cm-eyebrow">06 · SUPPORTING SOMEONE</div>
+
+    <h2 class="cm-heading">If someone confides in you.</h2>
+
+    <p class="cm-description">
+      Someone facing forced marriage may feel trapped, guilty, frightened
+      or conflicted about their family. Your response can help them feel
+      less alone.
+    </p>
+
+    <div class="cm-grid">
+
+      <article class="cm-card">
+        <h3>Take them seriously</h3>
+        <p>
+          Do not dismiss their fear or assume the family will eventually
+          change its mind.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Listen without judgment</h3>
+        <p>
+          Avoid blaming them, questioning why they did not refuse sooner
+          or forcing them to share more than they want.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Do not promise secrecy you cannot keep</h3>
+        <p>
+          Especially when a child may be at risk, explain gently that you
+          may need to involve a safe professional who can help protect them.
+        </p>
+      </article>
+
+      <article class="cm-card">
+        <h3>Help them connect to support</h3>
+        <p>
+          Offer to help them contact a trusted professional or appropriate
+          safeguarding service, without putting them at greater risk.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- GET HELP / REPORT -->
+  <section class="cm-help-section cm-container">
+    <div class="cm-help-box">
+
+      <div class="cm-help-label">07 · GET HELP & REPORTING</div>
+
+      <h2>Help should be reachable.</h2>
+
+      <p>
+        If you or someone you know is at risk of forced or child marriage,
+        you deserve access to people who can listen, assess the situation
+        and help you understand the available options.
+      </p>
+
+      <div class="cm-help-grid">
+
+        <article class="cm-help-card">
+          <h3>Immediate danger</h3>
+          <p>
+            If someone is in immediate danger, seek help from a safe person
+            nearby or an appropriate emergency or protection service.
+            Avoid confronting the person creating the danger if that could
+            increase the risk.
+          </p>
+        </article>
+
+        <article class="cm-help-card">
+          <h3>Child protection</h3>
+          <p>
+            If a child is at risk, a child protection professional,
+            safeguarding officer or appropriate local authority may be able
+            to assess the situation and help with protection.
+          </p>
+        </article>
+
+        <article class="cm-help-card">
+          <h3>Legal support</h3>
+          <p>
+            A qualified legal aid professional may explain applicable laws,
+            protections, options and procedures in the person's location.
+          </p>
+        </article>
+
+        <article class="cm-help-card">
+          <h3>Trusted support</h3>
+          <p>
+            If formal services are difficult to reach, consider a safe adult,
+            school safeguarding contact, healthcare professional or trusted
+            organisation that takes protection seriously.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="cm-report-notice">
+        <h3>Report to MATONI</h3>
+
+        <p>
+          MATONI is working towards a safe, confidential and responsible
+          support and reporting pathway. Our online reporting system is
+          currently under development. This page does not submit a report,
+          alert a responder or create a case. Please do not send sensitive
+          identifying information through this page.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="cm-disclaimer">
+      <strong>Important:</strong> This page is for educational purposes
+      and does not replace professional safeguarding, emergency, legal
+      or clinical support. Laws, reporting obligations and protection
+      options differ by location and age. MATONI does not currently
+      operate a staffed emergency response or reporting service.
+    </div>
+
+    <a href="guard.html" class="cm-back">
+      ← Back to HERGUARD
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h2>MATONI</h2>
+          <p>Health. Knowledge. Dignity.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="learn.html">HERBODY</a>
+          <a href="community.html">Community</a>
+          <a href="ask.html">Ask MATONI</a>
+          <a href="research.html">HERRESEARCH</a>
+          <a href="guard.html">HERGUARD</a>
+        </div>
+      </div>
+
+      <p class="footer-bottom">
+        © MATONI. Built around dignity, knowledge and care.
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="script.js?v=7"></script>
+
+</body>
+</html>
+
