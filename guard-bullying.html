@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bullying & Body Shaming | MATONI HERGUARD</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js?v=7"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    .bs-page {
+      --bs-wine: #71354E;
+      --bs-deep: #542B3D;
+      --bs-rose: #D9A6B6;
+      --bs-paper: #F8F3ED;
+      --bs-sand: #E8E0D5;
+      --bs-text: #40343A;
+      --bs-muted: #786C71;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--bs-text);
+      background: var(--bs-paper);
+      min-height: 100vh;
+    }
+
+    .bs-page * {
+      box-sizing: border-box;
+    }
+
+    .bs-container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    .bs-breadcrumb {
+      padding: 30px 0 15px;
+      font-size: 13px;
+      color: var(--bs-muted);
+    }
+
+    .bs-breadcrumb a {
+      color: var(--bs-wine);
+      text-decoration: none;
+    }
+
+    .bs-hero {
+      padding: 50px 0 75px;
+    }
+
+    .bs-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .bs-eyebrow {
+      color: var(--bs-wine);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .bs-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 500;
+      line-height: 1.08;
+      color: var(--bs-deep);
+      margin: 0 0 24px;
+    }
+
+    .bs-hero h1 em {
+      color: var(--bs-wine);
+      font-weight: 500;
+    }
+
+    .bs-hero-text {
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--bs-muted);
+      max-width: 610px;
+    }
+
+    .bs-hero-art {
+      background: linear-gradient(145deg, #E8D5DB, #F2E8E2);
+      border-radius: 190px 190px 28px 28px;
+      padding: 35px;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bs-hero-art::before,
+    .bs-hero-art::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(113, 53, 78, .16);
+      border-radius: 50%;
+    }
+
+    .bs-hero-art::before {
+      width: 280px;
+      height: 280px;
+    }
+
+    .bs-hero-art::after {
+      width: 220px;
+      height: 220px;
+    }
+
+    .bs-art-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .bs-art-symbol {
+      font-family: 'Playfair Display', serif;
+      font-size: 90px;
+      color: var(--bs-wine);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .bs-art-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--bs-deep);
+      max-width: 280px;
+      line-height: 1.5;
+    }
+
+    .bs-art-small {
+      margin-top: 16px;
+      color: var(--bs-muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .bs-section {
+      padding: 75px 0;
+    }
+
+    .bs-section-white {
+      background: #fff;
+    }
+
+    .bs-section-heading {
+      max-width: 700px;
+      margin-bottom: 38px;
+    }
+
+    .bs-section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      color: var(--bs-deep);
+      font-weight: 500;
+      margin: 0 0 16px;
+    }
+
+    .bs-section-heading p {
+      color: var(--bs-muted);
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    .bs-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .bs-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .bs-card {
+      background: #fff;
+      border: 1px solid #EAE1E5;
+      border-radius: 20px;
+      padding: 28px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .bs-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(84, 43, 61, .07);
+    }
+
+    .bs-card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #F3E6EA;
+      color: var(--bs-wine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+
+    .bs-card h3 {
+      color: var(--bs-deep);
+      font-size: 18px;
+      margin: 0 0 12px;
+    }
+
+    .bs-card p {
+      color: var(--bs-muted);
+      line-height: 1.8;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .bs-callout {
+      background: #F1E5E9;
+      border-radius: 22px;
+      padding: 32px;
+      margin-top: 30px;
+    }
+
+    .bs-callout h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 500;
+      color: var(--bs-deep);
+      margin: 0 0 12px;
+    }
+
+    .bs-callout p {
+      line-height: 1.85;
+      color: var(--bs-text);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .bs-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .bs-list-item {
+      display: flex;
+      gap: 15px;
+      background: #fff;
+      border: 1px solid #EAE1E5;
+      border-radius: 16px;
+      padding: 19px;
+      align-items: flex-start;
+    }
+
+    .bs-list-number {
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #F1E5E9;
+      color: var(--bs-wine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .bs-list-item h3 {
+      font-size: 15px;
+      margin: 0 0 7px;
+      color: var(--bs-deep);
+    }
+
+    .bs-list-item p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--bs-muted);
+      margin: 0;
+    }
+
+    .bs-quote-section {
+      background: var(--bs-deep);
+      color: white;
+      padding: 75px 0;
+    }
+
+    .bs-quote-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.35;
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .bs-quote-section h2 em {
+      color: #E8BFCB;
+    }
+
+    .bs-quote-section p {
+      text-align: center;
+      color: #D9C9D0;
+      margin-top: 22px;
+      line-height: 1.8;
+    }
+
+    .bs-help-box {
+      background: #FFF;
+      border: 1px solid #E5D8DF;
+      border-radius: 24px;
+      padding: 35px;
+    }
+
+    .bs-help-box h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--bs-deep);
+      font-size: 27px;
+      font-weight: 500;
+      margin: 0 0 15px;
+    }
+
+    .bs-help-box p {
+      color: var(--bs-muted);
+      line-height: 1.85;
+      font-size: 14px;
+    }
+
+    .bs-help-box ul {
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    .bs-help-box li {
+      color: var(--bs-text);
+      margin-bottom: 12px;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .bs-notice {
+      background: #F7EFE7;
+      border-left: 4px solid var(--bs-wine);
+      padding: 20px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 25px;
+    }
+
+    .bs-notice p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--bs-text);
+    }
+
+    .bs-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--bs-wine);
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 35px;
+    }
+
+    @media(max-width: 850px) {
+      .bs-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .bs-hero-art {
+        min-height: 310px;
+      }
+
+      .bs-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 600px) {
+      .bs-section {
+        padding: 55px 0;
+      }
+
+      .bs-grid-2,
+      .bs-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .bs-hero {
+        padding: 30px 0 55px;
+      }
+
+      .bs-card {
+        padding: 24px;
+      }
+
+      .bs-callout,
+      .bs-help-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="bs-page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MATONI</a>
+
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="learn.html">HERBODY</a>
+        <a href="community.html">Community</a>
+        <a href="ask.html">Ask MATONI</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html" class="active">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="bs-container">
+    <div class="bs-breadcrumb">
+      <a href="guard.html">HERGUARD</a> / Bullying & Body Shaming
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="bs-hero">
+    <div class="bs-container bs-hero-grid">
+
+      <div>
+        <div class="bs-eyebrow">HERGUARD • YOUR DIGNITY MATTERS</div>
+
+        <h1>Bullying &<br><em>Body Shaming</em></h1>
+
+        <p class="bs-hero-text">
+          Nobody deserves to be humiliated, threatened, excluded or made to feel
+          smaller because of their body, appearance, background or identity.
+          Bullying is not harmless simply because someone calls it a joke.
+        </p>
+
+        <p class="bs-hero-text">
+          You deserve to feel safe in your classroom, home, workplace, community
+          and online. Your dignity is not something another person gets to take away.
+        </p>
+      </div>
+
+      <div class="bs-hero-art">
+        <div class="bs-art-content">
+          <div class="bs-art-symbol">♡</div>
+          <div class="bs-art-quote">
+            You are not the things people say about you.
+          </div>
+          <div class="bs-art-small">YOU DESERVE RESPECT</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- UNDERSTANDING -->
+  <section class="bs-section bs-section-white">
+    <div class="bs-container">
+
+      <div class="bs-section-heading">
+        <div class="bs-eyebrow">UNDERSTANDING THE EXPERIENCE</div>
+        <h2>What does bullying look like?</h2>
+        <p>
+          Bullying is harmful behaviour intended to intimidate, humiliate, control
+          or hurt another person. It can involve repeated behaviour, a power
+          imbalance, or actions that make someone feel unsafe. It is not always
+          loud or obvious.
+        </p>
+      </div>
+
+      <div class="bs-grid-3">
+
+        <div class="bs-card">
+          <div class="bs-card-icon">01</div>
+          <h3>Verbal bullying</h3>
+          <p>
+            Insults, threats, cruel nicknames, mocking someone's voice,
+            accent, intelligence, family, appearance or personal circumstances.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <div class="bs-card-icon">02</div>
+          <h3>Social bullying</h3>
+          <p>
+            Deliberately excluding someone, spreading rumours, encouraging
+            others to avoid them, embarrassing them publicly or damaging
+            their friendships.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <div class="bs-card-icon">03</div>
+          <h3>Physical bullying</h3>
+          <p>
+            Hitting, pushing, tripping, grabbing, damaging belongings,
+            blocking someone's movement or using physical intimidation.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <div class="bs-card-icon">04</div>
+          <h3>Cyberbullying</h3>
+          <p>
+            Online insults, harassment, threatening messages, humiliating
+            posts, fake accounts, coordinated attacks or sharing someone's
+            content to ridicule them.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <div class="bs-card-icon">05</div>
+          <h3>Discriminatory bullying</h3>
+          <p>
+            Targeting someone because of their disability, skin colour,
+            ethnicity, religion, gender, circumstances, perceived differences
+            or other personal characteristics.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <div class="bs-card-icon">06</div>
+          <h3>Bullying through power</h3>
+          <p>
+            Using authority, seniority, popularity, money, influence or
+            dependency to intimidate, silence, punish or repeatedly humiliate
+            someone.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BODY SHAMING -->
+  <section class="bs-section">
+    <div class="bs-container">
+
+      <div class="bs-section-heading">
+        <div class="bs-eyebrow">YOUR BODY IS NOT A PUBLIC DISCUSSION</div>
+        <h2>Body shaming is not a compliment, a joke or harmless criticism.</h2>
+        <p>
+          Body shaming happens when someone humiliates, insults or devalues
+          another person's body or appearance. It can happen regardless of someone's
+          size, shape, skin, age or physical characteristics.
+        </p>
+      </div>
+
+      <div class="bs-grid-2">
+
+        <div class="bs-card">
+          <h3>Weight & body size</h3>
+          <p>
+            Mocking someone for being thin, fat, gaining weight, losing weight
+            or having a body that does not match another person's expectations.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Skin & appearance</h3>
+          <p>
+            Ridiculing acne, scars, stretch marks, skin colour, facial features,
+            hair, body hair or other natural or visible characteristics.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Menstruation & bodily changes</h3>
+          <p>
+            Humiliating someone for period stains, menstrual products, puberty,
+            breast development, body odour or other normal bodily changes.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Disability & physical differences</h3>
+          <p>
+            Making someone feel inferior, unwanted or less worthy because of a
+            disability, medical condition, physical difference or how they move.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="bs-callout">
+        <h3>“I was only joking.”</h3>
+        <p>
+          A joke does not automatically become harmless because the person making
+          it laughs. If someone repeatedly humiliates you, ignores your boundaries,
+          or uses your pain as entertainment, you are allowed to take it seriously.
+          You do not have to laugh along to make other people comfortable.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WARNING SIGNS -->
+  <section class="bs-section bs-section-white">
+    <div class="bs-container">
+
+      <div class="bs-section-heading">
+        <div class="bs-eyebrow">RECOGNISING THE PATTERN</div>
+        <h2>When behaviour becomes harmful</h2>
+        <p>
+          You may begin to notice that the behaviour is affecting how you feel,
+          how you act or how safe you are around a particular person or group.
+        </p>
+      </div>
+
+      <div class="bs-grid-2">
+
+        <div class="bs-card">
+          <h3>You are always the target</h3>
+          <p>
+            Someone repeatedly chooses you for ridicule, insults or humiliation,
+            even when other people are treated differently.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Your boundaries are ignored</h3>
+          <p>
+            You have asked them to stop, but they continue, escalate or turn
+            your request into another opportunity to mock you.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>People use an audience against you</h3>
+          <p>
+            They wait until others are watching, post about you, encourage
+            people to laugh or try to make you feel isolated.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>You feel intimidated or unsafe</h3>
+          <p>
+            You worry about going to school, work, certain places, opening
+            messages or encountering particular people.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="bs-callout">
+        <h3>You do not have to prove that you are hurt.</h3>
+        <p>
+          You do not need to cry, become angry, fight back or show visible
+          distress for the behaviour to be wrong. Your discomfort is worth
+          taking seriously.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="bs-section">
+    <div class="bs-container">
+
+      <div class="bs-section-heading">
+        <div class="bs-eyebrow">THE EFFECTS CAN BE REAL</div>
+        <h2>What bullying can do to someone</h2>
+        <p>
+          People experience bullying differently. Sometimes the effects are visible.
+          Other times, the person may continue smiling, attending class or going
+          to work while struggling privately.
+        </p>
+      </div>
+
+      <div class="bs-grid-3">
+
+        <div class="bs-card">
+          <h3>Emotional wellbeing</h3>
+          <p>
+            Shame, sadness, anxiety, anger, fear, loneliness, loss of confidence
+            or feeling constantly on edge.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Relationship with your body</h3>
+          <p>
+            Feeling uncomfortable in your skin, hiding your body, avoiding
+            mirrors, obsessively comparing yourself or developing unhealthy
+            eating behaviours.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>School & work</h3>
+          <p>
+            Difficulty concentrating, reduced performance, avoiding activities,
+            missing school or work, or feeling unable to participate.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Relationships</h3>
+          <p>
+            Struggling to trust people, withdrawing from friends, feeling
+            isolated or believing you have to tolerate disrespect to be accepted.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Physical wellbeing</h3>
+          <p>
+            Stress may contribute to headaches, disturbed sleep, fatigue,
+            stomach discomfort or other physical symptoms.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Sense of self</h3>
+          <p>
+            Beginning to believe the insults, questioning your worth or
+            feeling that you must change yourself to deserve kindness.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO DO -->
+  <section class=”bs-section bs-section-white”>
+    <div class=”bs-container”>
+
+      <div class=”bs-section-heading”>
+        <div class=”bs-eyebrow”>IF YOU ARE EXPERIENCING BULLYING</div>
+        <h2>You have options. You do not have to handle it alone.</h2>
+        <p>
+          Your safety matters more than proving a point or confronting someone.
+          There is no single correct response to bullying.
+        </p>
+      </div>
+
+      <div class=”bs-list”>
+
+        <div class=”bs-list-item”>
+          <div class=”bs-list-number”>1</div>
+          <div>
+            <h3>Prioritise your safety</h3>
+            <p>
+              If someone is threatening, physically harming or cornering you,
+              Move towards a safer place and people you trust. Do not feel
+              Obligated to confront them.
+            </p>
+          </div>
+        </div>
+
+        <div class="bs-list-item">
+          <div class="bs-list-number">2</div>
+          <div>
+            <h3>Tell someone you trust</h3>
+            <p>
+              Consider speaking to a trusted friend, parent, guardian,
+              teacher, counsellor, supervisor or another person who can
+              help you take practical steps.
+            </p>
+          </div>
+        </div>
+
+        <div class="bs-list-item">
+          <div class="bs-list-number">3</div>
+          <div>
+            <h3>Set a boundary if it is safe</h3>
+            <p>
+              You may say, “Don't speak to me that way,” “That comment is
+              not acceptable,” or “Stop making comments about my body.”
+              You are not required to do this if it could put you at risk.
+            </p>
+          </div>
+        </div>
+
+        <div class="bs-list-item">
+          <div class="bs-list-number">4</div>
+          <div>
+            <h3>Keep a record of what happens</h3>
+            <p>
+              If it is safe, record dates, locations, what happened,
+              witnesses and relevant messages. Keep screenshots of online
+              harassment. Store evidence somewhere the person cannot access.
+            </p>
+          </div>
+        </div>
+
+        <div class="bs-list-item">
+          <div class="bs-list-number">5</div>
+          <div>
+            <h3>Seek support through an appropriate channel</h3>
+            <p>
+              Depending on where it happens, you may approach school
+              authorities, workplace management, a counsellor, child
+              protection services or another trusted support organisation.
+            </p>
+          </div>
+        </div>
+
+        <div class="bs-list-item">
+          <div class="bs-list-number">6</div>
+          <div>
+            <h3>Take care of yourself without blaming yourself</h3>
+            <p>
+              Spend time with people who respect you. Give yourself space
+              to recover. Seek mental health support if the experience is
+              affecting your daily life, sleep, confidence or wellbeing.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CYBERBULLYING -->
+  <section class="bs-section">
+    <div class="bs-container">
+
+      <div class="bs-section-heading">
+        <div class="bs-eyebrow">WHEN IT HAPPENS ONLINE</div>
+        <h2>Protect yourself from cyberbullying</h2>
+        <p>
+          Online abuse can follow you into your home, your private messages
+          and your personal space. You are allowed to protect your digital
+          environment.
+        </p>
+      </div>
+
+      <div class="bs-grid-2">
+
+        <div class="bs-card">
+          <h3>Save evidence first, if safe</h3>
+          <p>
+            Screenshots may help document threats, abusive messages,
+            usernames, dates and links before content disappears.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Block or restrict the person</h3>
+          <p>
+            Use available platform tools to reduce contact. Blocking
+            someone is not weakness and you do not owe them access to you.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Report the content</h3>
+          <p>
+            Report harassment, impersonation, threats or harmful content
+            directly to the platform where it occurred.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Protect your privacy</h3>
+          <p>
+            Review who can see your posts, contact you, tag you or access
+            your personal information. Avoid responding if doing so may
+            escalate the situation.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="bs-callout">
+        <h3>If someone shares intimate images without your consent</h3>
+        <p>
+          This is a serious violation. You are not to blame for someone else's
+          decision to share or threaten to share your private images. Preserve
+          relevant evidence if safe, report the content, seek trusted support
+          and avoid paying or complying with threats. If a minor is involved,
+          do not download, forward or redistribute sexual images of them.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUPPORT SOMEONE -->
+  <section class="bs-section bs-section-white">
+    <div class="bs-container">
+
+      <div class="bs-section-heading">
+        <div class="bs-eyebrow">BE THE PERSON WHO MAKES A DIFFERENCE</div>
+        <h2>How to support someone being bullied</h2>
+        <p>
+          Sometimes one supportive person can make a difficult experience
+          feel less isolating. You do not have to solve everything to help.
+        </p>
+      </div>
+
+      <div class="bs-grid-2">
+
+        <div class="bs-card">
+          <h3>Listen without judgement</h3>
+          <p>
+            Give them room to explain. Don't dismiss their experience as
+            oversensitivity or tell them they should simply ignore it.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Believe and reassure them</h3>
+          <p>
+            Let them know they deserve respect and that being bullied
+            is not their fault.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Ask what they need</h3>
+          <p>
+            They may need someone to listen, accompany them, help document
+            incidents or support them in approaching someone.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Don't retaliate recklessly</h3>
+          <p>
+            Avoid escalating the situation, exposing private information
+            or organising another attack against the person responsible.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Speak up when safe</h3>
+          <p>
+            You can challenge harmful behaviour, refuse to participate
+            in humiliation or help someone leave an unsafe situation.
+          </p>
+        </div>
+
+        <div class="bs-card">
+          <h3>Help them find support</h3>
+          <p>
+            If they want help, assist them in reaching a trusted adult,
+            counsellor, appropriate authority or support organisation.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="bs-callout">
+        <h3>Things you can say to someone who is being bullied</h3>
+        <p>
+          “I'm sorry this is happening to you.”<br><br>
+          “You don't deserve to be treated like that.”<br><br>
+          “I believe you.”<br><br>
+          “Would you like me to stay with you or help you speak to someone?”
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HELP -->
+  <section class="bs-section">
+    <div class="bs-container">
+
+      <div class="bs-section-heading">
+        <div class="bs-eyebrow">GET HELP & FIND SUPPORT</div>
+        <h2>You deserve to be protected, heard and supported.</h2>
+        <p>
+          You do not have to wait until bullying becomes severe before
+          asking for help. If the behaviour is affecting your safety or
+          wellbeing, reaching out is valid.
+        </p>
+      </div>
+
+      <div class="bs-help-box">
+
+        <h3>Where you can turn</h3>
+
+        <ul>
+          <li>
+            <strong>At school:</strong> A trusted teacher, school counsellor,
+            safeguarding lead, principal or responsible school authority.
+          </li>
+
+          <li>
+            <strong>At home:</strong> A trusted parent, guardian, relative
+            or adult who will take your experience seriously.
+          </li>
+
+          <li>
+            <strong>At work:</strong> A trusted supervisor, HR representative
+            or appropriate workplace reporting channel.
+          </li>
+
+          <li>
+            <strong>Online:</strong> The platform's reporting, blocking,
+            privacy and safety tools.
+          </li>
+
+          <li>
+            <strong>In immediate danger:</strong> Move towards safety and
+            seek urgent assistance from a trusted person or local emergency
+            service.
+          </li>
+
+          <li>
+            <strong>If your mental health is suffering:</strong> Consider
+            speaking with a qualified mental health professional or
+            healthcare provider.
+          </li>
+        </ul>
+
+        <div class="bs-notice">
+          <p>
+            <strong>MATONI reporting notice:</strong> MATONI is currently
+            developing its safeguarding and reporting systems. This page
+            does not submit a report, alert a staff member or connect you
+            to an active responder. If you need help now, please contact
+            a trusted person or an appropriate service directly. Do not
+            submit sensitive personal information through an inactive
+            reporting system.
+          </p>
+        </div>
+
+      </div>
+
+      <a href="guard.html" class="bs-back">← Back to HERGUARD</a>
+
+    </div>
+  </section>
+
+  <!-- FINAL MESSAGE -->
+  <section class="bs-quote-section">
+    <div class="bs-container">
+      <h2>
+        Your body, your appearance, your background or your differences
+        do not make you <em>less deserving of respect.</em>
+      </h2>
+      <p>You deserve kindness without having to earn it.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <a href="index.html" class="logo">MATONI</a>
+        <p>Your body. Your health. Your voice. Your life.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="learn.html">HERBODY</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© MATONI. Built on dignity, knowledge, safety and choice.</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
+
