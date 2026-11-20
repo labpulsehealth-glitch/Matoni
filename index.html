@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +9,7 @@
 
   <meta name="description" content="MATONI advances women's health knowledge, education, body literacy, research and dignity for girls and women.">
 
-  
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
   <style>
     :root {
@@ -186,42 +184,6 @@
       font-size: 20px;
     }
 
-    /* HERBODY LINKS WITHIN THE SAME INITIATIVE */
-
-    .herbody-links {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      padding: 0 8px 25px 93px;
-    }
-
-    .herbody-feature {
-      display: block;
-      padding: 16px;
-      background: white;
-      border: 1px solid var(--matoni-line);
-      text-decoration: none;
-      color: var(--matoni-ink);
-      transition: border-color 0.2s ease;
-    }
-
-    .herbody-feature:hover {
-      border-color: var(--matoni-wine);
-    }
-
-    .herbody-feature h4 {
-      margin: 0 0 7px;
-      color: var(--matoni-wine);
-      font-size: 13px;
-    }
-
-    .herbody-feature p {
-      margin: 0;
-      color: var(--matoni-muted);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
     /* FOOTER */
 
     .editorial-footer {
@@ -297,22 +259,6 @@
       .initiative-copy p {
         font-size: 12px;
       }
-
-      .herbody-links {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding: 0 2px 22px 47px;
-        gap: 9px;
-      }
-
-      .herbody-feature {
-        padding: 13px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .herbody-links {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -320,234 +266,208 @@
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-<header class="header matoni-header">
-  <a href="index.html" class="logo matoni-logo">MATONI</a>
+  <header class="header matoni-header">
+    <a href="index.html" class="logo matoni-logo">MATONI</a>
 
-  <button class="menu-button" onclick="toggleMenu()" aria-label="Open navigation">
-    ☰
-  </button>
+    <button class="menu-button" onclick="toggleMenu()" aria-label="Open navigation">
+      ☰
+    </button>
 
-  <nav id="navigation">
-    <a href="index.html">Home</a>
-    <a href="#explore">Explore</a>
-    <a href="body.html">HERBODY</a>
-    <a href="hervoice.html">HERVOICE</a>
-    <a href="research.html">Research</a>
-  </nav>
-</header>
+    <nav id="navigation">
+      <a href="index.html">Home</a>
+      <a href="#explore">Explore</a>
+      <a href="body.html">HERBODY</a>
+      <a href="hervoice.html">HERVOICE</a>
+      <a href="research.html">Research</a>
+    </nav>
+  </header>
 
-<main id="main">
+  <main id="main">
 
-  <!-- ONE COMBINED HERO -->
+    <!-- HERO -->
 
-  <section class="editorial-hero">
+    <section class="editorial-hero">
 
-    <p class="eyebrow">WOMEN'S HEALTH · KNOWLEDGE · DIGNITY</p>
+      <p class="eyebrow">WOMEN'S HEALTH · KNOWLEDGE · DIGNITY</p>
 
-    <h1>A world where every girl is understood.</h1>
+      <h1>A world where every girl is understood.</h1>
 
-    <p class="hero-description">
-      A space for girls and women to understand their bodies,
-      find reliable health information and take charge of their
-      health without shame.
-    </p>
+      <p class="hero-description">
+        A space for girls and women to understand their bodies,
+        find reliable health information and take charge of their
+        health without shame.
+      </p>
 
-    <a href="#explore" class="editorial-button">
-      Begin Your Journey
-    </a>
+      <a href="#explore" class="editorial-button">
+        Begin Your Journey
+      </a>
 
-  </section>
+    </section>
 
-  <!-- ONE EXPLORATION SECTION -->
+    <!-- EXPLORE MATONI -->
 
-  <section class="initiatives-section" id="explore">
+    <section class="initiatives-section" id="explore">
 
-    <div class="initiatives-inner">
+      <div class="initiatives-inner">
 
-      <div class="initiatives-heading">
-        <p class="eyebrow">WELCOME TO MATONI</p>
+        <div class="initiatives-heading">
+          <p class="eyebrow">WELCOME TO MATONI</p>
 
-        <h2>Discover MATONI. Explore.</h2>
+          <h2>Discover MATONI. Explore.</h2>
 
-        <p>
-          Explore our initiatives and the different ways
-          we are advancing women's health, knowledge and dignity.
-        </p>
-      </div>
+          <p>
+            Explore our initiatives and the different ways
+            we are advancing women's health, knowledge and dignity.
+          </p>
+        </div>
 
-      <div class="initiative-list">
+        <div class="initiative-list">
 
-        <!-- HERBODY -->
+          <!-- HERBODY -->
 
-        <div class="initiative-entry">
+          <div class="initiative-entry">
 
-          <a href="body.html" class="initiative-item">
-            <span class="initiative-number">01</span>
+            <a href="body.html" class="initiative-item">
+              <span class="initiative-number">01</span>
+
+              <div class="initiative-copy">
+                <h3>HERBODY</h3>
+                <p>
+                  Understand the female body through anatomy,
+                  menstrual health, symptoms and personal tracking.
+                </p>
+              </div>
+
+              <span class="initiative-link">↗</span>
+            </a>
+
+          </div>
+
+          <!-- HERWISE -->
+
+          <a href="learn.html" class="initiative-item">
+            <span class="initiative-number">02</span>
 
             <div class="initiative-copy">
-              <h3>HERBODY</h3>
+              <h3>HERWISE</h3>
               <p>
-                Understand the female body through anatomy,
-                menstrual health, symptoms and personal tracking.
+                Accessible health education and reliable
+                information for girls and women.
               </p>
             </div>
 
             <span class="initiative-link">↗</span>
           </a>
 
-          <div class="herbody-links">
+          <!-- HERVOICE -->
 
-            <a href="body.html" class="herbody-feature">
-              <h4>Body Literacy</h4>
-              <p>Explore anatomy, hormones and body changes.</p>
-            </a>
+          <a href="hervoice.html" class="initiative-item">
+            <span class="initiative-number">03</span>
 
-            <a href="cycle.html" class="herbody-feature">
-              <h4>My Cycle</h4>
-              <p>Understand the menstrual cycle and its phases.</p>
-            </a>
+            <div class="initiative-copy">
+              <h3>HERVOICE</h3>
+              <p>
+                Women's experiences, stories, advocacy
+                and community conversations.
+              </p>
+            </div>
 
-            <a href="symptoms.html" class="herbody-feature">
-              <h4>Symptoms</h4>
-              <p>Learn about symptoms and warning signs.</p>
-            </a>
+            <span class="initiative-link">↗</span>
+          </a>
 
-            <a href="journal.html" class="herbody-feature">
-              <h4>My Journal</h4>
-              <p>Keep personal notes about your experiences.</p>
-            </a>
+          <!-- HERRESEARCH -->
 
-          </div>
+          <a href="research.html" class="initiative-item">
+            <span class="initiative-number">04</span>
+
+            <div class="initiative-copy">
+              <h3>HERRESEARCH</h3>
+              <p>
+                Advancing women's health research,
+                evidence and scientific understanding.
+              </p>
+            </div>
+
+            <span class="initiative-link">↗</span>
+          </a>
+
+          <!-- PERIOD WITHOUT SHAME -->
+
+          <a href="confidence.html" class="initiative-item">
+            <span class="initiative-number">05</span>
+
+            <div class="initiative-copy">
+              <h3>PERIOD WITHOUT SHAME</h3>
+              <p>
+                Menstrual dignity, education and the vision
+                of accessible menstrual products.
+              </p>
+            </div>
+
+            <span class="initiative-link">↗</span>
+          </a>
+
+          <!-- HERGUARD -->
+
+          <a href="guard.html" class="initiative-item">
+            <span class="initiative-number">06</span>
+
+            <div class="initiative-copy">
+              <h3>HERGUARD</h3>
+              <p>
+                A future-focused initiative for women's
+                health safety and protection.
+              </p>
+            </div>
+
+            <span class="initiative-link">↗</span>
+          </a>
 
         </div>
 
-        <!-- HERWISE -->
+      </div>
 
-        <a href="learn.html" class="initiative-item">
-          <span class="initiative-number">02</span>
+    </section>
 
-          <div class="initiative-copy">
-            <h3>HERWISE</h3>
-            <p>
-              Accessible health education and reliable
-              information for girls and women.
-            </p>
-          </div>
+  </main>
 
-          <span class="initiative-link">↗</span>
-        </a>
+  <!-- FOOTER -->
 
-        <!-- HERVOICE -->
+  <footer class="editorial-footer">
 
-        <a href="hervoice.html" class="initiative-item">
-          <span class="initiative-number">03</span>
+    <div class="footer-inner">
 
-          <div class="initiative-copy">
-            <h3>HERVOICE</h3>
-            <p>
-              Women's experiences, stories, advocacy
-              and community conversations.
-            </p>
-          </div>
+      <div class="footer-brand">MATONI</div>
 
-          <span class="initiative-link">↗</span>
-        </a>
+      <p class="footer-tagline">
+        A world where every girl is understood.
+      </p>
 
-        <!-- HERRESEARCH -->
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learning</a>
+        <a href="body.html">HERBODY</a>
+        <a href="hervoice.html">HERVOICE</a>
+        <a href="research.html">Research</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="guidelines.html">Community Guidelines</a>
+        <a href="safety.html">Health and Safety</a>
+      </div>
 
-        <a href="research.html" class="initiative-item">
-          <span class="initiative-number">04</span>
+      <div class="footer-bottom">
+        <p>© 2026 MATONI. All rights reserved.</p>
 
-          <div class="initiative-copy">
-            <h3>HERRESEARCH</h3>
-            <p>
-              Advancing women's health research,
-              evidence and scientific understanding.
-            </p>
-          </div>
-
-          <span class="initiative-link">↗</span>
-        </a>
-
-        <!-- PERIOD WITHOUT SHAME -->
-
-        <a href="confidence.html" class="initiative-item">
-          <span class="initiative-number">05</span>
-
-          <div class="initiative-copy">
-            <h3>PERIOD WITHOUT SHAME</h3>
-            <p>
-              Menstrual dignity, education and the vision
-              of accessible menstrual products.
-            </p>
-          </div>
-
-          <span class="initiative-link">↗</span>
-        </a>
-
-        <!-- HERGUARD -->
-
-        <a href="guard.html" class="initiative-item">
-          <span class="initiative-number">06</span>
-
-          <div class="initiative-copy">
-            <h3>HERGUARD</h3>
-            <p>
-              A future-focused initiative for women's
-              health safety and protection.
-            </p>
-          </div>
-
-          <span class="initiative-link">↗</span>
-        </a>
-
+        <p>
+          Educational information on this platform is not a substitute
+          for professional medical advice, diagnosis or treatment.
+        </p>
       </div>
 
     </div>
 
-  </section>
+  </footer>
 
-</main>
-
-<!-- FOOTER -->
-
-<footer class="editorial-footer">
-
-  <div class="footer-inner">
-
-    <div class="footer-brand">MATONI</div>
-
-    <p class="footer-tagline">
-      A world where every girl is understood.
-    </p>
-
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="learn.html">Learning</a>
-      <a href="body.html">HERBODY</a>
-      <a href="hervoice.html">HERVOICE</a>
-      <a href="research.html">Research</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="guidelines.html">Community Guidelines</a>
-      <a href="safety.html">Health and Safety</a>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 MATONI. All rights reserved.</p>
-
-      <p>
-        Educational information on this platform is not a substitute
-        for professional medical advice, diagnosis or treatment.
-      </p>
-    </div>
-
-  </div>
-
-</footer>
-
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 
 </body>
 </html>
