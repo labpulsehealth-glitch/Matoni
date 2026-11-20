@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F8F3ED">
+  <title>Know Your Rights | MATONI</title>
+  <meta name="description" content="Understand your rights to dignity, safety, education, bodily autonomy, privacy and freedom from violence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .kr-page {
+      --kr-wine: #71354E;
+      --kr-dark: #542B3D;
+      --kr-rose: #D9A6B6;
+      --kr-blush: #F3E4E8;
+      --kr-muted: #776B6D;
+      color: #44363B;
+      background: #FCF9F6;
+      font-family: 'DM Sans', sans-serif;
+      overflow: hidden;
+    }
+    .kr-page * { box-sizing: border-box; }
+    .kr-container { width: min(1120px, 90%); margin: auto; }
+    .kr-page a { color: inherit; }
+
+    .kr-breadcrumb {
+      padding: 25px 0 12px;
+      color: var(--kr-muted);
+      font-size: 13px;
+    }
+    .kr-breadcrumb a { color: var(--kr-wine); text-decoration: none; }
+    .kr-breadcrumb span { margin: 0 9px; color: #B6A6A9; }
+
+    .kr-hero {
+      position: relative;
+      padding: 80px 0 85px;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(255,255,255,.85), transparent 27%),
+        radial-gradient(circle at 0% 100%, rgba(217,166,182,.23), transparent 32%),
+        linear-gradient(135deg, #F5E8E9, #FAF3EC 58%, #F0E5DB);
+    }
+    .kr-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 45px;
+    }
+    .kr-eyebrow {
+      display: inline-block;
+      padding: 9px 15px;
+      border: 1px solid rgba(113,53,78,.18);
+      border-radius: 30px;
+      background: rgba(255,255,255,.5);
+      color: var(--kr-wine);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+    .kr-hero h1 {
+      max-width: 650px;
+      margin: 24px 0 18px;
+      color: var(--kr-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(45px, 6vw, 70px);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+    }
+    .kr-hero h1 em { color: #A65E78; font-weight: 500; }
+    .kr-hero-copy {
+      max-width: 560px;
+      color: #65565B;
+      font-size: 15px;
+      line-height: 1.95;
+    }
+    .kr-hero-note {
+      margin-top: 25px;
+      padding-left: 17px;
+      border-left: 3px solid var(--kr-rose);
+      color: var(--kr-wine);
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .kr-hero-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 350px;
+    }
+    .kr-art-circle {
+      position: absolute;
+      width: 285px;
+      height: 285px;
+      border: 1px solid rgba(113,53,78,.18);
+      border-radius: 50%;
+    }
+    .kr-art-circle::before, .kr-art-circle::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(113,53,78,.13);
+      border-radius: 50%;
+    }
+    .kr-art-circle::before { inset: 20px; }
+    .kr-art-circle::after { inset: 42px; }
+    .kr-art-card {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 225px;
+      height: 235px;
+      padding: 25px;
+      border: 1px solid white;
+      border-radius: 45% 45% 20px 20px;
+      background: linear-gradient(145deg, #FFFDFC, #F0DDE3);
+      box-shadow: 0 25px 60px rgba(84,43,61,.12);
+      text-align: center;
+      transform: rotate(3deg);
+    }
+    .kr-art-symbol { color: #A65E78; font-size: 63px; line-height: 1; }
+    .kr-art-card p {
+      max-width: 170px;
+      margin: 17px 0 0;
+      color: var(--kr-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      line-height: 1.35;
+    }
+    .kr-floating {
+      position: absolute;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 17px;
+      background: white;
+      box-shadow: 0 10px 25px rgba(84,43,61,.09);
+      color: var(--kr-wine);
+      font-size: 23px;
+    }
+    .kr-float-one { top: 24px; left: 5%; transform: rotate(-10deg); }
+    .kr-float-two { right: 4%; top: 70px; transform: rotate(10deg); }
+    .kr-float-three { bottom: 24px; left: 12%; transform: rotate(8deg); }
+
+    .kr-banner {
+      padding: 48px 20px;
+      background: var(--kr-wine);
+      color: white;
+      text-align: center;
+    }
+    .kr-banner small {
+      display: block;
+      margin-bottom: 12px;
+      color: #E8C8D2;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .kr-banner h2 {
+      max-width: 780px;
+      margin: auto;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(27px, 4vw, 40px);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .kr-section { padding: 82px 0; }
+    .kr-soft { background: #F8F2ED; }
+    .kr-heading { max-width: 740px; margin-bottom: 38px; }
+    .kr-kicker {
+      margin-bottom: 12px;
+      color: #A45D76;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+    .kr-heading h2 {
+      margin: 0 0 14px;
+      color: var(--kr-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4.5vw, 45px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .kr-heading p {
+      margin: 0;
+      color: var(--kr-muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .kr-right-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+    .kr-right-card {
+      padding: 26px;
+      border: 1px solid #EEE4E0;
+      border-radius: 18px;
+      background: white;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .kr-right-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(84,43,61,.07);
+    }
+    .kr-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 17px;
+      border-radius: 14px;
+      background: #F5E7EA;
+      color: var(--kr-wine);
+      font-size: 21px;
+    }
+    .kr-right-card h3 {
+      margin: 0 0 9px;
+      color: var(--kr-dark);
+      font-size: 16px;
+    }
+    .kr-right-card p {
+      margin: 0;
+      color: var(--kr-muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .kr-callout {
+      margin-top: 28px;
+      padding: 25px 27px;
+      border-left: 3px solid #C68A9E;
+      border-radius: 0 14px 14px 0;
+      background: #F5E8EB;
+      color: #67565C;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+    .kr-callout strong { color: var(--kr-dark); }
+
+    .kr-explainer {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .kr-explainer-art {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #F0DDE3, #F8ECE7);
+      text-align: center;
+    }
+    .kr-explainer-art span { color: #A65E78; font-size: 65px; }
+    .kr-explainer-art p {
+      max-width: 230px;
+      margin: 15px 0 0;
+      color: var(--kr-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      line-height: 1.4;
+    }
+    .kr-explainer-content {
+      padding: 30px;
+      border: 1px solid #EEE4E0;
+      border-radius: 20px;
+      background: white;
+    }
+    .kr-explainer-content h3 {
+      margin: 0 0 12px;
+      color: var(--kr-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 500;
+    }
+    .kr-explainer-content p {
+      color: var(--kr-muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .kr-action-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .kr-action {
+      display: flex;
+      gap: 15px;
+      padding: 23px;
+      border: 1px solid #EEE4E0;
+      border-radius: 17px;
+      background: white;
+    }
+    .kr-action-num {
+      flex: 0 0 36px;
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #F3E3E8;
+      color: var(--kr-wine);
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+    }
+    .kr-action h3 {
+      margin: 2px 0 7px;
+      color: var(--kr-dark);
+      font-size: 15px;
+    }
+    .kr-action p {
+      margin: 0;
+      color: var(--kr-muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .kr-warning {
+      padding: 30px;
+      border: 1px solid #EAD9D7;
+      border-radius: 19px;
+      background: #FFF9F6;
+    }
+    .kr-warning h3 {
+      margin: 0 0 10px;
+      color: var(--kr-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 500;
+    }
+    .kr-warning p, .kr-warning li {
+      color: var(--kr-muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+    .kr-warning ul { padding-left: 20px; }
+
+    .kr-note-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+      margin-top: 25px;
+    }
+    .kr-note-card {
+      padding: 25px;
+      border-radius: 17px;
+      background: white;
+      border: 1px solid #EEE4E0;
+    }
+    .kr-note-card h3 {
+      margin: 0 0 9px;
+      color: var(--kr-dark);
+      font-size: 15px;
+    }
+    .kr-note-card p {
+      margin: 0;
+      color: var(--kr-muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .kr-principle-box {
+      padding: 38px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #F0E0E4, #F8ECE7);
+    }
+    .kr-principle-box h3 {
+      margin: 0 0 13px;
+      color: var(--kr-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 500;
+    }
+    .kr-principle-box p {
+      margin: 0;
+      color: #6D5960;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .kr-disclaimer {
+      margin-top: 28px;
+      padding: 22px 24px;
+      border: 1px solid #E9DED6;
+      border-radius: 13px;
+      background: #F8F3ED;
+      color: #74666A;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+    .kr-disclaimer strong { color: var(--kr-dark); }
+
+    .kr-closing {
+      padding: 80px 20px;
+      background: #F1E3E5;
+      text-align: center;
+    }
+    .kr-closing-symbol { color: #B16C83; font-size: 39px; }
+    .kr-closing h2 {
+      max-width: 750px;
+      margin: 17px auto;
+      color: var(--kr-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 47px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .kr-closing p {
+      max-width: 590px;
+      margin: 0 auto 25px;
+      color: #75636A;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+    .kr-button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 40px;
+      background: var(--kr-wine);
+      color: white !important;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+    .kr-button:hover { background: var(--kr-dark); transform: translateY(-2px); }
+
+    @media(max-width: 800px) {
+      .kr-hero { padding: 55px 0 60px; }
+      .kr-hero-grid { grid-template-columns: 1fr; gap: 20px; }
+      .kr-hero-art { min-height: 290px; }
+      .kr-art-circle { width: 250px; height: 250px; }
+      .kr-art-card { width: 195px; height: 205px; }
+      .kr-right-grid { grid-template-columns: repeat(2, 1fr); }
+      .kr-explainer { grid-template-columns: 1fr; }
+      .kr-explainer-art { min-height: 180px; }
+    }
+    @media(max-width: 560px) {
+      .kr-section { padding: 60px 0; }
+      .kr-right-grid, .kr-action-list, .kr-note-grid { grid-template-columns: 1fr; }
+      .kr-hero h1 { font-size: 45px; }
+      .kr-hero-copy { font-size: 14px; }
+      .kr-banner { padding: 42px 22px; }
+      .kr-principle-box, .kr-warning, .kr-explainer-content { padding: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MATONI</a>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="learn.html">HERBODY</a>
+        <a href="community.html">Community</a>
+        <a href="ask.html">Ask MATONI</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="kr-page">
+    <div class="kr-container">
+      <div class="kr-breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="guard.html">HERGUARD</a><span>/</span>
+        Know Your Rights
+      </div>
+    </div>
+
+    <section class="kr-hero">
+      <div class="kr-container kr-hero-grid">
+        <div>
+          <div class="kr-eyebrow">Knowledge is a form of protection</div>
+          <h1>Your rights. Your voice. <em>Your dignity.</em></h1>
+          <p class="kr-hero-copy">
+            Every girl and woman deserves to live with dignity, make informed
+            decisions about her life, pursue an education, feel safe in her
+            community and be treated with respect.
+          </p>
+          <div class="kr-hero-note">
+            You do not have to be powerful, wealthy or influential to deserve your rights.
+          </div>
+        </div>
+
+        <div class="kr-hero-art" aria-label="Illustration representing dignity and rights">
+          <div class="kr-art-circle"></div>
+          <div class="kr-floating kr-float-one">✿</div>
+          <div class="kr-floating kr-float-two">♡</div>
+          <div class="kr-floating kr-float-three">✧</div>
+          <div class="kr-art-card">
+            <div class="kr-art-symbol">⚖</div>
+            <p>Your dignity is not negotiable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kr-banner">
+      <small>Something every girl should know</small>
+      <h2>You are a person with rights, not someone else's property, possession or permission to control.</h2>
+    </section>
+
+    <section class="kr-section">
+      <div class="kr-container">
+        <div class="kr-heading">
+          <div class="kr-kicker">The foundations</div>
+          <h2>Rights every girl and woman should know.</h2>
+          <p>These are important human-rights principles. The exact laws, procedures and available remedies depend on the country and circumstances. Understanding these principles can help you recognise when something is wrong and where to seek guidance.</p>
+        </div>
+
+        <div class="kr-right-grid">
+          <article class="kr-right-card">
+            <div class="kr-icon">♡</div>
+            <h3>Right to dignity</h3>
+            <p>You deserve to be treated as a human being with worth. Humiliation, degrading treatment, violence and abuse should never be normalised.</p>
+          </article>
+
+          <article class="kr-right-card">
+            <div class="kr-icon">⌂</div>
+            <h3>Right to safety</h3>
+            <p>You deserve protection from violence, threats, exploitation and abuse. Your home, school, workplace and community should not be places where harm is excused.</p>
+          </article>
+
+          <article class="kr-right-card">
+            <div class="kr-icon">✿</div>
+            <h3>Right to bodily autonomy</h3>
+            <p>Your body matters. You deserve information, respect and freedom from unwanted sexual contact, coercion and harmful treatment.</p>
+          </article>
+
+          <article class="kr-right-card">
+            <div class="kr-icon">✎</div>
+            <h3>Right to education</h3>
+            <p>Girls deserve opportunities to learn, develop their abilities and pursue their ambitions without discrimination, harassment or violence.</p>
+          </article>
+
+          <article class="kr-right-card">
+            <div class="kr-icon">☼</div>
+            <h3>Right to health</h3>
+            <p>You deserve access to appropriate healthcare and understandable health information, including respectful care for sexual and reproductive health needs.</p>
+          </article>
+
+          <article class="kr-right-card">
+            <div class="kr-icon">◉</div>
+            <h3>Right to privacy</h3>
+            <p>Your personal information, private communications and personal experiences deserve respect. Your story should not become public entertainment.</p>
+          </article>
+
+          <article class="kr-right-card">
+            <div class="kr-icon">⚖</div>
+            <h3>Right to equality</h3>
+            <p>You deserve fair treatment and equal dignity. Your gender should not be used as an excuse to deny you opportunities or subject you to discrimination.</p>
+          </article>
+
+          <article class="kr-right-card">
+            <div class="kr-icon">♧</div>
+            <h3>Right to seek help</h3>
+            <p>You should be able to seek information, healthcare, protection, legal guidance and support when you experience harm.</p>
+          </article>
+
+          <article class="kr-right-card">
+            <div class="kr-icon">✧</div>
+            <h3>Right to participate</h3>
+            <p>Your opinions and experiences matter. Girls and women deserve opportunities to participate in decisions that affect their lives and communities.</p>
+          </article>
+        </div>
+
+        <div class="kr-callout">
+          <strong>Remember:</strong> Having a right does not mean that every institution will automatically respect it. Knowing your rights can help you identify mistreatment, ask questions, seek support and understand the protections that may be available.
+        </div>
+      </div>
+    </section>
+
+    <section class="kr-section kr-soft">
+      <div class="kr-container">
+        <div class="kr-heading">
+          <div class="kr-kicker">Consent and personal boundaries</div>
+          <h2>Your body is not a public possession.</h2>
+          <p>Consent is an essential part of respectful relationships and interactions.</p>
+        </div>
+
+        <div class="kr-explainer">
+          <div class="kr-explainer-art">
+            <span>♡</span>
+            <p>Your boundaries deserve to be respected.</p>
+          </div>
+          <div class="kr-explainer-content">
+            <h3>What consent means</h3>
+            <p>Consent means freely agreeing to something. It should be given without force, threats, manipulation or pressure. It must relate to the specific activity being discussed, and a person can change their mind.</p>
+            <p>Silence, fear, freezing, unconsciousness or the absence of physical resistance should not be treated as permission.</p>
+            <p>Being in a relationship or marriage does not mean someone has unlimited permission to another person's body. Each person deserves respect and freedom from sexual violence and coercion.</p>
+            <p>Age, capacity and applicable laws also matter. A child's apparent agreement does not make sexual exploitation or abuse acceptable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kr-section">
+      <div class="kr-container">
+        <div class="kr-heading">
+          <div class="kr-kicker">Recognising violations</div>
+          <h2>When might someone's rights be violated?</h2>
+          <p>These examples can help you recognise behaviour that should not be dismissed as normal, traditional or deserved.</p>
+        </div>
+
+        <div class="kr-action-list">
+          <article class="kr-action">
+            <div class="kr-action-num">1</div>
+            <div>
+              <h3>Being forced into marriage</h3>
+              <p>Being threatened, pressured or made to marry without free and full consent. Child marriage also raises serious protection and legal concerns.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">2</div>
+            <div>
+              <h3>Being denied education</h3>
+              <p>Being prevented from attending school or pursuing learning opportunities because of gender, harmful discrimination or coercion.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">3</div>
+            <div>
+              <h3>Experiencing sexual violence</h3>
+              <p>Unwanted sexual contact, assault, exploitation, harassment or being pressured into sexual activity.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">4</div>
+            <div>
+              <h3>Being controlled or threatened</h3>
+              <p>Someone using fear, intimidation, isolation, financial control or threats to restrict your freedom.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">5</div>
+            <div>
+              <h3>Being denied healthcare</h3>
+              <p>Being humiliated, discriminated against or denied appropriate care because of your gender or personal circumstances.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">6</div>
+            <div>
+              <h3>Being exploited online</h3>
+              <p>Someone sharing intimate images without consent, threatening you, impersonating you or exposing your private information.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="kr-section kr-soft">
+      <div class="kr-container">
+        <div class="kr-heading">
+          <div class="kr-kicker">When something is wrong</div>
+          <h2>What can you do if your rights are violated?</h2>
+          <p>You may not be able to change the situation immediately. But you can explore ways to protect yourself and find appropriate support.</p>
+        </div>
+
+        <div class="kr-action-list">
+          <article class="kr-action">
+            <div class="kr-action-num">1</div>
+            <div>
+              <h3>Prioritise your safety</h3>
+              <p>If someone is threatening or hurting you, consider moving to a safer place and contacting a trusted person or appropriate emergency service.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">2</div>
+            <div>
+              <h3>Speak to someone trustworthy</h3>
+              <p>Consider a responsible adult, qualified professional, counsellor, healthcare provider or reputable support organisation.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">3</div>
+            <div>
+              <h3>Learn about your options</h3>
+              <p>Ask a qualified local legal professional or appropriate support organisation about the laws, protection measures and procedures that may apply.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">4</div>
+            <div>
+              <h3>Keep relevant information safely</h3>
+              <p>If it is safe, retain relevant messages, dates, photographs or documents. Do not risk your safety to collect evidence or confront someone.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">5</div>
+            <div>
+              <h3>Consider appropriate reporting channels</h3>
+              <p>You may be able to contact relevant protection services, law enforcement, regulators or other authorised institutions. Ask about confidentiality and what happens after a report.</p>
+            </div>
+          </article>
+          <article class="kr-action">
+            <div class="kr-action-num">6</div>
+            <div>
+              <h3>Seek continued support</h3>
+              <p>Healthcare, emotional support, safe accommodation, education assistance and legal guidance may all be important parts of protecting your wellbeing.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="kr-section">
+      <div class="kr-container">
+        <div class="kr-heading">
+          <div class="kr-kicker">For girls under 18</div>
+          <h2>You have the right to protection.</h2>
+          <p>Children and teenagers deserve to grow up in environments where their safety, development, education and wellbeing are taken seriously.</p>
+        </div>
+
+        <div class="kr-warning">
+          <h3>Important things to understand</h3>
+          <ul>
+            <li>Children deserve protection from abuse, exploitation, neglect, trafficking and harmful practices.</li>
+            <li>A child should not be blamed for abuse committed against them.</li>
+            <li>Children should have opportunities to learn, develop and participate in decisions affecting them in ways appropriate to their age and understanding.</li>
+            <li>If a child is in danger, a safe adult or appropriate child-protection professional should be contacted.</li>
+            <li>If a parent or caregiver may be responsible for the harm, another safe adult or appropriate protection service should be approached.</li>
+            <li>Adults and professionals may have legal safeguarding responsibilities. A child should not be promised absolute secrecy where protection requires action.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="kr-section kr-soft">
+      <div class="kr-container">
+        <div class="kr-heading">
+          <div class="kr-kicker">Understanding the Nigerian context</div>
+          <h2>Know where to look for legal information.</h2>
+          <p>Nigeria has constitutional protections and laws addressing different forms of violence, discrimination and child protection. Their application and available remedies can depend on the issue, location and relevant jurisdiction.</p>
+        </div>
+
+        <div class="kr-note-grid">
+          <article class="kr-note-card">
+            <h3>The Constitution of Nigeria</h3>
+            <p>The Constitution provides an important framework for fundamental rights, including protections relating to life, dignity, personal liberty, private and family life, freedom from discrimination and freedom of expression. The precise scope and enforcement of these protections may require legal interpretation.</p>
+          </article>
+          <article class="kr-note-card">
+            <h3>Child protection laws</h3>
+            <p>The Child Rights Act provides a national framework for children's rights. State-level adoption, implementation and relevant legal procedures matter, so it is important to check the law applicable in your state.</p>
+          </article>
+          <article class="kr-note-card">
+            <h3>Violence against persons legislation</h3>
+            <p>The Violence Against Persons (Prohibition) Act addresses several forms of violence and harmful practices. Its application outside the Federal Capital Territory depends on relevant state legislation and implementation.</p>
+          </article>
+          <article class="kr-note-card">
+            <h3>Other protections</h3>
+            <p>Other federal and state laws may address trafficking, sexual offences, workplace protections, education, discrimination and access to justice. The right legal pathway depends on the particular circumstances.</p>
+          </article>
+        </div>
+
+        <div class="kr-callout">
+          <strong>Important:</strong> Do not assume that a law applies in exactly the same way in every Nigerian state. For a specific situation, consult a qualified legal practitioner or an appropriate legal-aid organisation in the relevant location.
+        </div>
+      </div>
+    </section>
+
+    <section class="kr-section">
+      <div class="kr-container">
+        <div class="kr-principle-box">
+          <div class="kr-kicker">What MATONI believes</div>
+          <h3>Your rights should not depend on your status.</h3>
+          <p>
+            Not your income. Not your family background. Not your marital status.
+            Not whether you are popular, educated, married, unmarried, employed or
+            unemployed. Not whether someone believes your story immediately.
+            Every girl and woman deserves dignity, safety, respect and access to
+            appropriate support. We believe that knowledge should be accessible,
+            understandable and free from shame.
+          </p>
+        </div>
+
+        <div class="kr-disclaimer">
+          <strong>Legal information notice:</strong> This page provides general educational information, not legal advice. It does not replace advice from a qualified legal practitioner. Laws change, and legal protections and procedures vary by jurisdiction. MATONI does not determine legal cases, represent individuals in court or guarantee a particular outcome. Its reporting and referral systems are still under development; this page does not submit a report or connect you to a response team.
+        </div>
+      </div>
+    </section>
+
+    <section class="kr-closing">
+      <div class="kr-container">
+        <div class="kr-closing-symbol">✿</div>
+        <h2>Never let anyone convince you that you deserve less.</h2>
+        <p>
+          Your voice matters. Your education matters. Your safety matters.
+          Your dreams matter. You deserve a life in which you can grow,
+          participate, make choices and be treated with dignity.
+        </p>
+        <a class="kr-button" href="guard.html">Return to HERGUARD</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <a href="index.html" class="logo">MATONI</a>
+        <p>A world where no girl or woman is made to feel ashamed of her body, her voice or her experiences.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="learn.html">HERBODY</a>
+        <a href="community.html">Community</a>
+        <a href="ask.html">Ask MATONI</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 MATONI. Every girl deserves dignity, safety and a voice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=7"></script>
+</body>
+</html>
