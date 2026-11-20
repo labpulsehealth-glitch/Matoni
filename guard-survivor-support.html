@@ -1,0 +1,1206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F8F3ED">
+  <title>Survivor Support | MATONI</title>
+  <meta name="description" content="A gentle, supportive space for survivors. You deserve to be believed, respected, protected and supported.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .ss-page {
+      --ss-wine: #71354E;
+      --ss-dark: #542B3D;
+      --ss-rose: #D9A6B6;
+      --ss-blush: #F3E4E8;
+      --ss-cream: #F8F3ED;
+      --ss-sand: #E8E0D5;
+      --ss-ink: #44363B;
+      --ss-muted: #776B6D;
+      color: var(--ss-ink);
+      background: #FCF9F6;
+      font-family: 'DM Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    .ss-page * { box-sizing: border-box; }
+    .ss-container { width: min(1120px, 90%); margin: auto; }
+    .ss-page a { color: inherit; }
+
+    .ss-breadcrumb {
+      padding: 25px 0 12px;
+      font-size: 13px;
+      color: var(--ss-muted);
+    }
+    .ss-breadcrumb a {
+      text-decoration: none;
+      color: var(--ss-wine);
+    }
+    .ss-breadcrumb span { margin: 0 9px; color: #B6A6A9; }
+
+    .ss-hero {
+      position: relative;
+      padding: 75px 0 85px;
+      background:
+        radial-gradient(circle at 90% 15%, rgba(255,255,255,.8), transparent 28%),
+        radial-gradient(circle at 5% 95%, rgba(217,166,182,.24), transparent 30%),
+        linear-gradient(135deg, #F7E9E9 0%, #F9F2EB 55%, #F1E5DC 100%);
+    }
+    .ss-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 55px;
+    }
+    .ss-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 15px;
+      border: 1px solid rgba(113,53,78,.17);
+      border-radius: 40px;
+      color: var(--ss-wine);
+      background: rgba(255,255,255,.52);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+    .ss-eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--ss-rose);
+    }
+    .ss-hero h1 {
+      max-width: 650px;
+      margin: 24px 0 18px;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(43px, 6vw, 69px);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -1.7px;
+    }
+    .ss-hero h1 em { color: #A65E78; font-weight: 500; }
+    .ss-hero-copy {
+      max-width: 540px;
+      color: #65565B;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    .ss-hero-note {
+      margin-top: 26px;
+      padding-left: 17px;
+      border-left: 3px solid var(--ss-rose);
+      color: var(--ss-wine);
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .ss-hero-art {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 370px;
+    }
+    .ss-orbit {
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      border: 1px solid rgba(113,53,78,.16);
+      border-radius: 50%;
+    }
+    .ss-orbit::before, .ss-orbit::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(113,53,78,.12);
+      border-radius: 50%;
+    }
+    .ss-orbit::before { inset: 22px; }
+    .ss-orbit::after { inset: 44px; }
+    .ss-heart-card {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 235px;
+      height: 255px;
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 48% 48% 42% 42%;
+      background: linear-gradient(150deg, #FFFDFC, #F1DDE2);
+      box-shadow: 0 25px 65px rgba(84,43,61,.12);
+      text-align: center;
+      transform: rotate(-3deg);
+    }
+    .ss-heart-symbol {
+      color: #B66E86;
+      font-size: 63px;
+      line-height: 1;
+    }
+    .ss-heart-card p {
+      max-width: 175px;
+      margin: 18px 0 0;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      line-height: 1.35;
+    }
+    .ss-floating {
+      position: absolute;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 57px;
+      height: 57px;
+      border: 1px solid rgba(113,53,78,.1);
+      border-radius: 18px;
+      background: rgba(255,255,255,.85);
+      box-shadow: 0 10px 25px rgba(84,43,61,.08);
+      color: var(--ss-wine);
+      font-size: 25px;
+    }
+    .ss-float-one { top: 35px; left: 6%; transform: rotate(-12deg); }
+    .ss-float-two { right: 4%; top: 90px; transform: rotate(10deg); }
+    .ss-float-three { bottom: 25px; left: 13%; transform: rotate(9deg); }
+
+    .ss-mantra {
+      position: relative;
+      padding: 52px 20px;
+      background: var(--ss-wine);
+      color: white;
+      text-align: center;
+    }
+    .ss-mantra small {
+      display: block;
+      margin-bottom: 13px;
+      color: #E8C8D2;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .ss-mantra h2 {
+      max-width: 780px;
+      margin: auto;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(27px, 4vw, 40px);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .ss-section { padding: 82px 0; }
+    .ss-section-soft { background: #F8F2ED; }
+    .ss-section-heading {
+      max-width: 700px;
+      margin-bottom: 38px;
+    }
+    .ss-kicker {
+      margin-bottom: 12px;
+      color: #A45D76;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+    .ss-section-heading h2 {
+      margin: 0 0 15px;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4.5vw, 45px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .ss-section-heading p {
+      margin: 0;
+      color: var(--ss-muted);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .ss-principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+    .ss-principle {
+      padding: 27px 25px;
+      border: 1px solid #EEE4E0;
+      border-radius: 19px;
+      background: white;
+    }
+    .ss-principle-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      margin-bottom: 19px;
+      border-radius: 14px;
+      background: #F6E8EB;
+      color: var(--ss-wine);
+      font-size: 20px;
+    }
+    .ss-principle h3 {
+      margin: 0 0 9px;
+      color: var(--ss-dark);
+      font-size: 16px;
+    }
+    .ss-principle p {
+      margin: 0;
+      color: var(--ss-muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .ss-affirmation {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 35px;
+      padding: 38px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #F1DFE4, #F8EDE8);
+    }
+    .ss-affirmation-art {
+      display: grid;
+      place-items: center;
+      min-height: 205px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.48);
+      color: #A75E78;
+      font-size: 78px;
+    }
+    .ss-affirmation blockquote {
+      margin: 0;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.2vw, 35px);
+      line-height: 1.45;
+    }
+    .ss-affirmation p {
+      margin: 16px 0 0;
+      color: #806D72;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .ss-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .ss-step {
+      display: flex;
+      gap: 18px;
+      padding: 25px;
+      border: 1px solid #EEE5E1;
+      border-radius: 18px;
+      background: white;
+    }
+    .ss-step-number {
+      flex: 0 0 39px;
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      background: #F3E3E8;
+      color: var(--ss-wine);
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+    }
+    .ss-step h3 {
+      margin: 2px 0 8px;
+      color: var(--ss-dark);
+      font-size: 16px;
+    }
+    .ss-step p {
+      margin: 0;
+      color: var(--ss-muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .ss-response-box {
+      padding: 35px;
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 12px 35px rgba(84,43,61,.045);
+    }
+    .ss-response-box h3 {
+      margin: 0 0 20px;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 500;
+    }
+    .ss-quote-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+    .ss-quote {
+      padding: 17px 18px;
+      border-radius: 13px;
+      background: #F9F2EF;
+      color: #624D55;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .ss-quote::before {
+      content: "“";
+      display: block;
+      margin-bottom: 3px;
+      color: #B16C83;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      line-height: 1;
+    }
+    .ss-avoid {
+      margin-top: 22px;
+      padding: 23px;
+      border: 1px solid #EBD9D8;
+      border-radius: 15px;
+      background: #FBF4F1;
+    }
+    .ss-avoid h4 {
+      margin: 0 0 12px;
+      color: var(--ss-dark);
+      font-size: 15px;
+    }
+    .ss-avoid ul {
+      margin: 0;
+      padding-left: 19px;
+      color: var(--ss-muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .ss-trauma-note {
+      margin-top: 23px;
+      padding: 23px 25px;
+      border-left: 3px solid #C68A9E;
+      border-radius: 0 14px 14px 0;
+      background: #F7ECEE;
+      color: #67565C;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+    .ss-trauma-note strong { color: var(--ss-dark); }
+
+    .ss-care-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .ss-care-card {
+      padding: 27px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid #EEE5E1;
+    }
+    .ss-care-card h3 {
+      margin: 0 0 10px;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      font-weight: 500;
+    }
+    .ss-care-card p {
+      margin: 0;
+      color: var(--ss-muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .ss-choice {
+      padding: 38px;
+      border-radius: 22px;
+      background: #F0E2E5;
+    }
+    .ss-choice h3 {
+      margin: 0 0 12px;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 500;
+    }
+    .ss-choice p {
+      max-width: 820px;
+      margin: 0;
+      color: #6D5960;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .ss-safety {
+      padding: 33px;
+      border: 1px solid #E9D7D4;
+      border-radius: 20px;
+      background: #FFF9F6;
+    }
+    .ss-safety h3 {
+      margin: 0 0 12px;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      font-weight: 500;
+    }
+    .ss-safety p, .ss-safety li {
+      color: var(--ss-muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+    .ss-safety ul { padding-left: 19px; }
+
+    .ss-rights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 23px;
+    }
+    .ss-right {
+      padding: 20px;
+      border: 1px solid #EEE4E0;
+      border-radius: 15px;
+      background: white;
+    }
+    .ss-right strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ss-dark);
+      font-size: 14px;
+    }
+    .ss-right span {
+      color: var(--ss-muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .ss-emergency {
+      padding: 30px;
+      border-radius: 20px;
+      background: #71354E;
+      color: white;
+    }
+    .ss-emergency h3 {
+      margin: 0 0 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 500;
+    }
+    .ss-emergency p {
+      margin: 0;
+      color: #F0DDE4;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .ss-closing {
+      padding: 82px 20px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,.65), transparent 48%),
+        #F1E3E5;
+      text-align: center;
+    }
+    .ss-closing .ss-closing-symbol {
+      color: #B16C83;
+      font-size: 39px;
+    }
+    .ss-closing h2 {
+      max-width: 760px;
+      margin: 17px auto;
+      color: var(--ss-dark);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .ss-closing p {
+      max-width: 570px;
+      margin: 0 auto 25px;
+      color: #75636A;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+    .ss-back-link {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 40px;
+      background: var(--ss-wine);
+      color: white !important;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+    .ss-back-link:hover {
+      background: var(--ss-dark);
+      transform: translateY(-2px);
+    }
+
+    .ss-status {
+      max-width: 1120px;
+      width: 90%;
+      margin: 0 auto 55px;
+      padding: 19px 22px;
+      border: 1px solid #E9DED6;
+      border-radius: 13px;
+      background: #F8F3ED;
+      color: #74666A;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .ss-status strong { color: var(--ss-dark); }
+
+    @media(max-width: 800px) {
+      .ss-hero { padding: 55px 0 60px; }
+      .ss-hero-grid { grid-template-columns: 1fr; gap: 20px; }
+      .ss-hero-art { min-height: 300px; }
+      .ss-orbit { width: 260px; height: 260px; }
+      .ss-heart-card { width: 200px; height: 220px; }
+      .ss-principles, .ss-rights { grid-template-columns: repeat(2, 1fr); }
+      .ss-affirmation { grid-template-columns: 1fr; }
+      .ss-affirmation-art { min-height: 130px; }
+    }
+    @media(max-width: 560px) {
+      .ss-section { padding: 60px 0; }
+      .ss-principles, .ss-steps, .ss-care-grid, .ss-quote-list, .ss-rights {
+        grid-template-columns: 1fr;
+      }
+      .ss-affirmation, .ss-choice, .ss-response-box, .ss-safety {
+        padding: 24px;
+      }
+      .ss-step { padding: 20px; }
+      .ss-hero h1 { font-size: 45px; }
+      .ss-hero-copy { font-size: 14px; }
+      .ss-mantra { padding: 43px 22px; }
+      .ss-floating { width: 47px; height: 47px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MATONI</a>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="learn.html">HERBODY</a>
+        <a href="community.html">Community</a>
+        <a href="ask.html">Ask MATONI</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="ss-page">
+    <div class="ss-container">
+      <div class="ss-breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="guard.html">HERGUARD</a><span>/</span>
+        Survivor Support
+      </div>
+    </div>
+
+    <section class="ss-hero">
+      <div class="ss-container ss-hero-grid">
+        <div>
+          <div class="ss-eyebrow"><span class="ss-eyebrow-dot"></span> A space for care and healing</div>
+          <h1>You are still <em>whole.</em></h1>
+          <p class="ss-hero-copy">
+            Whatever happened to you, it does not reduce your worth.
+            You deserve kindness without conditions, support without pressure,
+            and a future that is bigger than the pain you have experienced.
+          </p>
+          <div class="ss-hero-note">
+            You do not have to be okay today. You deserve care today, exactly as you are.
+          </div>
+        </div>
+
+        <div class="ss-hero-art" aria-label="A gentle illustration representing care and hope">
+          <div class="ss-orbit"></div>
+          <div class="ss-floating ss-float-one">✿</div>
+          <div class="ss-floating ss-float-two">♡</div>
+          <div class="ss-floating ss-float-three">✧</div>
+          <div class="ss-heart-card">
+            <div class="ss-heart-symbol">♡</div>
+            <p>Your story is still being written.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-mantra">
+      <small>Let this be said clearly</small>
+      <h2>What happened to you is not your identity. It is not your fault. And it does not decide your future.</h2>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">First, a few things to remember</div>
+          <h2>You deserve support that respects you.</h2>
+          <p>Survivor-centred support begins with the person who experienced the harm. It does not take control away from them or demand that they heal in a particular way.</p>
+        </div>
+
+        <div class="ss-principles">
+          <article class="ss-principle">
+            <div class="ss-principle-icon">♡</div>
+            <h3>You deserve to be believed</h3>
+            <p>You should not have to prove your pain to deserve compassion, safety or support.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">✿</div>
+            <h3>Your choices matter</h3>
+            <p>You deserve information and support without being forced into decisions you are not ready to make.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">☼</div>
+            <h3>Your dignity is yours</h3>
+            <p>You are not dirty, ruined, weak or less worthy because someone hurt you.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">⌂</div>
+            <h3>Safety comes first</h3>
+            <p>You deserve to be in an environment where your wellbeing is taken seriously.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">✧</div>
+            <h3>Healing has no deadline</h3>
+            <p>There is no correct speed for healing. You do not owe anyone a recovery timetable.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">❀</div>
+            <h3>You are more than the experience</h3>
+            <p>Your dreams, personality, talents, relationships and possibilities still belong to you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section ss-section-soft">
+      <div class="ss-container">
+        <div class="ss-affirmation">
+          <div class="ss-affirmation-art">❀</div>
+          <div>
+            <blockquote>
+              “I am allowed to take my time. I am allowed to ask for help. I am allowed to build a life that feels safe and beautiful again.”
+            </blockquote>
+            <p>You do not have to say these words if you are not ready. Let them simply be here for you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">If this has happened to you</div>
+          <h2>You do not have to figure everything out at once.</h2>
+                <p>There is no perfect script for what to do after experiencing abuse, violence, harassment or exploitation. Start with what is safest and most important right now.</p>
+        </div>
+
+        <div class="ss-steps">
+          <article class="ss-step">
+            <div class="ss-step-number">1</div>
+            <div>
+              <h3>Think about your immediate safety</h3>
+              <p>If you are in danger, move towards a safer place if you can. This might be with a trusted person, in a public place or somewhere the person causing harm cannot easily reach you.</p>
+            </div>
+          </article>
+          <article class="ss-step">
+            <div class="ss-step-number">2</div>
+            <div>
+              <h3>Reach out to someone safe</h3>
+              <p>You might choose a trusted friend, relative, teacher, counsellor, healthcare professional or another responsible adult. You can share only what you feel comfortable sharing.</p>
+            </div>
+          </article>
+          <article class="ss-step">
+            <div class="ss-step-number">3</div>
+            <div>
+              <h3>Consider medical care</h3>
+              <p>If you have been injured, sexually assaulted or exposed to a possible health risk, a healthcare professional can discuss care and time-sensitive options. You do not need to decide about reporting before seeking medical help.</p>
+            </div>
+          </article>
+          <article class="ss-step">
+            <div class="ss-step-number">4</div>
+            <div>
+              <h3>Give yourself room to breathe</h3>
+              <p>You do not have to make every decision immediately. If possible, take things one step at a time and let a safe person help with practical needs.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="ss-trauma-note">
+          <strong>Your reaction does not make your experience less real.</strong>
+          People respond to trauma differently. Some cry; others feel numb, confused, angry, frightened or disconnected. Some struggle to remember details. Some continue their everyday routines. There is no single correct way to react, and none of these responses makes what happened your fault.
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section ss-section-soft">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">For the people who care</div>
+          <h2>How to support someone who has been hurt.</h2>
+          <p>Your response can make a difference. You do not need perfect words. You need patience, respect and a willingness to listen.</p>
+        </div>
+
+        <div class="ss-response-box">
+          <h3>Words that can make someone feel less alone</h3>
+          <div class="ss-quote-list">
+            <div class="ss-quote">I believe you.</div>
+            <div class="ss-quote">I am sorry this happened to you.</div>
+            <div class="ss-quote">This was not your fault.</div>
+            <div class="ss-quote">You do not have to tell me everything.</div>
+            <div class="ss-quote">What would help you feel safer right now?</div>
+            <div class="ss-quote">I will respect your choices.</div>
+            <div class="ss-quote">Would you like me to stay with you?</div>
+            <div class="ss-quote">You deserve support, and we can take this one step at a time.</div>
+          </div>
+
+          <div class="ss-avoid">
+            <h4>Things to avoid saying or doing</h4>
+            <ul>
+              <li>Asking why they did not fight back, leave sooner or report immediately.</li>
+              <li>Blaming their clothing, behaviour, relationship or decisions.</li>
+              <li>Pressuring them to confront the person responsible or forgive them.</li>
+              <li>Sharing their story with friends, family or social media without permission.</li>
+              <li>Making promises you cannot keep, including absolute secrecy.</li>
+              <li>Turning their experience into gossip, an investigation or a story about yourself.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">Care beyond the first conversation</div>
+          <h2>Support can look different for everyone.</h2>
+          <p>There is no one-size-fits-all recovery plan. These are some forms of support a survivor may choose to explore.</p>
+        </div>
+
+        <div class="ss-care-grid">
+          <article class="ss-care-card">
+            <h3>Medical and physical care</h3>
+            <p>A healthcare professional can assess injuries, discuss sexual and reproductive health needs, explain available preventive care and answer questions. Some options are time-sensitive, so seeking care promptly may be important. You deserve respectful treatment without shame.</p>
+          </article>
+          <article class="ss-care-card">
+            <h3>Emotional and psychological care</h3>
+            <p>A trained counsellor or mental health professional may help you process difficult feelings, understand your responses and explore coping strategies. You can ask about the person's qualifications, confidentiality and approach before beginning.</p>
+          </article>
+          <article class="ss-care-card">
+            <h3>Practical and everyday support</h3>
+            <p>Support may include a safe place to stay, help with transport, food, school arrangements, childcare or accompanying someone to an appointment. Small acts of care can matter enormously.</p>
+          </article>
+          <article class="ss-care-card">
+            <h3>Community and trusted relationships</h3>
+            <p>Some people find comfort in trusted friends, family, peer groups or supportive community organisations. Choose people who respect your privacy and do not pressure you to share more than you want.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section ss-section-soft">
+      <div class="ss-container">
+        <div class="ss-choice">
+          <div class="ss-kicker">Your voice matters</div>
+          <h3>Reporting is a choice where the law allows you to decide.</h3>
+          <p>
+            You may want to report what happened, seek legal advice, explore formal protection or take time before deciding. You deserve clear information about possible processes and their consequences, without threats or pressure. There may be legal safeguarding or reporting duties in situations involving children or immediate danger. A qualified local professional can explain what applies. Accessing healthcare and emotional support should not be treated as something you must earn by making a report.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">When the survivor is under 18</div>
+          <h2>Children deserve protection, not blame.</h2>
+          <p>When a child or teenager experiences abuse, exploitation or violence, their safety and protection must be taken seriously.</p>
+        </div>
+
+        <div class="ss-safety">
+          <h3>How a safe adult can help</h3>
+          <ul>
+            <li>Listen calmly and take what the child says seriously.</li>
+            <li>Explain that they are not to blame and did the right thing by seeking help.</li>
+            <li>Help them reach a safe, responsible adult or qualified child-protection professional.</li>
+            <li>Do not confront or alert a suspected abuser if doing so could increase danger.</li>
+            <li>Do not repeatedly question the child or pressure them to recount painful details.</li>
+            <li>Do not promise absolute secrecy. Explain gently that information may need to be shared with people responsible for keeping them safe.</li>
+          </ul>
+          <p>Where a parent or caregiver may be involved in the harm, seek help from another safe adult or appropriate child-protection professional instead.</p>
+        </div>
+      </div>
+    </section>
+
+<header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">MATONI</a>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="learn.html">HERBODY</a>
+        <a href="community.html">Community</a>
+        <a href="ask.html">Ask MATONI</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="ss-page">
+    <div class="ss-container">
+      <div class="ss-breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="guard.html">HERGUARD</a><span>/</span>
+        Survivor Support
+      </div>
+    </div>
+
+    <section class="ss-hero">
+      <div class="ss-container ss-hero-grid">
+        <div>
+          <div class="ss-eyebrow"><span class="ss-eyebrow-dot"></span> A space for care and healing</div>
+          <h1>You are still <em>whole.</em></h1>
+          <p class="ss-hero-copy">
+            Whatever happened to you, it does not reduce your worth.
+            You deserve kindness without conditions, support without pressure,
+            and a future that is bigger than the pain you have experienced.
+          </p>
+          <div class="ss-hero-note">
+            You do not have to be okay today. You deserve care today, exactly as you are.
+          </div>
+        </div>
+
+        <div class="ss-hero-art" aria-label="A gentle illustration representing care and hope">
+          <div class="ss-orbit"></div>
+          <div class="ss-floating ss-float-one">✿</div>
+          <div class="ss-floating ss-float-two">♡</div>
+          <div class="ss-floating ss-float-three">✧</div>
+          <div class="ss-heart-card">
+            <div class="ss-heart-symbol">♡</div>
+            <p>Your story is still being written.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-mantra">
+      <small>Let this be said clearly</small>
+      <h2>What happened to you is not your identity. It is not your fault. And it does not decide your future.</h2>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">First, a few things to remember</div>
+          <h2>You deserve support that respects you.</h2>
+          <p>Survivor-centred support begins with the person who experienced the harm. It does not take control away from them or demand that they heal in a particular way.</p>
+        </div>
+
+        <div class="ss-principles">
+          <article class="ss-principle">
+            <div class="ss-principle-icon">♡</div>
+            <h3>You deserve to be believed</h3>
+            <p>You should not have to prove your pain to deserve compassion, safety or support.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">✿</div>
+            <h3>Your choices matter</h3>
+            <p>You deserve information and support without being forced into decisions you are not ready to make.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">☼</div>
+            <h3>Your dignity is yours</h3>
+            <p>You are not dirty, ruined, weak or less worthy because someone hurt you.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">⌂</div>
+            <h3>Safety comes first</h3>
+            <p>You deserve to be in an environment where your wellbeing is taken seriously.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">✧</div>
+            <h3>Healing has no deadline</h3>
+            <p>There is no correct speed for healing. You do not owe anyone a recovery timetable.</p>
+          </article>
+          <article class="ss-principle">
+            <div class="ss-principle-icon">❀</div>
+            <h3>You are more than the experience</h3>
+            <p>Your dreams, personality, talents, relationships and possibilities still belong to you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section ss-section-soft">
+      <div class="ss-container">
+        <div class="ss-affirmation">
+          <div class="ss-affirmation-art">❀</div>
+          <div>
+            <blockquote>
+              “I am allowed to take my time. I am allowed to ask for help. I am allowed to build a life that feels safe and beautiful again.”
+            </blockquote>
+            <p>You do not have to say these words if you are not ready. Let them simply be here for you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">If this has happened to you</div>
+          <h2>You do not have to figure everything out at once.</h2>
+          <p>There is no perfect script for what to do after experiencing abuse, violence, harassment or exploitation. Start with what is safest and most important right now.</p>
+        </div>
+
+        <div class="ss-steps">
+          <article class="ss-step">
+            <div class="ss-step-number">1</div>
+            <div>
+              <h3>Think about your immediate safety</h3>
+              <p>If you are in danger, move towards a safer place if you can. This might be with a trusted person, in a public place or somewhere the person causing harm cannot easily reach you.</p>
+            </div>
+          </article>
+          <article class="ss-step">
+            <div class="ss-step-number">2</div>
+            <div>
+              <h3>Reach out to someone safe</h3>
+              <p>You might choose a trusted friend, relative, teacher, counsellor, healthcare professional or another responsible adult. You can share only what you feel comfortable sharing.</p>
+            </div>
+          </article>
+          <article class="ss-step">
+            <div class="ss-step-number">3</div>
+            <div>
+              <h3>Consider medical care</h3>
+              <p>If you have been injured, sexually assaulted or exposed to a possible health risk, a healthcare professional can discuss care and time-sensitive options. You do not need to decide about reporting before seeking medical help.</p>
+            </div>
+          </article>
+          <article class="ss-step">
+            <div class="ss-step-number">4</div>
+            <div>
+              <h3>Give yourself room to breathe</h3>
+              <p>You do not have to make every decision immediately. If possible, take things one step at a time and let a safe person help with practical needs.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="ss-trauma-note">
+          <strong>Your reaction does not make your experience less real.</strong>
+          People respond to trauma differently. Some cry; others feel numb, confused, angry, frightened or disconnected. Some struggle to remember details. Some continue their everyday routines. There is no single correct way to react, and none of these responses makes what happened your fault.
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section ss-section-soft">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">For the people who care</div>
+          <h2>How to support someone who has been hurt.</h2>
+          <p>Your response can make a difference. You do not need perfect words. You need patience, respect and a willingness to listen.</p>
+        </div>
+
+        <div class="ss-response-box">
+          <h3>Words that can make someone feel less alone</h3>
+          <div class="ss-quote-list">
+            <div class="ss-quote">I believe you.</div>
+            <div class="ss-quote">I am sorry this happened to you.</div>
+            <div class="ss-quote">This was not your fault.</div>
+            <div class="ss-quote">You do not have to tell me everything.</div>
+            <div class="ss-quote">What would help you feel safer right now?</div>
+            <div class="ss-quote">I will respect your choices.</div>
+            <div class="ss-quote">Would you like me to stay with you?</div>
+            <div class="ss-quote">You deserve support, and we can take this one step at a time.</div>
+          </div>
+
+          <div class="ss-avoid">
+            <h4>Things to avoid saying or doing</h4>
+            <ul>
+              <li>Asking why they did not fight back, leave sooner or report immediately.</li>
+              <li>Blaming their clothing, behaviour, relationship or decisions.</li>
+              <li>Pressuring them to confront the person responsible or forgive them.</li>
+              <li>Sharing their story with friends, family or social media without permission.</li>
+              <li>Making promises you cannot keep, including absolute secrecy.</li>
+              <li>Turning their experience into gossip, an investigation or a story about yourself.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">Care beyond the first conversation</div>
+          <h2>Support can look different for everyone.</h2>
+          <p>There is no one-size-fits-all recovery plan. These are some forms of support a survivor may choose to explore.</p>
+        </div>
+
+        <div class="ss-care-grid">
+          <article class="ss-care-card">
+            <h3>Medical and physical care</h3>
+            <p>A healthcare professional can assess injuries, discuss sexual and reproductive health needs, explain available preventive care and answer questions. Some options are time-sensitive, so seeking care promptly may be important. You deserve respectful treatment without shame.</p>
+          </article>
+          <article class="ss-care-card">
+            <h3>Emotional and psychological care</h3>
+            <p>A trained counsellor or mental health professional may help you process difficult feelings, understand your responses and explore coping strategies. You can ask about the person's qualifications, confidentiality and approach before beginning.</p>
+          </article>
+          <article class="ss-care-card">
+            <h3>Practical and everyday support</h3>
+            <p>Support may include a safe place to stay, help with transport, food, school arrangements, childcare or accompanying someone to an appointment. Small acts of care can matter enormously.</p>
+          </article>
+          <article class="ss-care-card">
+            <h3>Community and trusted relationships</h3>
+            <p>Some people find comfort in trusted friends, family, peer groups or supportive community organisations. Choose people who respect your privacy and do not pressure you to share more than you want.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section ss-section-soft">
+      <div class="ss-container">
+        <div class="ss-choice">
+          <div class="ss-kicker">Your voice matters</div>
+          <h3>Reporting is a choice where the law allows you to decide.</h3>
+          <p>
+            You may want to report what happened, seek legal advice, explore formal protection or take time before deciding. You deserve clear information about possible processes and their consequences, without threats or pressure. There may be legal safeguarding or reporting duties in situations involving children or immediate danger. A qualified local professional can explain what applies. Accessing healthcare and emotional support should not be treated as something you must earn by making a report.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">When the survivor is under 18</div>
+          <h2>Children deserve protection, not blame.</h2>
+          <p>When a child or teenager experiences abuse, exploitation or violence, their safety and protection must be taken seriously.</p>
+        </div>
+
+        <div class="ss-safety">
+          <h3>How a safe adult can help</h3>
+          <ul>
+            <li>Listen calmly and take what the child says seriously.</li>
+            <li>Explain that they are not to blame and did the right thing by seeking help.</li>
+            <li>Help them reach a safe, responsible adult or qualified child-protection professional.</li>
+            <li>Do not confront or alert a suspected abuser if doing so could increase danger.</li>
+            <li>Do not repeatedly question the child or pressure them to recount painful details.</li>
+            <li>Do not promise absolute secrecy. Explain gently that information may need to be shared with people responsible for keeping them safe.</li>
+          </ul>
+          <p>Where a parent or caregiver may be involved in the harm, seek help from another safe adult or appropriate child-protection professional instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section ss-section-soft">
+      <div class="ss-container">
+        <div class="ss-section-heading">
+          <div class="ss-kicker">Protecting your privacy</div>
+          <h2>Your story deserves careful handling.</h2>
+          <p>If you are seeking help, you may want to think about who can access your information and whether your devices are safe to use.</p>
+        </div>
+
+        <div class="ss-rights">
+          <div class="ss-right">
+            <strong>Choose your confidants</strong>
+            <span>Share personal information with people and professionals you have reason to trust.</span>
+          </div>
+          <div class="ss-right">
+            <strong>Protect your devices</strong>
+            <span>Review passwords, account access and location sharing if someone may be monitoring you.</span>
+          </div>
+          <div class="ss-right">
+            <strong>Be careful online</strong>
+            <span>Avoid posting identifying details or confronting an abuser publicly if it could put you at risk.</span>
+          </div>
+          <div class="ss-right">
+            <strong>Keep evidence safely if you choose</strong>
+            <span>Messages, screenshots or other records may be useful. Store them somewhere the person causing harm cannot access.</span>
+          </div>
+          <div class="ss-right">
+            <strong>Ask about confidentiality</strong>
+            <span>Before sharing sensitive details with a service, ask who may see the information and when it may need to be disclosed.</span>
+          </div>
+          <div class="ss-right">
+            <strong>Do not delay urgent care</strong>
+            <span>Never put your health or immediate safety at risk to collect evidence or preserve a device.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-section">
+      <div class="ss-container">
+        <div class="ss-emergency">
+          <h3>If you are in immediate danger</h3>
+          <p>
+            Please prioritise getting to a safer place and contacting local emergency services, a trusted safe adult or a nearby healthcare provider. If you are injured or need urgent medical attention, seek care as soon as possible. If one person does not take you seriously, try another safe person or appropriate service. You deserve to be helped.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-closing">
+      <div class="ss-container">
+        <div class="ss-closing-symbol">♡</div>
+        <h2>There is still room for joy in your story.</h2>
+        <p>
+          You can laugh again. You can dream again. You can discover new things about yourself, build meaningful friendships and create a future that belongs to you. Healing may take time, and difficult days may still come. None of that takes away your worth.
+        </p>
+        <a class="ss-back-link" href="guard.html">Return to HERGUARD</a>
+      </div>
+    </section>
+
+    <div class="ss-status">
+      <strong>A note about MATONI:</strong> This page provides educational information and supportive guidance. MATONI's direct reporting, case-management and referral systems are still under development. This page does not submit a report, alert a response team, provide emergency assistance or establish contact with a counsellor. Please use appropriate local emergency, healthcare and protection services when you need direct help.
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <a href="index.html" class="logo">MATONI</a>
+        <p>A world where no girl or woman is made to feel ashamed of her body, her voice or her experiences.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="learn.html">HERBODY</a>
+        <a href="community.html">Community</a>
+        <a href="ask.html">Ask MATONI</a>
+        <a href="research.html">HERRESEARCH</a>
+        <a href="guard.html">HERGUARD</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 MATONI. Every girl deserves dignity, safety and a voice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=7"></script>
+</body>
+</html>
+
+
