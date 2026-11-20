@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#713d56">
+
+  <title>HERBODY | MATONI</title>
+
+  <meta name="description" content="Explore HERBODY by MATONI: body literacy, menstrual cycle education, symptom awareness and personal health journaling.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --hb-ink: #352630;
+      --hb-wine: #713d56;
+      --hb-muted: #796b73;
+      --hb-paper: #fffdfc;
+      --hb-soft: #f8f2f5;
+      --hb-line: #eadfe5;
+      --hb-accent: #b58a9d;
+    }
+
+    body {
+      background: var(--hb-paper);
+      color: var(--hb-ink);
+    }
+
+    .hb-header {
+      background: var(--hb-paper);
+      border-bottom: 1px solid var(--hb-line);
+    }
+
+    .hb-logo {
+      letter-spacing: 0.16em;
+      font-size: 23px;
+      font-weight: 700;
+    }
+
+    .hb-header nav a {
+      font-size: 13px;
+    }
+
+    /* INTRODUCTION */
+
+    .hb-hero {
+      max-width: 1050px;
+      margin: auto;
+      padding: 95px 24px 85px;
+      text-align: center;
+    }
+
+    .hb-eyebrow {
+      color: var(--hb-wine);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      margin-bottom: 22px;
+    }
+
+    .hb-hero h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(43px, 7vw, 76px);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+    }
+
+    .hb-hero h1 span {
+      color: var(--hb-wine);
+      font-style: italic;
+    }
+
+    .hb-description {
+      max-width: 590px;
+      margin: 25px auto 0;
+      color: var(--hb-muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .hb-note {
+      max-width: 650px;
+      margin: 35px auto 0;
+      padding: 19px 23px;
+      background: var(--hb-soft);
+      border: 1px solid var(--hb-line);
+      color: var(--hb-muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* FEATURE SECTION */
+
+    .hb-features {
+      padding: 70px 24px 90px;
+      background: var(--hb-soft);
+      border-top: 1px solid var(--hb-line);
+    }
+
+    .hb-container {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .hb-section-heading {
+      margin-bottom: 38px;
+      text-align: center;
+    }
+
+    .hb-section-heading h2 {
+      margin: 12px 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .hb-section-heading p:last-child {
+      max-width: 540px;
+      margin: auto;
+      color: var(--hb-muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .hb-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .hb-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 235px;
+      padding: 29px;
+      background: var(--hb-paper);
+      border: 1px solid var(--hb-line);
+      text-decoration: none;
+      color: var(--hb-ink);
+      transition: transform 0.2s ease,
+                  border-color 0.2s ease,
+                  box-shadow 0.2s ease;
+    }
+
+    .hb-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--hb-accent);
+      box-shadow: 0 12px 30px rgba(72, 43, 58, 0.07);
+    }
+
+    .hb-card-number {
+      color: var(--hb-accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      margin-bottom: 23px;
+    }
+
+    .hb-card h3 {
+      margin: 0 0 11px;
+      color: var(--hb-wine);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: 400;
+    }
+
+    .hb-card p {
+      max-width: 390px;
+      margin: 0 0 25px;
+      color: var(--hb-muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .hb-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 17px;
+      border-top: 1px solid var(--hb-line);
+      color: var(--hb-wine);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .hb-card-arrow {
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    /* CLOSING NOTE */
+
+    .hb-closing {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 75px 24px 85px;
+      text-align: center;
+    }
+
+    .hb-closing h2 {
+      margin: 0 0 15px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(27px, 4vw, 38px);
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .hb-closing p {
+      max-width: 570px;
+      margin: auto;
+      color: var(--hb-muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* FOOTER */
+
+    .hb-footer {
+      padding: 43px 24px 25px;
+      background: #382934;
+      color: #fff;
+    }
+
+    .hb-footer-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .hb-footer-brand {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+    }
+
+    .hb-footer-tagline {
+      margin-top: 10px;
+      color: #e6d8df;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+    }
+
+    .hb-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      margin: 28px 0;
+    }
+
+    .hb-footer-links a {
+      color: #f1e7ec;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .hb-footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .hb-footer-bottom {
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      color: #d5c5ce;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      .hb-hero {
+        padding: 75px 21px 65px;
+      }
+
+      .hb-features {
+        padding: 58px 19px 70px;
+      }
+
+      .hb-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .hb-card {
+        min-height: 210px;
+        padding: 24px;
+      }
+
+      .hb-card h3 {
+        font-size: 25px;
+      }
+
+      .hb-closing {
+        padding: 60px 22px 70px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- HEADER -->
+
+  <header class="header hb-header">
+
+    <a href="index.html" class="logo hb-logo">MATONI</a>
+
+    <button class="menu-button"
+            onclick="toggleMenu()"
+            aria-label="Open navigation">
+      ☰
+    </button>
+
+    <nav id="navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#explore">Explore</a>
+      <a href="herbody.html">HERBODY</a>
+      <a href="hervoice.html">HERVOICE</a>
+      <a href="research.html">Research</a>
+    </nav>
+
+  </header>
+
+  <main id="main">
+
+    <!-- HERBODY INTRODUCTION -->
+
+    <section class="hb-hero">
+
+      <p class="hb-eyebrow">MATONI PRESENTS</p>
+
+      <h1>Welcome to <span>HERBODY.</span></h1>
+
+      <p class="hb-description">
+        Your body deserves to be understood, not questioned,
+        dismissed or misunderstood.
+
+        HERBODY is a space for girls and women to learn about
+        their bodies, understand their experiences and become
+        more confident in making informed decisions about
+        their health.
+      </p>
+
+      <div class="hb-note">
+        Every body has a story. Every question deserves to be
+        taken seriously. You are welcome to learn at your own
+        pace, without shame or judgement.
+      </div>
+
+    </section>
+
+    <!-- HERBODY FEATURES -->
+
+    <section class="hb-features">
+
+      <div class="hb-container">
+
+        <div class="hb-section-heading">
+
+          <p class="hb-eyebrow">EXPLORE HERBODY</p>
+
+          <h2>Where would you like to begin?</h2>
+
+          <p>
+            Choose an area to explore. Each space has its own
+            information and tools to help you understand your body.
+          </p>
+
+        </div>
+
+        <div class="hb-grid">
+
+          <!-- BODY LITERACY -->
+
+          <a href="body.html" class="hb-card">
+
+            <span class="hb-card-number">01</span>
+
+            <h3>Body Literacy</h3>
+
+            <p>
+              Learn about female anatomy, hormones, reproductive
+              health, puberty and the changes that happen
+              throughout life.
+            </p>
+
+            <div class="hb-card-bottom">
+              <span>Explore body knowledge</span>
+              <span class="hb-card-arrow">↗</span>
+            </div>
+
+          </a>
+
+          <!-- MY CYCLE -->
+
+          <a href="cycle.html" class="hb-card">
+
+            <span class="hb-card-number">02</span>
+
+            <h3>My Cycle</h3>
+
+            <p>
+              Understand menstruation, the phases of the menstrual
+              cycle, hormonal changes and your individual patterns.
+            </p>
+
+            <div class="hb-card-bottom">
+              <span>Explore menstrual health</span>
+              <span class="hb-card-arrow">↗</span>
+            </div>
+
+          </a>
+
+          <!-- SYMPTOMS -->
+
+          <a href="symptoms.html" class="hb-card">
+
+            <span class="hb-card-number">03</span>
+
+            <h3>Symptoms</h3>
+
+            <p>
+              Explore common body symptoms, understand possible
+              explanations and recognise signs that may need
+              professional medical attention.
+            </p>
+
+            <div class="hb-card-bottom">
+              <span>Understand your symptoms</span>
+              <span class="hb-card-arrow">↗</span>
+            </div>
+
+          </a>
+
+          <!-- MY JOURNAL -->
+
+          <a href="journal.html" class="hb-card">
+
+            <span class="hb-card-number">04</span>
+
+            <h3>My Journal</h3>
+
+            <p>
+              Create a personal space for recording your
+              experiences, observations, questions and health
+              reflections.
+            </p>
+
+            <div class="hb-card-bottom">
+              <span>Open your personal journal</span>
+              <span class="hb-card-arrow">↗</span>
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CLOSING MESSAGE -->
+
+    <section class="hb-closing">
+
+      <p class="hb-eyebrow">A MATONI PROMISE</p>
+
+      <h2>Understanding your body should never come with shame.</h2>
+
+      <p>
+        You deserve accurate information, respect and the freedom
+        to ask questions about your health. Start wherever you feel
+        comfortable. Your journey belongs to you.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="hb-footer">
+
+    <div class="hb-footer-inner">
+
+      <div class="hb-footer-brand">MATONI</div>
+
+      <p class="hb-footer-tagline">
+        A world where every girl is understood.
+      </p>
+
+      <div class="hb-footer-links">
+        <a href="index.html">Home</a>
+        <a href="herbody.html">HERBODY</a>
+        <a href="learn.html">Learning</a>
+        <a href="hervoice.html">HERVOICE</a>
+        <a href="research.html">Research</a>
+        <a href="guard.html">HERGUARD</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="guidelines.html">Community Guidelines</a>
+        <a href="safety.html">Health and Safety</a>
+      </div>
+
+      <div class="hb-footer-bottom">
+
+        <p>© 2026 MATONI. All rights reserved.</p>
+
+        <p>
+          Educational information on this platform is not a substitute
+          for professional medical advice, diagnosis or treatment.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+  </html>
+  
