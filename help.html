@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#542b3f">
+
+<title>Get Help Now | MATONI</title>
+<meta name="description" content="Find support, report abuse, seek protection and access help through MATONI.">
+
+<style>
+:root {
+  --wine: #542b3f;
+  --wine-dark: #402031;
+  --rose: #b58a9d;
+  --rose-light: #f8f2f5;
+  --ivory: #fffdfc;
+  --cream: #f8f3ed;
+  --ink: #352630;
+  --muted: #776a70;
+  --line: #eadfe4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* HEADER */
+
+.header {
+  background: var(--wine);
+  color: white;
+  padding: 19px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Segoe Script", "Brush Script MT", cursive;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.menu-button {
+  border: 1px solid rgba(255,255,255,.45);
+  background: transparent;
+  color: white;
+  padding: 7px 12px;
+  font: 12px Arial, sans-serif;
+  cursor: pointer;
+}
+
+#navigation {
+  display: none;
+  background: var(--wine-dark);
+  padding: 12px 20px;
+}
+
+#navigation.open {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+#navigation a {
+  color: white;
+  font: 12px Arial, sans-serif;
+}
+
+/* INTRO */
+
+.intro {
+  padding: 38px 22px 28px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.eyebrow {
+  font: 10px Arial, sans-serif;
+  color: var(--rose);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  color: var(--wine);
+  font-size: clamp(32px, 6vw, 45px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 8px 0 12px;
+}
+
+.intro p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 650px;
+}
+
+/* EMERGENCY NOTICE */
+
+.emergency {
+  max-width: 850px;
+  margin: 0 auto 25px;
+  padding: 15px 18px;
+  background: #f8eeee;
+  border-left: 3px solid #a14c54;
+}
+
+.emergency h2 {
+  font-size: 17px;
+  font-weight: 400;
+  color: #843b43;
+  margin-bottom: 3px;
+}
+
+.emergency p {
+  font-size: 12px;
+  color: #684c50;
+}
+
+.emergency a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* PAGE LAYOUT */
+
+.page-content {
+  max-width: 850px;
+  margin: auto;
+  padding: 0 20px 45px;
+}
+
+.section-title {
+  color: var(--wine);
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.section-description {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* REPORT PANEL */
+
+.report-panel {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  padding: 23px;
+  margin-bottom: 35px;
+}
+
+.report-intro {
+  margin-bottom: 20px;
+}
+
+.report-intro h2 {
+  color: var(--wine);
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.report-intro p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* FORM */
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label,
+.form-label {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.form-group small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+input, select, textarea {
+  width: 100%;
+  background: white;
+  border: 1px solid #ded1d8;
+  border-radius: 2px;
+  padding: 11px;
+  color: var(--ink);
+  font-size: 13px;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 2px rgba(181,138,157,.12);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 115px;
+}
+
+.choice-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.choice input {
+  width: auto;
+  margin-top: 4px;
+  accent-color: var(--wine);
+}
+
+.choice span {
+  flex: 1;
+}
+
+.privacy-note {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.privacy-note strong {
+  color: var(--wine);
+}
+
+.submit-button {
+  background: var(--wine);
+  color: white;
+  border: none;
+  padding: 12px 17px;
+  font: 12px Arial, sans-serif;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.submit-button:hover {
+  background: var(--wine-dark);
+}
+
+/* EXTERNAL SUPPORT */
+
+.external-support {
+  margin-top: 35px;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.support-card {
+  border: 1px solid var(--line);
+  background: white;
+  padding: 17px;
+}
+
+.support-card h3 {
+  color: var(--wine);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.support-card p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.support-card a {
+  display: inline-block;
+  margin-top: 9px;
+  color: var(--wine);
+  font: 10px Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+/* SAFETY */
+
+.safety-section {
+  margin-top: 30px;
+  background: var(--rose-light);
+  padding: 18px;
+}
+
+.safety-section h2 {
+  color: var(--wine);
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.safety-section p,
+.safety-section li {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.safety-section ul {
+  padding-left: 18px;
+  margin-top: 8px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--wine-dark);
+  color: white;
+  text-align: center;
+  padding: 25px 18px;
+}
+
+.footer-brand {
+  font-family: "Segoe Script", "Brush Script MT", cursive;
+  font-size: 29px;
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 13px 18px;
+  margin: 15px 0;
+}
+
+.footer-links a {
+  color: #eadde3;
+  font: 10px Arial, sans-serif;
+}
+
+footer p {
+  color: #cdb7c1;
+  font: 10px Arial, sans-serif;
+}
+
+/* QUICK EXIT */
+
+.quick-exit {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 999;
+  border: 1px solid #d9cbd1;
+  background: white;
+  color: var(--wine);
+  padding: 8px 12px;
+  font: 10px Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.12);
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+  .intro {
+    padding-top: 30px;
+  }
+
+  .report-panel {
+    padding: 17px;
+  }
+
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-intro h2 {
+    font-size: 23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">MATONI</a>
+
+  <button class="menu-button" onclick="toggleMenu()">
+    Menu
+  </button>
+</header>
+
+<nav id="navigation">
+  <a href="index.html">Home</a>
+  <a href="herbody.html">HERBODY</a>
+  <a href="learn.html">HERWISE</a>
+  <a href="hervoice.html">HERVOCIE</a>
+  <a href="research.html">HERRESEARCH</a>
+  <a href="guard.html">HERGUARD</a>
+</nav>
+
+<section class="intro">
+  <div class="eyebrow">Support · Safety · Protection</div>
+
+  <h1>Get Help Now</h1>
+
+  <p>
+    You deserve to feel safe, respected and supported.
+    Whatever you are experiencing, you deserve to be taken
+    seriously. You do not have to face everything alone.
+  </p>
+</section>
+
+<!-- EMERGENCY -->
+<section class="emergency">
+  <h2>Are you in immediate danger?</h2>
+  <p>
+    If you are in immediate danger, try to move to a safer place
+    and contact emergency services or someone you trust who can
+    help you right now. Do not wait for an online report to receive help.
+  </p>
+</section>
+
+<main class="page-content">
+
+  <!-- REPORT TO MATONI -->
+  <section class="report-panel">
+
+    <div class="report-intro">
+      <div class="eyebrow">Your voice matters</div>
+
+      <h2>Report to MATONI</h2>
+
+      <p>
+        If you are experiencing abuse, threats, coercion, exploitation
+        or a situation that makes you feel unsafe, you can report it
+        here. You can choose to remain anonymous.
+      </p>
+    </div>
+
+    <form class="report-form"
+          id="matoni-report-form"
+          action=""
+          method="POST">
+
+      <div class="form-group">
+        <label for="report-category">What would you like to report?</label>
+
+        <select id="report-category" name="category" required>
+          <option value="">Select a category</option>
+          <option>Forced marriage or threat of forced marriage</option>
+          <option>Sexual abuse or assault</option>
+          <option>Domestic or family violence</option>
+          <option>Harassment or stalking</option>
+          <option>Exploitation or trafficking</option>
+          <option>Child abuse or neglect</option>
+          <option>Health-related concern</option>
+          <option>Threats or intimidation</option>
+          <option>Other safety concern</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="danger-level">
+          Are you currently in danger?
+        </label>
+
+        <select id="danger-level" name="danger_level" required>
+          <option value="">Please select</option>
+          <option>Yes, I am in immediate danger</option>
+          <option>I may be in danger soon</option>
+          <option>No, but I need help</option>
+          <option>I am reporting for someone else</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="report-description">
+          Tell us what happened
+        </label>
+
+        <small>
+          Share only what you feel comfortable sharing.
+          You do not need to describe everything.
+        </small>
+
+        <textarea
+          id="report-description"
+          name="description"
+          placeholder="Write your report here..."
+          required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>How would you like to submit your report?</label>
+
+        <div class="choice-group">
+
+          <label class="choice">
+            <input type="radio"
+                   name="identity_option"
+                   value="anonymous"
+                   checked>
+            <span>
+              <strong>Anonymous report</strong><br>
+              I do not want to provide my identity.
+            </span>
+          </label>
+
+          <label class="choice">
+            <input type="radio"
+                   name="identity_option"
+                   value="identified">
+            <span>
+              <strong>Identified report</strong><br>
+              I am willing to share my details so MATONI can contact me.
+            </span>
+          </label>
+
+        </div>
+      </div>
+
+      <div id="contact-fields" style="display:none">
+
+        <div class="form-group">
+          <label for="report-name">Your name</label>
+          <input type="text"
+                 id="report-name"
+                 name="name"
+                 autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="report-contact">Phone number or email</label>
+          <input type="text"
+                 id="report-contact"
+                 name="contact"
+                 placeholder="How can we safely contact you?">
+        </div>
+
+        <div class="form-group">
+          <label for="safe-contact">Is it safe to contact you?</label>
+          <select id="safe-contact" name="safe_contact">
+            <option value="">Select an option</option>
+            <option>Yes</option>
+            <option>Yes, but only at specific times</option>
+            <option>No, please do not contact me</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-instructions">
+            Safe contact instructions
+          </label>
+
+          <textarea id="contact-instructions"
+                    name="contact_instructions"
+                    placeholder="For example, do not call, only send messages..."></textarea>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="report-location">
+          Country or location (optional)
+        </label>
+
+        <input type="text"
+               id="report-location"
+               name="location"
+               placeholder="Country, state or general location">
+      </div>
+
+      <div class="form-group">
+        <label>Would you like assistance?</label>
+
+        <div class="choice-group">
+
+          <label class="choice">
+            <input type="checkbox"
+                   name="assistance[]"
+                   value="safety">
+            <span>Safety or protection assistance</span>
+          </label>
+
+          <label class="choice">
+            <input type="checkbox"
+                   name="assistance[]"
+                   value="medical">
+            <span>Medical assistance</span>
+          </label>
+
+          <label class="choice">
+            <input type="checkbox"
+                   name="assistance[]"
+                   value="legal">
+            <span>Legal information or assistance</span>
+          </label>
+
+          <label class="choice">
+            <input type="checkbox"
+                   name="assistance[]"
+                   value="counselling">
+            <span>Counselling or emotional support</span>
+          </label>
+
+          <label class="choice">
+            <input type="checkbox"
+                   name="assistance[]"
+                   value="referral">
+            <span>Referral to an external organisation</span>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="privacy-note">
+        <strong>Your safety and privacy matter.</strong>
+        Please avoid including passwords, bank details or information
+        that could unnecessarily put you at risk. Your report should
+        only be accessible to authorised MATONI personnel.
+      </div>
+
+      <button type="submit" class="submit-button">
+        Submit Report
+      </button>
+
+    </form>
+
+  </section>
+
+
+  <!-- EXTERNAL SUPPORT -->
+  <section class="external-support">
+
+    <div class="eyebrow">Support beyond MATONI</div>
+
+    <h2 class="section-title">Find external help</h2>
+
+    <p class="section-description">
+      Sometimes the quickest or most appropriate help comes from
+      specialised organisations and professionals.
+    </p>
+
+    <div class="support-grid">
+
+      <article class="support-card">
+        <h3>Emergency Services</h3>
+        <p>
+          For immediate threats, emergencies or situations where
+          someone's safety is at risk.
+        </p>
+        <a href="https://www.npf.gov.ng/" target="_blank" rel="noopener noreferrer">
+          Emergency resources ↗
+        </a>
+      </article>
+
+      <article class="support-card">
+        <h3>Medical Support</h3>
+        <p>
+          For injuries, sexual assault, urgent reproductive health
+          concerns or other medical emergencies.
+        </p>
+        <a href="https://www.health.gov.ng/" target="_blank" rel="noopener noreferrer">
+          Health resources ↗
+        </a>
+      </article>
+
+      <article class="support-card">
+        <h3>Protection & GBV Support</h3>
+        <p>
+          Find organisations providing support for abuse,
+          violence, exploitation and protection concerns.
+        </p>
+        <a href="https://www.unwomen.org/" target="_blank" rel="noopener noreferrer">
+          Find support resources ↗
+        </a>
+      </article>
+
+      <article class="support-card">
+        <h3>Legal Assistance</h3>
+        <p>
+          For information about legal rights, protection,
+          reporting and possible legal remedies.
+        </p>
+        <a href="https://lawsofnigeria.placng.org/" target="_blank" rel="noopener noreferrer">
+          Legal information ↗
+        </a>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- SAFETY GUIDANCE -->
+  <section class="safety-section">
+
+    <h2>If you are worried about your safety</h2>
+
+    <p>
+      You know your situation best. Choose the steps that are safest
+      for you. Seeking help does not mean you have to do everything at once.
+    </p>
+
+    <ul>
+      <li>Move to a safer place if you can do so without increasing danger.</li>
+      <li>Reach out to someone you trust who will take you seriously.</li>
+      <li>Seek medical care if you are injured or need urgent medical attention.</li>
+      <li>Avoid confronting someone if doing so could put you in danger.</li>
+      <li>Be careful if someone monitors your phone, messages or internet activity.</li>
+    </ul>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-brand">MATONI</div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="herbody.html">HERBODY</a>
+    <a href="learn.html">HERWISE</a>
+    <a href="hervoice.html">HERVOCIE</a>
+    <a href="research.html">HERRESEARCH</a>
+    <a href="guard.html">HERGUARD</a>
+    <a href="help.html">Get Help</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="safety.html">Safety</a>
+  </div>
+
+  <p>© <span id="year"></span> MATONI. All rights reserved.</p>
+
+</footer>
+
+
+<button class="quick-exit" onclick="quickExit()">
+  Quick Exit
+</button>
+
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function toggleMenu() {
+  document.getElementById("navigation").classList.toggle("open");
+}
+
+function quickExit() {
+  window.location.replace(
+    "https://www.google.com/search?q=home+workout+exercises"
+  );
+}
+
+/* SHOW CONTACT FIELDS ONLY WHEN REQUESTED */
+
+const identityOptions = document.querySelectorAll(
+  'input[name="identity_option"]'
+);
+
+const contactFields = document.getElementById("contact-fields");
+
+identityOptions.forEach(option => {
+  option.addEventListener("change", function() {
+    contactFields.style.display =
+      this.value === "identified" && this.checked
+      ? "block"
+      : "none";
+  });
+});
+
+/*
+  BACKEND INTEGRATION
+
+  Connect this form to MATONI's secure reporting backend before launch.
+
+  Required backend safeguards:
+  - HTTPS
+  - Secure storage and access restrictions
+  - Encryption of sensitive information
+  - Protection against spam and malicious submissions
+  - A defined safeguarding response protocol
+  - A trained team responsible for reviewing reports
+  - Safe contact and follow-up procedures
+  - Clear retention and deletion policy
+*/
+</script>
+
+</body>
+  </html>
+  
