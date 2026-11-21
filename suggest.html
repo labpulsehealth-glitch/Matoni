@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#542b3f">
+
+  <title>Research Suggestion Box | MATONI</title>
+
+  <meta name="description" content="Suggest a research question or a neglected women's health topic to MATONI HERRESEARCH. Suggestions can be anonymous.">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .suggest-page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+    }
+
+    .suggest-intro {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .suggest-intro h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(32px, 6vw, 48px);
+      line-height: 1.15;
+      color: #45283c;
+      margin: 14px 0;
+    }
+
+    .suggest-intro p {
+      max-width: 540px;
+      margin: 0 auto;
+      color: #6b5d65;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .suggest-notice {
+      margin: 24px 0;
+      padding: 18px 20px;
+      background: #f8edf2;
+      border-left: 4px solid #713f58;
+      border-radius: 6px;
+      color: #45283c;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .suggest-notice ul {
+      margin: 8px 0 0 18px;
+    }
+
+    .suggest-notice a {
+      color: #713f58;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .suggest-form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #45283c;
+      margin: 18px 0 6px;
+    }
+
+    .suggest-form .hint {
+      font-weight: 400;
+      color: #6b5d65;
+    }
+
+    .suggest-form select,
+    .suggest-form input[type="text"],
+    .suggest-form textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d9c6cf;
+      border-radius: 10px;
+      background: #fff;
+      color: #392d35;
+      font: inherit;
+      font-size: 15px;
+    }
+
+    .suggest-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .suggest-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6b5d65;
+    }
+
+    /* Hidden trap field for spam robots */
+    .trap {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    #suggest-send {
+      margin-top: 22px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 35px;
+      background: #713f58;
+      color: #fff;
+      font-weight: 600;
+      min-height: 46px;
+    }
+
+    #suggest-send:hover:not(:disabled) {
+      background: #45283c;
+    }
+
+    #suggest-send:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    #suggest-status {
+      margin-top: 16px;
+      min-height: 24px;
+      font-size: 14px;
+      color: #45283c;
+    }
+
+    #suggest-status.error {
+      color: #a02040;
+    }
+
+    .suggest-footnote {
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px solid #eadfe5;
+      font-size: 12px;
+      line-height: 1.8;
+      color: #6b5d65;
+    }
+
+    footer.simple-footer {
+      padding: 40px 20px;
+      background: #382934;
+      color: #e6d8df;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    footer.simple-footer a {
+      color: #f1e7ec;
+      margin: 0 8px;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="header matoni-header">
+  <a href="index.html" class="logo matoni-logo">MATONI</a>
+
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">
+    ☰
+  </button>
+
+  <nav id="navigation" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="herbody.html">HERBODY</a>
+    <a href="ask-matoni.html">Ask MATONI</a>
+    <a href="research.html">HERRESEARCH</a>
+    <a href="help.html">Get Help</a>
+  </nav>
+</header>
+
+<main id="main" class="suggest-page">
+
+  <section class="suggest-intro">
+    <p class="eyebrow">HERRESEARCH</p>
+
+    <h1>Research Suggestion Box</h1>
+
+    <p>
+      What should science investigate next? Tell us about a research question,
+      a neglected health concern, or an area where more evidence is needed.
+    </p>
+  </section>
+
+  <section class="suggest-notice" aria-label="Please read first">
+    <strong>Please read before you send:</strong>
+    <ul>
+      <li>This box is for <strong>research ideas</strong>, not personal medical problems. For health questions, try
+        <a href="ask-matoni.html">Ask MATONI</a> or visit a clinic.</li>
+      <li>If you or someone else is in danger or needs urgent help, please use
+        <a href="help.html">Get Help Now</a>.</li>
+      <li>You can stay <strong>anonymous</strong>. If you are under 18, please leave the name blank.</li>
+      <li>Please do not include phone numbers, email addresses, or details that could identify you or someone else.</li>
+      <li>Suggestions are read by the MATONI team and are <strong>not published</strong>. We cannot reply to each one.</li>
+    </ul>
+  </section>
+
+  <div class="suggest-form">
+
+    <label for="suggest-category">Topic</label>
+    <select id="suggest-category">
+      <option value="">Choose a topic...</option>
+      <option>Hormones and the female body</option>
+      <option>Medication and treatment</option>
+      <option>Female-specific conditions</option>
+      <option>Menstrual and reproductive health</option>
+      <option>Mental and emotional wellbeing</option>
+      <option>Maternal health and childbirth</option>
+      <option>Ageing and menopause</option>
+      <option>Health inequality and access</option>
+      <option>Environment and women's health</option>
+      <option>Technology and innovation</option>
+      <option>Something else</option>
+    </select>
+
+    <label for="suggest-role">I am a <span class="hint">(optional)</span></label>
+    <select id="suggest-role">
+      <option>Prefer not to say</option>
+      <option>Student</option>
+      <option>Healthcare professional</option>
+      <option>Researcher</option>
+      <option>Member of the public</option>
+    </select>
+
+    <label for="suggest-text">Your suggestion</label>
+    <textarea id="suggest-text" maxlength="800" placeholder="For example: Why do so many girls in my area miss school during their periods, and what could help?"></textarea>
+    <div class="suggest-row">
+      <span>At least 20 characters.</span>
+      <span id="suggest-count" aria-hidden="true">0 / 800</span>
+    </div>
+
+    <label for="suggest-name">Name <span class="hint">(optional, leave blank to stay anonymous)</span></label>
+    <input type="text" id="suggest-name" maxlength="60" autocomplete="off">
+
+    <div class="trap" aria-hidden="true">
+      <label for="suggest-website">Leave this empty</label>
+      <input type="text" id="suggest-website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="button" id="suggest-send">Send suggestion</button>
+
+    <p id="suggest-status" role="status" aria-live="polite"></p>
+
+  </div>
+
+  <p class="suggest-footnote">
+    MATONI is developing its research vision and is not conducting clinical research or collecting
+    research participant health data through this page. Suggestions may be kept for up to one year
+    to help guide research priorities. See our <a href="privacy.html">Privacy</a> page.
+  </p>
+
+</main>
+
+<footer class="simple-footer">
+  <div>MATONI · A world where every girl is understood.</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="research.html">HERRESEARCH</a>
+    <a href="help.html">Get Help</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="safety.html">Safety</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+  // Address of your suggestions Worker (change if you named it differently)
+  var SUGGEST_ENDPOINT = "https://matoni-suggestions.ayoolanipekunfaith.workers.dev";
+
+  (function () {
+    var category = document.getElementById("suggest-category");
+    var role = document.getElementById("suggest-role");
+    var text = document.getElementById("suggest-text");
+    var name = document.getElementById("suggest-name");
+    var trap = document.getElementById("suggest-website");
+    var button = document.getElementById("suggest-send");
+    var status = document.getElementById("suggest-status");
+    var count = document.getElementById("suggest-count");
+
+    function say(message, isError) {
+      status.textContent = message;
+      status.className = isError ? "error" : "";
+    }
+
+    text.addEventListener("input", function () {
+      count.textContent = text.value.length + " / 800";
+    });
+
+    function hasPersonalDetails(value) {
+      return /(\+?\d[\s-]?){9,}/.test(value) || /\S+@\S+\.\S+/.test(value);
+    }
+
+    button.addEventListener("click", function () {
+      var suggestion = text.value.trim();
+
+      if (!category.value) {
+        say("Please choose a topic.", true);
+        return;
+      }
+
+      if (suggestion.length < 20) {
+        say("Please write a little more (at least 20 characters).", true);
+        return;
+      }
+
+      if (hasPersonalDetails(suggestion) || hasPersonalDetails(name.value)) {
+        say("Please remove phone numbers or email addresses.", true);
+        return;
+      }
+
+      button.disabled = true;
+      say("Sending...", false);
+
+      var controller = new AbortController();
+      var timer = setTimeout(function () { controller.abort(); }, 20000);
+
+      fetch(SUGGEST_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          category: category.value,
+          role: role.value,
+          text: suggestion,
+          name: name.value.trim(),
+          website: trap.value
+        }),
+        signal: controller.signal
+      })
+        .then(function (response) {
+          return response.json().then(
+            function (data) { return { ok: response.ok, data: data }; },
+            function () { return { ok: false, data: {} }; }
+          );
+        })
+        .then(function (result) {
+          if (result.ok) {
+            say("Thank you. Your suggestion has been received.", false);
+            category.value = "";
+            role.value = "Prefer not to say";
+            text.value = "";
+            name.value = "";
+            count.textContent = "0 / 800";
+          } else {
+            say(result.data.error || "Something went wrong. Please try again later.", true);
+          }
+        })
+        .catch(function (error) {
+          say(
+            error && error.name === "AbortError"
+              ? "This is taking too long. Please check your connection and try again."
+              : "Unable to connect. Please try again later.",
+            true
+          );
+        })
+        .then(function () {
+          clearTimeout(timer);
+          button.disabled = false;
+        });
+    });
+  })();
+</script>
+
+</body>
+        </html>
+        
