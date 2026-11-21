@@ -1,17 +1,18 @@
-// MATONI Worker: the secure backend for Ask MATONI.
-// Runs on Cloudflare Workers. The API key is stored as a Worker SECRET
-// named ANTHROPIC_API_KEY. It is never written in this file.
+// MATONI Worker (FREE VERSION): uses Cloudflare Workers AI.
+// No API key and no payment card needed. It uses your Worker's "AI" binding.
+// Free daily allowance applies; when it runs out, visitors see a "busy" message
+// until the next day (resets at 00:00 UTC).
 
 // ---------- SETTINGS YOU MAY CHANGE ----------
 
 // Only this website may call the Worker (no trailing slash, no page path).
 const ALLOWED_ORIGIN = "https://labpulsehealth-glitch.github.io";
 
-// A small, fast, low-cost model is enough for short explanations.
-const MODEL = "claude-haiku-5-5";
+// Check the exact name in the Workers AI model catalog if this ever fails.
+const MODEL = "@cf/meta/llama-3.1-8b-instruct";
 
 const MAX_QUESTION_LENGTH = 700;
-const MAX_REQUESTS_PER_MINUTE = 5;   // per visitor (see notes in the guide)
+const MAX_REQUESTS_PER_MINUTE = 5;   // per visitor
 
 const LANGUAGES = {
   en: "English",
@@ -42,8 +43,6 @@ Rules you must always follow:
 12. Never claim to be a doctor or a person, and never claim to have examined her. When the question is about a personal health worry, end with one short reminder that a health worker can check her personally.`;
 
 // ---------- SIMPLE PER-VISITOR LIMIT ----------
-// Works inside one Worker instance only. It slows down casual abuse.
-// For stronger protection, also add a Cloudflare rate-limiting rule.
 
 const recentHits = new Map();
 
@@ -84,7 +83,6 @@ function reply(body, status) {
 }
 
 function cleanText(text) {
-  // Remove hidden control characters and extra spaces
   return String(text)
     .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
     .replace(/\s+/g, " ")
@@ -96,7 +94,6 @@ function cleanText(text) {
 export default {
   async fetch(request, env) {
 
-    // Browser "preflight" check
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: corsHeaders() });
     }
@@ -105,12 +102,12 @@ export default {
       return reply({ error: "Method not allowed." }, 405);
     }
 
-    // Only accept requests that come from the MATONI website
     if (request.headers.get("Origin") !== ALLOWED_ORIGIN) {
       return reply({ error: "This request is not allowed." }, 403);
     }
 
-    if (!env.ANTHROPIC_API_KEY) {
+    // The "AI" binding is added in the Worker's Settings > Bindings
+    if (!env.AI) {
       return reply({ error: "The service is not set up yet." }, 500);
     }
 
@@ -120,7 +117,6 @@ export default {
       return reply({ error: "Please wait a moment before asking again." }, 429);
     }
 
-    // Read and check the question
     let input;
     try {
       input = await request.json();
@@ -148,52 +144,26 @@ export default {
         ? ""
         : " If you are not fully confident in this language, keep the answer simple and say it may be less accurate.");
 
-    // Ask the AI
-    let aiResponse;
+    let result;
     try {
-      aiResponse = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": env.ANTHROPIC_API_KEY,
-          "anthropic-version": "2023-06-01"
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          max_tokens: 500,
-          system: systemText,
-          messages: [
-            {
-              role: "user",
-              content: "<question>" + question + "</question>"
-            }
-          ]
-        }),
-        signal: AbortSignal.timeout(25000)
+      result = await env.AI.run(MODEL, {
+        messages: [
+          { role: "system", content: systemText },
+          { role: "user", content: "<question>" + question + "</question>" }
+        ],
+        max_tokens: 450,
+        temperature: 0.3
       });
     } catch (error) {
-      return reply({ error: "The explanation service is busy. Please try again." }, 502);
+      // Most often: today's free allowance is used up. Do not log the question.
+      return reply(
+        { error: "Ask MATONI is busy right now. Please try again later or tomorrow." },
+        503
+      );
     }
 
-    if (!aiResponse.ok) {
-      // Details are not passed to the visitor. Do not log the question.
-      return reply({ error: "The explanation service is busy. Please try again." }, 502);
-    }
-
-    let data;
-    try {
-      data = await aiResponse.json();
-    } catch (error) {
-      return reply({ error: "The explanation service sent an unexpected reply." }, 502);
-    }
-
-    const answer = Array.isArray(data.content)
-      ? data.content
-          .filter((block) => block.type === "text")
-          .map((block) => block.text)
-          .join("\n")
-          .trim()
-      : "";
+    const answer =
+      result && typeof result.response === "string" ? result.response.trim() : "";
 
     if (!answer) {
       return reply({ error: "No answer was received. Please try again." }, 502);
@@ -202,4 +172,3 @@ export default {
     return reply({ answer: answer }, 200);
   }
 };
-                    
