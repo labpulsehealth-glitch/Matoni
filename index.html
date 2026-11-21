@@ -75,37 +75,43 @@
       bottom: -80px;
     }
 
-    .brand-mark {
-      display: block;
-      width: min(100%, 590px);
-      height: auto;
-      margin: 0 auto;
-      overflow: visible;
-    }
+    
+/* MATONI CONTEMPORARY CURSIVE WORDMARK */
 
-    .letter {
-      fill: none;
-      stroke: #fffaf2;
-      stroke-width: 3.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+.matoni-script-logo {
+  color: #fffaf5;
+  font-family: "Segoe Script", "Snell Roundhand",
+               "Brush Script MT", "URW Chancery L",
+               cursive;
+  font-size: clamp(76px, 15vw, 112px);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.12;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0 5px 8px;
+  text-shadow: 0 1px 1px rgba(255,255,255,.08);
+}
 
-    .letter-detail {
-      fill: none;
-      stroke: #e5c7d3;
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+.brand-tagline {
+  color: #ead9e1;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
 
-    .brand-tagline {
-      color: #ead9e1;
-      font: 10px Arial, sans-serif;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
+@media (max-width: 380px) {
+  .matoni-script-logo {
+    font-size: 76px;
+  }
+
+  .brand-tagline {
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+}
+
 
     .masthead-rule {
       width: 55px;
@@ -542,96 +548,11 @@
   <!-- MATONI CUSTOM LETTERING -->
   <header class="masthead">
 
-    <svg class="brand-mark"
-         viewBox="0 0 620 145"
-         role="img"
-         aria-labelledby="brand-title">
-
-      <title id="brand-title">MATONI</title>
-
-      <!-- M: curved entry, tall arches and extended terminals -->
-      <g class="letter">
-        <path d="M43 108
-                 C49 91 57 61 69 35
-                 C73 25 81 24 85 36
-                 L105 94
-                 C108 103 112 102 116 93
-                 L139 36
-                 C143 25 151 25 155 37
-                 C164 62 172 89 179 108"/>
-        <path class="letter-detail"
-              d="M37 108 C48 116 57 115 66 108
-                 M155 108 C164 115 173 115 183 108"/>
-      </g>
-
-      <!-- A: bespoke pointed arch and elegant crossbar -->
-      <g class="letter">
-        <path d="M180 108
-                 C194 77 207 43 221 19
-                 C225 11 231 11 235 20
-                 C248 51 262 81 276 108"/>
-        <path d="M198 76 C218 69 241 69 260 76"/>
-        <path class="letter-detail"
-              d="M214 27 C218 17 224 12 230 11"/>
-        <path class="letter-detail"
-              d="M180 108 C189 114 196 114 202 109
-                 M267 109 C274 115 281 114 287 108"/>
-      </g>
-
-      <!-- T: extended, sweeping crossbar -->
-      <g class="letter">
-        <path d="M280 28
-                 C300 24 324 24 344 28
-                 C358 30 371 29 382 22"/>
-        <path d="M331 29
-                 C328 50 328 79 330 108"/>
-        <path class="letter-detail"
-              d="M281 28 C271 33 267 39 269 45
-                 M382 22 C389 17 395 17 401 21"/>
-        <path class="letter-detail"
-              d="M320 108 C327 114 336 114 344 108"/>
-      </g>
-
-      <!-- O: rounded, gently oval letterform -->
-      <g class="letter">
-        <path d="M444 19
-                 C416 19 399 37 397 65
-                 C395 92 412 112 439 114
-                 C466 116 486 96 487 67
-                 C488 39 470 19 444 19 Z"/>
-        <path class="letter-detail"
-              d="M444 27
-                 C424 28 411 44 411 66
-                 C411 86 423 103 442 105"/>
-      </g>
-
-      <!-- N: long rising diagonal with refined curved terminals -->
-      <g class="letter">
-        <path d="M496 108
-                 C501 81 506 51 510 28
-                 C512 18 518 17 524 26
-                 L571 97
-                 C577 106 581 104 583 93
-                 C587 70 591 44 595 20"/>
-        <path class="letter-detail"
-              d="M490 108 C497 114 504 115 511 110
-                 M585 20 C591 13 598 13 605 19"/>
-      </g>
-
-      <!-- I: slender letter with distinctive ornamental finishing -->
-      <g class="letter">
-        <path d="M606 30
-                 C615 25 622 24 630 27
-                 M617 28 C612 52 610 83 612 108
-                 M603 108 C613 114 624 114 633 108"/>
-      </g>
-
-      <!-- Small restrained finishing details -->
-      <path class="letter-detail"
-            d="M48 22 C55 12 66 10 76 15"/>
-      <path class="letter-detail"
-            d="M397 119 C420 129 458 130 482 117"/>
-    </svg>
+    
+<!-- MATONI MODERN SCRIPT WORDMARK -->
+<div class="matoni-script-logo" aria-label="MATONI">
+  MATONI
+</div>
 
     <p class="brand-tagline">A world where every girl is understood</p>
     <div class="masthead-rule"></div>
