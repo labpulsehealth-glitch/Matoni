@@ -3,7 +3,7 @@
 // never in this file.
 
 const MATONI_AI_ENDPOINT =
-  "https://matoni-api.ayoolanipekunfaith.workers.dev";
+  "https://matoni-ask.ayoolanipekunfaith.workers.dev";
 
 const REQUEST_TIMEOUT_MS = 20000;
 
