@@ -3,7 +3,7 @@
 // never in this file.
 
 const MATONI_AI_ENDPOINT =
-  "https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev";
+  "https://matoni-api.ayoolanipekunfaith.workers.dev";
 
 const REQUEST_TIMEOUT_MS = 20000;
 
